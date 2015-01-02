@@ -1,6 +1,6 @@
 .DS_Store
 .idea/
-.sass_cache/
+.sass-cache/
 _site/
 *.iml
 
