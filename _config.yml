@@ -1,20 +1,24 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+#relative_permalinks: false
+
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+title:            Campudus Developers
+email:            info@campudus.com
+description: > # Web and app development.
+baseurl: / # the subpath of your site, e.g. /blog/
+url:              "http://campudus.com" # the base hostname & protocol for your site
 github_username:  campudus
+paginate:         5
 
 # Build settings
 encoding: "utf-8"
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-highlighter: pygments
 
 exclude:
 - bin
@@ -33,6 +37,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 
+
 collections:
   projects:
     permalink: /projects/:path/
@@ -41,7 +46,7 @@ collections:
 defaults:
   -
     scope:
-      path: ""
+      path: "/projects"
       type: "projects"
     values:
       layout: project
