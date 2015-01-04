@@ -71,8 +71,8 @@ There is a nice blog by [@juthilo](https://twitter.com/juthilo) at [jekyll-windo
 
 #### Installing Ruby
 
-1. Download and install Ruby from http://rubyinstaller.org/downloads/ and check “Add Ruby executables to PATH” during installation, so ruby will be available in your terminal.
-2. Download and Install the associated RubyDevKit Version from http://rubyinstaller.org/downloads/. The DevKit is needed to build native extensions that Jekyll needs. You can find more information at
+1. Download and install Ruby from [http://rubyinstaller.org/downloads/](http://rubyinstaller.org/downloads/) and check “Add Ruby executables to PATH” during installation, so ruby will be available in your terminal.
+2. Download and Install the associated RubyDevKit Version from [http://rubyinstaller.org/downloads/](http://rubyinstaller.org/downloads/). The DevKit is needed to build native extensions that Jekyll needs. You can find more information at
 3. Now you need to configure RubyDevKit to use the correct Ruby version with these commands (assuming you installed RubyDevKit into `C:\RubyDevKit`):
 {% highlight bash %}
 cd C:\RubyDevKit

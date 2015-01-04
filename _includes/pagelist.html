@@ -1,0 +1,11 @@
+{% assign pages = include.pages | where: 'lang', page.lang %}
+{% for p in pages %}
+<div class="item {{ p.id }}">
+<a href="{{ p.url }}">
+  <h2 class="item-title">
+    {{ p.title }}
+  </h2>
+  <div class="item-description">{{ p.description }}</div>
+</a>
+</div>
+{% endfor %}

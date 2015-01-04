@@ -2,7 +2,7 @@
 title: Campudus Developers
 email: info@campudus.com
 description: Web and app development.
-baseurl: ""
+baseurl: /
 url: "https://campudus.github.io" # the base hostname & protocol for your site
 
 # Build settings

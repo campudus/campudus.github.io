@@ -1,5 +1,8 @@
 ---
-layout: page
+layout: main
 title: Projekte
 order: 3
 ---
+
+{% assign subPages = site.pages | where: 'layout', 'project' %}
+{% include pagelist.html pages=subPages %}

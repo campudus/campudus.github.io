@@ -8,7 +8,9 @@ title: Campudus Developers
   <title>Campudus Developers</title>
   <script>
     var defaultLang = 'en';
-    var lang = 'de';
+    var availableLanguages = ['en', 'de'];
+    var language = (window.navigator.userLanguage || window.navigator.language).substr(0, 2);
+    var lang = availableLanguages[language] || defaultLang;
     window.location.href = '{{ site.baseurl }}' + lang;
   </script>
 </head>

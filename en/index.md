@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: main
 title: About Campudus
 order: 1
 ---
