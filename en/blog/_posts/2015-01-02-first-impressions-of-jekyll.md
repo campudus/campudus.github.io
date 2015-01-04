@@ -148,11 +148,17 @@ And be aware of a possible mail problem: [http://imakewebthings.com/blog/github-
 
 ### Making Jekyll multilingual
 
-Here is a great article which covers this topic pretty well: [http://sylvain.durand.tf/making-jekyll-multilingual/](http://sylvain.durand.tf/making-jekyll-multilingual/)
+Here is an article that gave us some ideas: [http://sylvain.durand.tf/making-jekyll-multilingual/](http://sylvain.durand.tf/making-jekyll-multilingual/)
+
+Creating a multilingual site with Jekyll unveiled a problem with collections for us. If we'd use a collection for our projects, you won't be able to set a permalink to a path with the page language into it without writing some Ruby plugin. As this would break our intention to push and publish to GitHub pages directly, we kicked collections again and used path scopes plus includes to do what we wanted to achieve.
+
+For now, we use the same directory structure for all languages, so we could easily build our own language switcher. It can also check if the 
 
 ## Javascript alternatives for Jekyll
 
 At Campudus we use JavaScript quite often, so we researched some alternatives written in Javascript with Node.JS. Here are some of the most promising ones we found so far:
 
-- [http://brunch.io/](http://brunch.io/) - Looks a lot like a really simple build tool for web pages.
-- [http://hexo.io/](http://hexo.io/) - Looks like Jekyll for JavaScript. We will probably try it out soon, but as there is no native support in GitHub, it means to have a separate source and "binary" branch.
+* [http://brunch.io/](http://brunch.io/) - Looks a lot like a really simple build tool for web pages.
+* [http://hexo.io/](http://hexo.io/) - Looks like Jekyll for JavaScript. We will probably try it out soon, but as there is no native support in GitHub, it means to have a separate source and "binary" branch.
+
+At some point we might want to switch to one of these generators, but right now, we'll see how it works out with the current setup. Most probably, we'll check out one of these to see if it is usable for customer projects.
