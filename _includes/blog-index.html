@@ -1,0 +1,16 @@
+<section id="blog-index">
+
+  <div class="posts">
+    {% assign posts=site.posts | where: 'lang', page.lang %}
+    {% for post in posts %}
+    <a href="{{ post.url }}" class="post-wrapper">
+      <small class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</small>
+      <h2 class="post-title">
+        {{ post.title }}
+      </h2>
+    </a>
+    {% endfor %}
+  </div>
+
+  <p class="rss-subscribe"><a href="{{ '/atom.xml' | prepend: page.lang | prepend: '/' | prepend: site.url }}">{{ include.subscribe }}</a></p>
+</section>

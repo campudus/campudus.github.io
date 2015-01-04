@@ -1,29 +1,12 @@
-# Dependencies
-highlighter:      pygments
-markdown: kramdown
-
-kramdown:
-  input: GFM
-
-# Permalinks
-permalink:        pretty
-#relative_permalinks: false
-
 # Site settings
-title:            Campudus Developers
-email:            info@campudus.com
-description: > # Web and app development.
-baseurl: / # the subpath of your site, e.g. /blog/
-url:              "http://campudus.com" # the base hostname & protocol for your site
-github_username:  campudus
-paginate:         5
+title: Campudus Developers
+email: info@campudus.com
+description: Web and app development.
+baseurl: ""
+url: "https://campudus.github.io" # the base hostname & protocol for your site
 
 # Build settings
 encoding: "utf-8"
-
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-highlighter: pygments
 
 exclude:
 - bin
@@ -37,6 +20,20 @@ exclude:
 - script
 - vendor
 
+# Dependencies
+highlighter: pygments
+markdown: kramdown
+
+kramdown:
+  input: GFM
+
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Permalinks
+permalink: pretty
+#relative_permalinks: false
+
+# Path / type specific variables
 defaults:
   -
     scope:
@@ -48,3 +45,8 @@ defaults:
       path: en
     values:
       lang: en
+  -
+    scope:
+      type: posts
+    values:
+      layout: post.html

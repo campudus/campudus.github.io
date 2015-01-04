@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: Winora
 order: 2
 ---

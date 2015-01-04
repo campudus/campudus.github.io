@@ -8,10 +8,6 @@ tags:
 - learning
 ---
 
-blubb: {{ page.blubb }}
-
-# First Impressions of Jekyll
-
 Our first fun friday this year was all about Jekyll. We've been thinking about converting our current web page into a static site for quite some time, but we didn't have the time to evaluate nice frameworks until today. It always takes a bit of time to understand the concepts of a framework, so a fun friday is a good way to start looking deeply into it.
 
 What follows are our first impressions. At the time of writing, Jekyll's version is 2.5.3.
@@ -78,34 +74,27 @@ There is a nice blog by [@juthilo](https://twitter.com/juthilo) at [jekyll-windo
 1. Download and install Ruby from http://rubyinstaller.org/downloads/ and check “Add Ruby executables to PATH” during installation, so ruby will be available in your terminal.
 2. Download and Install the associated RubyDevKit Version from http://rubyinstaller.org/downloads/. The DevKit is needed to build native extensions that Jekyll needs. You can find more information at
 3. Now you need to configure RubyDevKit to use the correct Ruby version with these commands (assuming you installed RubyDevKit into `C:\RubyDevKit`):
-
-```
+{% highlight bash %}
 cd C:\RubyDevKit
 ruby dk.rb init
 ruby dk.rb install
-```
+{% endhighlight %}
+Now you should verify that `C:\RubyDevKit\config.yml` contains the correct path to Ruby.
 
-4. Check `C:\RubyDevKit\config.yml` for correct path to Ruby
+#### Install Python for syntax highlighting
+1. Download and install [Python](https://www.python.org/downloads/) to be able to use pygments, the default syntax highlighter for Jekyll.
+2. Add Python to the systems `PATH` environment variable
+3. Add the line `highlighter: true` to the `_config.yml` file in jekyll, to enable syntax highlighting. Otherwise you may end up with an error similar to the following:
 
-```
-gem install jekyll
-```
-
-
-If you encounter an SSL error during installation, you might have hit a problem with SSL certificates. Please have a look at this [Ruby SSL guide](https://gist.github.com/luislavena/f064211759ee0f806c88) for more information and how to fix it.
-
-Some people recommend to just install the gem via HTTP by adding the option `--source http://rubygems.org` to the `gem` command. From a security perspective, you should really avoid doing that, as you may download and execute code from an unverified source.
-
-5. Download and install [Python](https://www.python.org/downloads/) to be able to use pygments, the default syntax highlighter for Jekyll.
-6. Add Python to the systems `PATH` environment variable
-7. Add the line `highlighter: true` to the `_config.yml` file in jekyll, to enable syntax highlighting. Otherwise you may end up with an error similar to the following:
 ```
 Liquid Exception: undefined method `[]' for nil:NilClass in _posts/2015-01-02-welcome-to-jekyll.markdown
 ```
-8. Start jekyll
-```
-jekyll serve
-```
+
+#### Install Jekyll
+1. Install Jekyll via `gem install jekyll`
+If you encounter an SSL error during installation, you might have hit a problem with SSL certificates. Please have a look at this [Ruby SSL guide](https://gist.github.com/luislavena/f064211759ee0f806c88) for more information and how to fix it.
+Some people recommend to just install the gem via HTTP by adding the option `--source http://rubygems.org` to the `gem` command. From a security perspective, you should really avoid doing that, as you may download and execute code from an unverified source.
+2. Start jekyll via `jekyll serve`
 
 
 ## Digging Deeper into Jekyll
@@ -114,11 +103,11 @@ Jekyll is made for blogging and simple websites. We wanted to see how flexible a
 
 ### Using custom post types
 
-By default there are two post types: static pages and blog posts. What if we wanted something like projects?
-Introduced in v2.0, Jekyll is able to do this and its called [collections](http://jekyllrb.com/docs/collections/). At the time of this article the feature was experimental and marked as unstable by the Jekyll team.
+By default there are two post types: static pages and blog posts. What if we wanted something like portolio objects?
 
+Introduced in v2.0, Jekyll is able to do this and its called [collections](http://jekyllrb.com/docs/collections/). At the time of writing, the feature is still experimental and marked as unstable by the Jekyll team. Anyway, we had to try it out and see how it works.
 
-First step add the collection in the `_config.yml`:
+The first step is to add the collection in the `_config.yml`:
 
 ```
 collections:
@@ -154,16 +143,16 @@ We tried to find a way to generate the same page in multiple layouts. For exampl
 
 ### Using your own URL/Domain for a github page
 
-Refer to: https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/
-And be aware of a possible mail problem: http://imakewebthings.com/blog/github-pages-email/
+Refer to: [https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/)
+And be aware of a possible mail problem: [http://imakewebthings.com/blog/github-pages-email/](http://imakewebthings.com/blog/github-pages-email/)
 
 ### Making Jekyll multilingual
 
-Here is a great article which covers this topic pretty well:
-http://sylvain.durand.tf/making-jekyll-multilingual/
+Here is a great article which covers this topic pretty well: [http://sylvain.durand.tf/making-jekyll-multilingual/](http://sylvain.durand.tf/making-jekyll-multilingual/)
 
 ## Javascript alternatives for Jekyll
 
 At Campudus we use JavaScript quite often, so we researched some alternatives written in Javascript with Node.JS. Here are some of the most promising ones we found so far:
-- http://brunch.io/ - Looks a lot like a really simple build tool for web pages.
-- http://hexo.io/ - Looks like Jekyll for JavaScript. We will probably try it out soon, but as there is no native support in GitHub, it means to have a separate source and "binary" branch.
+
+- [http://brunch.io/](http://brunch.io/) - Looks a lot like a really simple build tool for web pages.
+- [http://hexo.io/](http://hexo.io/) - Looks like Jekyll for JavaScript. We will probably try it out soon, but as there is no native support in GitHub, it means to have a separate source and "binary" branch.

@@ -4,19 +4,4 @@ title: Blog
 order: 5
 ---
 
-<section id="blog-index">
-
-  <div class="posts">
-    {% assign posts=site.posts | where: 'lang', page.lang %}
-    {% for post in posts %}
-    <a href="{{ post.url }}" class="post-wrapper">
-      <small class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</small>
-      <h2 class="post-title">
-        {{ post.title }}
-      </h2>
-    </a>
-    {% endfor %}
-  </div>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-</section>
+{% include blog-index.html subscribe='Subscribe via RSS' %}
