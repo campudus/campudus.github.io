@@ -1,11 +1,22 @@
+# Dependencies
+highlighter:      pygments
+markdown: kramdown
+
+kramdown:
+  input: GFM
+
+# Permalinks
+permalink:        pretty
+#relative_permalinks: false
+
 # Site settings
-title: Campudus
-email: info@campudus.com
-description: > # this means to ignore newlines until "baseurl:"
-  Something new...
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://campudus.github.io" # the base hostname & protocol for your site
+title:            Campudus Developers
+email:            info@campudus.com
+description: > # Web and app development.
+baseurl: / # the subpath of your site, e.g. /blog/
+url:              "http://campudus.com" # the base hostname & protocol for your site
 github_username:  campudus
+paginate:         5
 
 # Build settings
 encoding: "utf-8"
@@ -25,15 +36,6 @@ exclude:
 - README.md
 - script
 - vendor
-
-markdown: kramdown
-
-kramdown:
-  input: GFM
-
-collections:
-  projects:
-    output: true
 
 defaults:
   -
