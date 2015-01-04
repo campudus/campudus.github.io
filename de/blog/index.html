@@ -1,0 +1,25 @@
+---
+layout: page
+title: Blog
+order: 5
+---
+
+<section id="blog-index">
+
+  <ul class="post-list">
+    {% assign posts = site.posts | where: 'lang', page.lang %}
+    {% for post in posts %}
+    <li>
+      <code>post={{ post }}</code>
+      <code>page.lang={{ page.lang }}</code>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">Abonnieren <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</section>

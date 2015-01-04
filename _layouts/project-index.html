@@ -1,0 +1,17 @@
+---
+layout: static
+title: Projects
+order: 3
+---
+
+<section id="projects">
+  <ul>
+    projects: {{ page.lang }}
+    {% assign pages = site['projects-'+lang] %}
+    {% for page in pages %}
+    {% if page.title %}
+    <li class="{{ page.name }}"><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</section>

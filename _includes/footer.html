@@ -1,3 +1,18 @@
 <footer class="site-footer">
   &copy; 2015 Campudus
+
+  {% capture replaced %}/{{ page.lang }}{% endcapture %}
+  {% assign translated = page.url | replace: replaced, '' %}
+  {% capture eng %}/en{{ translated }}{% endcapture %}
+  {% capture ger %}/de{{ translated }}{% endcapture %}
+  {% capture aps %}{{ site.pages | map: 'url' | join: '***' }}***{{ site.posts | map: 'url' | join: '***'}}{% endcapture %}
+  {% assign all_pages = aps | split: '***' %}
+  {% for p in all_pages %}
+    {% if p == eng %}
+      <a href="{{ eng | prepend: site.baseurl }}">English</a>
+    {% elsif p == ger %}
+      <a href="{{ ger | prepend: site.baseurl }}">Deutsch</a>
+    {% endif %}
+  {% endfor %}
+
 </footer>

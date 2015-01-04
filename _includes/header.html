@@ -7,10 +7,11 @@
     <nav class="site-nav">
       site nav:
       <ul>
-        {% assign pages = site.pages | sort: 'order' %}
+        {% assign pages = site.pages | sort: 'order' | where: 'lang', page.lang | where: 'name', 'index.html' %}
         {% for page in pages %}
+        <!-- {{ page }} -->
         {% if page.title %}
-        <li class="{{ page.name }}"><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+        <li class="{{ page.name | replace: '.md', '' }}"><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
         {% endif %}
         {% endfor %}
       </ul>
