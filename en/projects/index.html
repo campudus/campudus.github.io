@@ -4,5 +4,9 @@ title: Projects
 order: 3
 ---
 
+<h1>Projects</h1>
+
+<section class="projects">
 {% assign subPages = site.pages | where: 'layout', 'project' %}
 {% include pagelist.html pages=subPages %}
+</section>
