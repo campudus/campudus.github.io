@@ -8,10 +8,19 @@ title: Campudus Developers
   <title>Campudus Developers</title>
   <script>
     var defaultLang = 'en';
-    var availableLanguages = ['en', 'de'];
-    var language = (window.navigator.userLanguage || window.navigator.language).substr(0, 2);
-    var lang = availableLanguages[language] || defaultLang;
+    var availableLanguages = {en : 'en', de : 'de'};
+    var lang = getFavoriteLanguage(availableLanguages, navigator.languages);
     window.location.href = '{{ site.baseurl }}' + lang;
+
+    function getFavoriteLanguage(availableLangs, navLangs) {
+      var l;
+      if (navLangs == null || navLangs.length == 0) {
+        l = (window.navigator.userLanguage || window.navigator.language).substring(0, 2);
+        return availableLangs[l] || defaultLang;
+      } else {
+        return availableLangs[navLangs[0]] || getFavoriteLanguage(availableLangs, navLangs.slice(1));
+      }
+    }
   </script>
 </head>
 <body>
