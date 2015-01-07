@@ -2,7 +2,7 @@
 layout: product
 title: Your Showroom
 id: products/showroom
-description: Manage your companies 
+description: Manage your company presentations
 order: 1
 ---
 
