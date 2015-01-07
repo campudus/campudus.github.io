@@ -1,0 +1,1 @@
+{% capture pid %}{% if include.page.id == nil %}{% include function.url-without-current-lang.lq page=include.page %}{% else %}{{ include.page.id }}{% endif %}{% endcapture %}{{ pid }}

@@ -1,21 +1,38 @@
-{% capture replaced %}/{{ page.lang }}{% endcapture %}
-{% assign translated = page.url | replace: replaced, '' %}
-{% capture eng %}en{{ translated }}{% endcapture %}
-{% capture ger %}de{{ translated }}{% endcapture %}
-{% capture engUrl %}/en{{ translated }}{% endcapture %}
-{% capture gerUrl %}/de{{ translated }}{% endcapture %}
-{% capture aps %}{{ site.pages | map: 'url' | join: '***' }}***{{ site.posts | map: 'url' | join: '***'}}{% endcapture %}
-{% assign allPages = aps | split: '***' %}
-
 <footer class="site-footer">
   &copy; 2015 Campudus
 
-  {% if allPages contains engUrl %}
-  <a href="{{ eng | prepend: site.baseurl }}">English</a>
+  {% if page.layout == "post" %}
+  {% assign allPages = site.posts %}
+  {% else %}
+  {% assign allPages = site.pages %}
+  {% endif %}
+
+  {% capture myId %}{% include function.get-id-of-page.lq page=page %}{% endcapture %}
+
+  {% for p in allPages %}
+  {% capture pId %}{% include function.get-id-of-page.lq page=p %}{% endcapture %}
+
+  {% if pId == myId and p.lang == 'en' %}
+  {% assign engFound = p %}
+  {% endif %}
+  {% endfor %}
+
+  {% for p in allPages %}
+  {% capture pId %}{% include function.get-id-of-page.lq page=p %}{% endcapture %}
+
+  {% if pId == myId and p.lang == 'de' %}
+  {% assign gerFound = p %}
+  {% endif %}
+  {% endfor %}
+
+  {% if engFound != nil %}
+  <a href="{{ engFound.url }}">English</a>
   {% else %}
   <span class="unavailable">English</span>
-  {% endif %}{% if allPages contains gerUrl %}
-  <a href="{{ ger | prepend: site.baseurl }}">Deutsch</a>
+  {% endif %}
+
+  {% if gerFound != nil %}
+  <a href="{{ gerFound.url }}">Deutsch</a>
   {% else %}
   <span class="unavailable">Deutsch</span>
   {% endif %}

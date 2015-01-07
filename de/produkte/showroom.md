@@ -1,6 +1,8 @@
 ---
 layout: product
 title: Your Showroom
+id: products/showroom
+description: Alle Unternehmenspräsentationen zentral verwaltet und gemanaged.
 order: 1
 ---
 

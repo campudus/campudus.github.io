@@ -1,0 +1,1 @@
+{% capture replacer %}/{{ include.page.lang }}{% endcapture %}{% assign url = include.page.url | replace: replacer, '' %}{{ url }}

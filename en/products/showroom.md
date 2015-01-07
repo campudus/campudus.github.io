@@ -1,6 +1,8 @@
 ---
 layout: product
 title: Your Showroom
+id: products/showroom
+description: Manage your companies 
 order: 1
 ---
 
