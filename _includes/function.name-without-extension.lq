@@ -1,0 +1,9 @@
+{% capture fnRes %}
+{% capture pname %}{{ include.page.name }}{% endcapture %}
+{% assign nameSplitted = pname | split: '.' %}
+{% capture fileExtension %}.{{ nameSplitted | last }}{% endcapture %}
+{% assign extLength = fileExtension | size %}
+{% assign from = pname | size | minus: extLength %}
+{% assign nameWithoutExt = pname | truncate: from, '' %}
+{{ nameWithoutExt }}
+{% endcapture %}{{ fnRes | strip_newlines }}

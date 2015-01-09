@@ -1,7 +1,6 @@
 ---
 layout: product
 title: DealerCenter
-id: products/dealercenter
 description: Point-of-Sale kiosk system
 order: 2
 ---

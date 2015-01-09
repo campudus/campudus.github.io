@@ -42,6 +42,16 @@ defaults:
       lang: de
   -
     scope:
+      path: "de/produkte"
+    values:
+      idPrefix: "products"
+  -
+    scope:
+      path: "de/projekte"
+    values:
+      idPrefix: "projects"
+  -
+    scope:
       path: en
     values:
       lang: en

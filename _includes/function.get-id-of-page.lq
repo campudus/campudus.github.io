@@ -1,1 +1,14 @@
-{% capture pid %}{% if include.page.id == nil %}{% include function.url-without-current-lang.lq page=include.page %}{% else %}{{ include.page.id }}{% endif %}{% endcapture %}{{ pid }}
+{% capture fnRes %}
+{% capture pid %}
+{% if include.page.id == nil %}
+{% if include.page.idPrefix != nil %}
+{% capture xxx %}/{% include function.name-without-extension.lq page=include.page %}{% endcapture %}
+{{ include.page.idPrefix }}{% if xxx != '/index' %}{{ xxx }}{% endif %}
+{% else %}
+{% include function.url-without-current-lang-and-extension.lq page=include.page %}
+{% endif %}
+{% else %}
+{{ include.page.id }}
+{% endif %}
+{% endcapture %}{{ pid }}
+{% endcapture %}{{ fnRes | strip_newlines }}

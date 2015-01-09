@@ -1,1 +1,5 @@
-{% capture replacer %}/{{ include.page.lang }}{% endcapture %}{% assign url = include.page.url | replace: replacer, '' %}{{ url }}
+{% capture fnRes %}
+{% capture replacer %}/{{ include.page.lang }}{% endcapture %}
+{% assign url = include.page.url | replace: replacer, '' %}
+{{ url }}
+{% endcapture %}{{ fnRes | strip_newlines }}

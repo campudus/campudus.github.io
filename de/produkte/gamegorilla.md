@@ -1,7 +1,6 @@
 ---
 layout: product
 title: Game Gorilla
-id: products/gamegorilla
 description: Peer-to-Peer framework für browsergame clients
 order: 3
 ---
