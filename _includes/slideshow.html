@@ -1,0 +1,15 @@
+{% assign images = include.images | split: '*' %}
+{% if include.descriptions %}
+{% assign descriptions = include.descriptions | split: '#*#' %}
+{% endif %}
+{% assign upTo = images.size | minus: 1 %}
+<div class="slideshow">
+  {% for i in (0..upTo) %}
+  <figure>
+    <img src="{{ page.url }}{{ images[i] }}"/>
+    {% if descriptions[i] %}
+    <div class="description">{{ descriptions[i] }}</div>
+    {% endif %}
+  </figure>
+  {% endfor %}
+</div>

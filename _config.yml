@@ -49,6 +49,7 @@ defaults:
     scope:
       path: "de/projekte"
     values:
+      layout: "project"
       idPrefix: "projects"
   -
     scope:
