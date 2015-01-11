@@ -2,10 +2,10 @@
 {% if include.page.id == nil %}
 
 {% if include.page.idPrefix != nil %}
-{% capture xxx %}/{% include function.name-without-extension.lq page=include.page %}{% endcapture %}
+{% capture xxx %}/{% include fn/name-without-extension.lq page=include.page %}{% endcapture %}
 {{ include.page.idPrefix }}{% if xxx != '/index' %}{{ xxx }}{% endif %}
 {% else %}
-{% include function.url-without-current-lang-and-extension.lq page=include.page %}
+{% include fn/url-without-current-lang-and-extension.lq page=include.page %}
 {% endif %}
 
 {% else %}

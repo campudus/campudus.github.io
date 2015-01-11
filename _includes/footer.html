@@ -7,10 +7,10 @@
   {% assign allPages = site.pages %}
   {% endif %}
 
-  {% capture myId %}{% include function.get-id-of-page.lq page=page %}{% endcapture %}
+  {% capture myId %}{% include fn/get-id-of-page.lq page=page %}{% endcapture %}
 
   {% for p in allPages %}
-  {% capture pId %}{% include function.get-id-of-page.lq page=p %}{% endcapture %}
+  {% capture pId %}{% include fn/get-id-of-page.lq page=p %}{% endcapture %}
 
   {% if pId == myId and p.lang == 'en' %}
   {% assign engFound = p %}
@@ -18,7 +18,7 @@
   {% endfor %}
 
   {% for p in allPages %}
-  {% capture pId %}{% include function.get-id-of-page.lq page=p %}{% endcapture %}
+  {% capture pId %}{% include fn/get-id-of-page.lq page=p %}{% endcapture %}
 
   {% if pId == myId and p.lang == 'de' %}
   {% assign gerFound = p %}
