@@ -2,8 +2,8 @@
 {% if include.page.id == nil %}
 
 {% if include.page.idPrefix != nil %}
-{% capture xxx %}/{% include fn/name-without-extension.lq page=include.page %}{% endcapture %}
-{{ include.page.idPrefix }}{% if xxx != '/index' %}{{ xxx }}{% endif %}
+{% capture name %}/{% include fn/name-without-extension.lq page=include.page %}{% endcapture %}
+{{ include.page.idPrefix }}{% if name != '/index' %}{{ name }}{% endif %}
 {% else %}
 {% include fn/url-without-current-lang-and-extension.lq page=include.page %}
 {% endif %}
