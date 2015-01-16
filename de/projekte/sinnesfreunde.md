@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Sinnesfreunde
-order: 3
+order: 5
 ---
 
 {% include slideshow.html assetDir='assets/sinnesfreunde' images='1.jpg*2.jpg*3.jpg*4.jpg*5.jpg*6.jpg' descriptions='a#*#b#*#c#*#d#*#e#*#f' %}

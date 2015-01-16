@@ -5,4 +5,6 @@ description: Point-of-Sale kiosk system
 order: 2
 ---
 
-Konzept und Design von Alex Thusbass. Wir haben das POS System erfolgreich im Auftrag für die [Winora Group](http://winora-group.de/) umgesetzt.
+{% include slideshow.html assetDir='assets/dealercenter' images='1.jpg*2.jpg*3.jpg*4.jpg*5.jpg*6.jpg*7.jpg' descriptions='a#*#b#*#c#*#d#*#e#*#f#*#g' %}
+
+Das POS-System _DealerCenter_ für den Fahrradhersteller Winora Group unterstützt mit interaktiven Inhalten den Verkauf und hilft bei der Erklärung komplexer Themen. Deutschlandweit setzen es bereits mehrere hundert Händler ein. Das Projekt wurde von Alex Thusbass ([kucherthusbass](http://www.kucherthusbass.de/)) ins Leben gerufen und initial entwickelt. Creative Director: Alex Thusbass; Weiterentwicklung/Programmierung: Campudus.
