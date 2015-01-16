@@ -1,6 +1,7 @@
 ---
 title: Wegener Werbung
 order: 7
+website: http://www.wegener-werbung.de/
 ---
 
 {% include slideshow.html assetDir='assets/wegenerwerbung' images='1.jpg*2.jpg*3.jpg*4.jpg*5.jpg*6.jpg' descriptions='a#*#b#*#c#*#d#*#e#*#f' %}

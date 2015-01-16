@@ -1,8 +1,8 @@
 ---
-layout: product
 title: Your Showroom
 description: Alle Unternehmenspräsentationen zentral verwaltet und gemanaged.
 order: 1
+website: http://www.your-showroom.com/
 ---
 
 Eine Management Plattform für Unternehmenspräsentationen. Hiermit hat der Außendienst immer alle wichtigen Informationen zur Verfügung.

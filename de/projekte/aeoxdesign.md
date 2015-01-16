@@ -1,6 +1,7 @@
 ---
 title: Aeoxdesign Portfolio
 order: 11
+website: http://www.aeoxdesign.de/
 ---
 
 {% include slideshow.html assetDir='assets/aeoxdesign' images='1.jpg*2.jpg*3.jpg' descriptions='a#*#b#*#c' %}

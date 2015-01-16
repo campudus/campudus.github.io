@@ -1,6 +1,7 @@
 ---
 title: Haibike XDURO2 Microsite
 order: 6
+website: http://www.haibike.de/microsites/xduro2/
 ---
 
 {% include slideshow.html assetDir='assets/haibike-xduro2' images='1.jpg*2.jpg' descriptions='a#*#b' %}

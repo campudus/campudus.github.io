@@ -3,4 +3,10 @@ layout: page
 ---
 <section class="project">
 {{ content }}
+
+{% if page.website %}
+  <div class="webpage">
+    <a href="{{ page.website }}">{% if page.lang == 'en' %}Visit website{% elsif page.lang == 'de' %}Webseite besuchen{% endif %}</a>
+  </div>
+{% endif %}
 </section>

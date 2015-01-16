@@ -1,8 +1,8 @@
 ---
-layout: product
 title: Game Gorilla
 description: Peer-to-Peer framework für browsergame clients
 order: 8
+website: http://www.game-gorilla.com/
 ---
 
 {% include slideshow.html assetDir='assets/gamegorilla' images='1.jpg*2.png*3.jpg*4.jpg' descriptions='a#*#b#*#c#*#d' %}

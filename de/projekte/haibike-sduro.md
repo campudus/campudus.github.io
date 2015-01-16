@@ -1,6 +1,7 @@
 ---
 title: Haibike SDURO Microsite
 order: 4
+website: http://www.haibike.de/microsites/sduro/de/
 ---
 
 {% include slideshow.html assetDir='assets/haibike-sduro' images='1.jpg*2.jpg*3.jpg' descriptions='a#*#b#*#c' %}
