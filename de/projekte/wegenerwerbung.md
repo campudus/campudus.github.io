@@ -1,6 +1,6 @@
 ---
 title: Wegener Werbung
-order: 7
+order: 07
 website: http://www.wegener-werbung.de/
 ---
 

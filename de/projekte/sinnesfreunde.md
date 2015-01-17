@@ -1,6 +1,6 @@
 ---
 title: Sinnesfreunde
-order: 5
+order: 05
 website: http://www.sinnesfreunde.de/
 ---
 

@@ -3,8 +3,9 @@ layout: main
 title: Produkte
 order: 2
 ---
-{% assign subPages = site.pages | where: 'layout', 'product' %}
-<section id="products">
-  <h1>Produkte</h1>
-  {% include pagelist.html pages=subPages %}
+
+<h1>Produkte</h1>
+
+<section class="products">
+  {% include pagelist.html layout='product' %}
 </section>

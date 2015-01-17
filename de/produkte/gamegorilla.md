@@ -1,7 +1,7 @@
 ---
 title: Game Gorilla
 description: Peer-to-Peer framework für browsergame clients
-order: 8
+order: 08
 website: http://www.game-gorilla.com/
 ---
 

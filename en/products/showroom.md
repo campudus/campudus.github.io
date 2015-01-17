@@ -1,9 +1,8 @@
 ---
-layout: product
 title: Your Showroom
 id: products/showroom
 description: Manage your company presentations
-order: 1
+order: 01
 ---
 
 A management platform for your data, so all your sales represantatives have information

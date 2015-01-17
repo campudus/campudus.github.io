@@ -1,6 +1,6 @@
 ---
 title: Haibike SDURO Microsite
-order: 4
+order: 04
 website: http://www.haibike.de/microsites/sduro/de/
 ---
 

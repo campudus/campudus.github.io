@@ -36,6 +36,9 @@ permalink: pretty
 # Path / type specific variables
 defaults:
   -
+    values:
+      order: 100
+  -
     scope:
       path: de
     values:

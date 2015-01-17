@@ -1,7 +1,6 @@
 ---
-layout: project
 title: Winora
-order: 2
+order: 02
 ---
 
 Something about our projects with Winora.

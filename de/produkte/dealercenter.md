@@ -1,7 +1,7 @@
 ---
 title: DealerCenter
 description: Point-of-Sale kiosk system
-order: 2
+order: 02
 ---
 
 {% include slideshow.html assetDir='assets/dealercenter' images='1.jpg*2.jpg*3.jpg*4.jpg*5.jpg*6.jpg*7.jpg' descriptions='a#*#b#*#c#*#d#*#e#*#f#*#g' %}

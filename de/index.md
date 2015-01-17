@@ -1,6 +1,7 @@
 ---
 layout: main
 title: Über Campudus
+order: 1
 ---
 
 # Campudus

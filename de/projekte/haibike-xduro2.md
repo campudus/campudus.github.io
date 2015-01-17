@@ -1,6 +1,6 @@
 ---
 title: Haibike XDURO2 Microsite
-order: 6
+order: 06
 website: http://www.haibike.de/microsites/xduro2/
 ---
 

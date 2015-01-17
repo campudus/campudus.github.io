@@ -1,6 +1,6 @@
-{% assign pages = include.pages | where: 'lang', page.lang %}
+{% assign pages_list = site.pages | where: 'lang', page.lang | where: 'layout', include.layout %}
 <div class="items">
-  {% for p in pages %}
+  {% for p in pages_list %}
   <div class="item {{ p.id }}">
     <a href="{{ p.url }}">
       <h2 class="item-title">
