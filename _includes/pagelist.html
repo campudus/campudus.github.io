@@ -1,4 +1,4 @@
-{% assign pages_list = site.pages | where: 'lang', page.lang | where: 'layout', include.layout %}
+{% assign pages_list = site.pages | where: 'lang', page.lang | where: 'layout', include.layout | sort: 'order' %}
 <div class="items">
   {% for p in pages_list %}
   <div class="item {{ p.id }}">

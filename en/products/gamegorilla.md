@@ -2,7 +2,7 @@
 title: Game Gorilla
 id: products/gamegorilla
 description: Peer-to-Peer framework for browsergame clients
-order: 03
+order: c
 ---
 
 [Game Gorilla](http://demo.campudus.com) gives developers a nice API for peer-to-peer communication for their browsergames.
