@@ -6,4 +6,4 @@ website: http://www.haibike.de/microsites/xduro2/
 
 {% include slideshow.html assetDir='assets/haibike-xduro2' images='1.jpg*2.jpg' %}
 
-Für die Produktwebsite der [E-Bikes XDURO2](http://www.haibike.de/microsites/xduro2/) von Haibike programmiert Campudus die interaktive Website. Ziel war ein umfangreicher One-Pager mit HTML5 um auf allen Geräten – auch Tablets – bedient werden zu können.
+Campudus programmed the interactive product website for the [Haibike XDURO2 e-Bike series](http://www.haibike.de/microsites/xduro2/gb/). Targeting computers and tablets, the microsite delivers lots of information about the various models (concept by Alex Thusbass). Available in five languages.
