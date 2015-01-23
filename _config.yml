@@ -8,6 +8,8 @@ url: "https://campudus.github.io" # the base hostname & protocol for your site
 # Build settings
 encoding: "utf-8"
 
+enforce_ssl: campudus.github.io
+
 exclude:
 - bin
 - config.rb
