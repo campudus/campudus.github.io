@@ -10,7 +10,7 @@ body {
 i {
   font-style: normal;
   //SEO Text
-  span{
+  span {
     display: none;
   }
 }
@@ -38,8 +38,8 @@ p {
   font-family: $sourcesans;
 }
 
-#logo{
-  font-size:2vw;
+#logo {
+  font-size: 40px;
 }
 
 header div, .headtext div, .content div, .character div, .technology div, .contact div {
@@ -64,4 +64,17 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
   @include grid-column(
   $center: true
   )
+}
+
+// Foundation override
+
+.row {
+  max-width: 100rem;
+  border-bottom: 3px solid #fff;
+  padding: 15% 0;
+}
+
+header.row {
+  border: none;
+  padding: 2% 0 0 0;
 }
