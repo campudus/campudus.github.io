@@ -14,6 +14,7 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
 $sourcesans: 'Source Sans Pro', sans-serif;
 $campudus-blue: #006db4;
+$yellow: #f7d933;
 body {
   background-color: $campudus-blue;
 }
@@ -45,6 +46,12 @@ p {
 
 header div, .headtext div, .content div, .character div, .technology div, .contact div {
   text-align: center;
+}
+
+.headtext div h1 {
+  background: $yellow;
+  color: $campudus-blue;
+  transform: rotate(-1deg);
 }
 
 .headtext, .content, .character, .technology, .contact {
