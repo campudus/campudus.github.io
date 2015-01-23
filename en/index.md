@@ -1,7 +1,7 @@
 ---
 layout: main
 title: About Campudus
-order: 1
+order: a
 ---
 
 # We are Web & App Architects
