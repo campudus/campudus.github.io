@@ -3,6 +3,19 @@ $leagueGothic: 'League Gothic', sans-serif;
 
 $campudus-blue: #006db4;
 $yellow: #f7d933;
+
+// Foundation override
+.row {
+  max-width: 100rem;
+  border-bottom: 3px solid #fff;
+  padding: 15% 0;
+}
+
+header.row {
+  border: none;
+  padding: 2% 0 0 0;
+}
+
 body {
   background-color: $campudus-blue;
 }
@@ -25,14 +38,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  font-size: 3vw;
-  padding-bottom: 10px;
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 1.75rem;
 }
 
 p {
   line-height: 1.5em;
   font-family: $sourcesans;
   font-weight: 300;
+  font-size: 1.25rem;
 }
 
 #logo {
@@ -49,8 +66,11 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
 }
 
 .headtext {
-
   text-align: center;
+
+  @media only screen and (min-width: 40.063em) {
+    padding-top: 11%;
+  }
 
   h1 {
     background: $yellow;
@@ -68,11 +88,24 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
   }
 
   p {
-
     max-width: 30em;
     margin: 0 auto;
+
     &.small {
       font-size: 14px;
+
+      &:before {
+        display: block;
+        width: 50px;
+        height: 1px;
+        background-color: #ffffff;
+        margin: 20px auto;
+        content: " ";
+      }
+    }
+
+    &.intro {
+      margin-bottom: 0.5em;
     }
 
     @media only screen and (min-width: 40.063em) {
@@ -81,20 +114,4 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
 
   }
 
-}
-
-.headtext, .content, .character, .technology, .contact {
-  padding: 50px 0px;
-}
-
-// Foundation override
-.row {
-  max-width: 100rem;
-  border-bottom: 3px solid #fff;
-  padding: 15% 0;
-}
-
-header.row {
-  border: none;
-  padding: 2% 0 0 0;
 }
