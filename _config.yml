@@ -39,7 +39,7 @@ permalink: pretty
 defaults:
   -
     values:
-      order: 100
+      order: zzzz
   -
     scope:
       path: de

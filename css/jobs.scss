@@ -1,0 +1,59 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+@import "foundation";
+
+@font-face {
+  font-family: LeagueGothic;
+  font-weight: 300;
+  src: url("../de/jobs/font/LeagueGothic-Regular.otf") format("opentype");
+}
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300);
+$sourcesans: 'Source Sans Pro', sans-serif;
+$campudus-blue: #006db4;
+body {
+  background-color: $campudus-blue;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li, a {
+  color: white;
+
+}
+
+h1, h2, h3 {
+  font-family: 'LeagueGothic', Helvetica, sans-serif;
+
+}
+
+h1 {
+  font-size: 79px;
+
+}
+
+h2 {
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  font-family: $sourcesans;
+}
+
+header div, .headtext div, .content div, .character div, .technology div, .contact div {
+  text-align: center;
+}
+
+.headtext, .content, .character, .technology, .contact {
+  padding: 50px 0px;
+
+}
+
+.headtext div {
+  @include grid-column(
+  $center: true
+  )
+}
