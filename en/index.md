@@ -2,6 +2,7 @@
 layout: main
 title: About Campudus
 order: a
+inMainMenu: 1
 ---
 
 # We are Web & App Architects
