@@ -135,6 +135,7 @@ form {
 
   label {
     color: white;
+    text-transform: uppercase;
   }
 
   label, button {
@@ -146,5 +147,7 @@ form {
     border-radius: 8px;
     background-color: #034d7e;
     border-color: #007ac9;
+    text-transform: uppercase;
   }
+
 }
