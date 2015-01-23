@@ -115,3 +115,36 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
   }
 
 }
+
+// Form
+
+form {
+  max-width: 30vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#recruitment {
+
+  input {
+    border-radius: 8px;
+    border-color: #007ac9;
+    background-color: #034d7e;
+    height: 3vw;
+  }
+
+  label {
+    color: white;
+  }
+
+  label, button {
+    font-size: 2vw;
+    font-family: $leagueGothic;
+  }
+
+  button {
+    border-radius: 8px;
+    background-color: #034d7e;
+    border-color: #007ac9;
+  }
+}
