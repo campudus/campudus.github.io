@@ -124,6 +124,14 @@ form {
   text-align: center;
 }
 
+.tech-item span.description {
+  display: none;
+}
+
+.tech-item.checked span.description {
+  display: block;
+}
+
 #recruitment {
 
   input {
