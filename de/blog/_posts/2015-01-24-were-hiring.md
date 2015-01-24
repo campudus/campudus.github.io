@@ -11,13 +11,11 @@ tags:
 - jobs
 - fun friday
 ---
-# Aufgepasst, wir rekrutieren!
-
 **TL;DR:** Wir basteln eine Seite, über die man sich bei Campudus bewerben kann.
 
+## Konzept und Ablauf
 Es war mal wieder Fun Friday angesagt und unsere Idee für dieses mal war es, etwas sinnvolles für uns selbst zu basteln. Zur Zeit ist vor allem die Suche nach neuen Talenten zur Unterstützung unseres Teams wichtig. Daher haben wir beschlossen, eine kleine Seite zu basteln, die potentielle Bewerber nutzen können, um sich uns vorzustellen.
 
-## Konzept und Ablauf
 Wie wir in den vergangenen Fun Fridays gesehen haben, ist es nicht gerade leicht komplett mit einem Projekt an einem Tag fertig zu werden. Vor allem wenn man viele neue Technologien auf einmal ausprobiert und gleichzeitig noch ein Konzept dafür aus dem Hut zaubern muss. Daher haben wir es uns diesmal etwas einfacher gemacht und uns schon vorher ein grobes Konzept überlegt.
 
 Wir wissen, dass man in der Ausbildung zum Informatiker leider nicht wirklich die Technologien lernt, die wir inzwischen einsetzen. Viele unserer Kommilitonen haben sich immer abgeschreckt gefühlt, wenn auf den Aushängen zuviel gefordert wurde. Uns ist klar, dass sicherlich niemand bereits jetzt genau all die Sachen kann, die wir uns im Moment wünschen. Daher möchten wir unseren "Wir suchen" Teil anders gestalten. Wir zeigen unseren potentiellen Bewerbern, was wir so tun und sie kreuzen an, was für sie interessant klingt. Eines der Kernziele von Campudus ist es, dass wir uns immer weiter verbessern. Aus diesem Grund suchen wir Leute, die ähnlich wie wir ticken und sich nicht zu "Fachidioten" entwickeln wollen.
