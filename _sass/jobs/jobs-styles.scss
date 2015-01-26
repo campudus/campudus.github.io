@@ -3,6 +3,7 @@ $leagueGothic: 'League Gothic', sans-serif;
 
 $campudus-blue: #006db4;
 $yellow: #f7d933;
+$insetColor: #000;
 
 // Foundation override
 .row {
@@ -124,12 +125,40 @@ form {
   text-align: center;
 }
 
-.tech-item span.description {
-  display: none;
+.checked {
+  i.icon-check {
+    color: $yellow;
+  }
 }
 
-.tech-item.checked span.description {
-  display: block;
+.tech-item {
+  min-height: 150px;
+  position: relative;
+
+  .description {
+    margin-bottom: 3rem;
+  }
+
+  i {
+    font-size: 1.75rem;
+    margin: 2%;
+    display: block;
+  }
+
+  i.icon-check {
+    margin: 0;
+    margin-left: -0.875rem;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    bottom: 1rem;
+  }
+
+  &.checked {
+    -webkit-box-shadow: inset 0 0 50px $insetColor;
+    -moz-box-shadow: inset 0 0 50px $insetColor;
+    box-shadow: inset 0 0 50px $insetColor;
+  }
 }
 
 #recruitment {
@@ -139,6 +168,9 @@ form {
     border-color: #007ac9;
     background-color: #034d7e;
     height: 3vw;
+    font-family: $leagueGothic;
+    font-size: 1.75rem;
+    color: $yellow;
   }
 
   label {
@@ -158,4 +190,26 @@ form {
     text-transform: uppercase;
   }
 
+}
+
+footer {
+
+  .row {
+    padding: 2%;
+    border: 0;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      font-family: $leagueGothic;
+      font-size: 1.75rem;
+      text-transform: uppercase;
+
+      &.home {
+        text-align: right;
+      }
+    }
+  }
 }
