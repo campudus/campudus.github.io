@@ -54,7 +54,7 @@ $(document).ready(function () {
     serializedData.push({name : 'skills', value : skillArray.join(',')});
 
     request = $.ajax({
-      "url" : "https://script.googleabcdefgxxa.com/macros/s/AKfycbwy_70uxGw1hsNbgXN0K9Lnjt2vFriM14qfdQmE0dIyNq6Vbjo/exec",
+      "url" : "https://script.google.com/macros/s/AKfycbwy_70uxGw1hsNbgXN0K9Lnjt2vFriM14qfdQmE0dIyNq6Vbjo/exec",
       "content-type" : "application/json",
       "type" : "post",
       "data" : serializedData
