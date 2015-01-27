@@ -1,3 +1,5 @@
+//@import "compass/css3";
+
 $sourcesans: 'Source Sans Pro', sans-serif;
 $leagueGothic: 'League Gothic', sans-serif;
 
@@ -7,8 +9,19 @@ $light-color: #0093eb;
 $highlight-color: #f7d933;
 $dark-color: #005993;
 $gray: rgba(0, 0, 0, 0.25);
-
 $tech-item-inset-color: $gray;
+
+body, html {
+  font-size: 12px;
+  background-color: $campudus-blue;
+}
+
+// Font sizes
+@media only screen and (min-width: 64.063em) {
+  body, html {
+    font-size: 16px;
+  }
+}
 
 a {
   color: $text-color;
@@ -27,13 +40,21 @@ a {
   padding: 15% 0;
 }
 
+@media only screen and (max-width: 64.063em) {
+  .content-wrapper .columns {
+    margin-bottom: 4em;
+  }
+}
+
+.character .kind {
+  margin-bottom: 0; //override
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
 header.row {
   border: none;
   padding: 2% 0 0 0;
-}
-
-body {
-  background-color: $campudus-blue;
 }
 
 i {
@@ -51,6 +72,9 @@ h1, h2, h3, h4, h5, h6, p, ul, li, a {
 h1, h2, h3, h4, h5, h6 {
   font-family: $leagueGothic;
   text-transform: uppercase;
+  text-align: center;
+  line-height: 1em;
+
 }
 
 h2 {
@@ -58,7 +82,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 2.5rem;
 }
 
 p {
@@ -66,6 +90,17 @@ p {
   font-family: $sourcesans;
   font-weight: 300;
   font-size: 1.25rem;
+  max-width: 30em;
+  text-align: center;
+  margin: 0 auto;
+
+  &.intro {
+    margin-bottom: 3rem;
+  }
+
+  &.small {
+    font-size: 16px;
+  }
 }
 
 #logo {
@@ -108,8 +143,6 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
     margin: 0 auto;
 
     &.small {
-      font-size: 14px;
-
       &:before {
         display: block;
         width: 50px;
@@ -122,12 +155,10 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
 
     &.intro {
       margin-bottom: 0.5em;
+      @media only screen and (min-width: 40.063em) {
+        font-size: 1.8vw;
+      }
     }
-
-    @media only screen and (min-width: 40.063em) {
-      font-size: 1.8vw;
-    }
-
   }
 
 }
@@ -139,7 +170,7 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
 // Form
 
 form {
-  max-width: 30vw;
+  max-width: 600px;
   margin: 0 auto;
   text-align: center;
 }
@@ -161,10 +192,16 @@ i.icon-check {
   cursor: pointer;
   min-height: 150px;
   position: relative;
-  padding: 2% 0 !important;
+  padding: 4% 0 !important;
+  height: 300px;
+  margin: 1%;
+  transition: all 0.2s ease-out;
+  background-color: $campudus-blue;
+  z-index: 1;
 
   h3 {
-    font-size: 3rem;
+    margin: 0.3em 0 0 0;
+    padding: 0;
   }
 
   .description {
@@ -173,9 +210,9 @@ i.icon-check {
 
   i {
     font-size: 4rem;
-    margin: 2%;
     line-height: 4rem;
     display: block;
+    transition: all 0.2s ease-out;
   }
 
   i.icon-vertx {
@@ -187,9 +224,41 @@ i.icon-check {
   }
 
   &.checked {
+    z-index: 2;
     -webkit-box-shadow: inset 0 0 100px $tech-item-inset-color;
     -moz-box-shadow: inset 0 0 100px $tech-item-inset-color;
     box-shadow: inset 0 0 100px $tech-item-inset-color;
+  }
+
+}
+
+html.no-touch {
+  .tech-item:hover {
+    i.icon-check {
+      //transform: translate(0, -10px);
+    }
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+  .tech-item.checked:hover {
+    position: relative;
+    z-index: 3;
+  }
+
+}
+
+@media only screen and (min-width: 40.063em) {
+  .technology .medium-block-grid-2 > li {
+    width: 48%;
+    list-style: none;
+  }
+}
+
+@media only screen and (min-width: 64.063em) {
+  .technology .large-block-grid-4 > li {
+    width: 23%;
+    list-style: none;
   }
 }
 
@@ -197,7 +266,7 @@ i.icon-check {
 
   input {
     border-radius: 8px;
-    border-color: $gray;
+    border: 0;
     background-color: $dark-color;
     height: 3.5rem;
     font-family: $leagueGothic;
@@ -233,33 +302,54 @@ i.icon-check {
   }
 
   button {
+    margin-top: 3rem;
     position: relative;
     padding: 0.5rem 4rem;
     border-radius: 8px;
     background-color: $light-color;
-    border: 3px solid $dark-color;
+    border: 2px solid $dark-color;
     text-transform: uppercase;
     box-shadow: 0 5px 0 0 $dark-color;
+    outline-style: none;
 
-    background: $light-color; /* Old browsers */
-    background: -moz-linear-gradient(top, $light-color 0%, $campudus-blue 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $light-color), color-stop(100%, $campudus-blue)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, $light-color 0%, $campudus-blue 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, $light-color 0%, $campudus-blue 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, $light-color 0%, $campudus-blue 100%); /* IE10+ */
-    background: linear-gradient(to bottom, $light-color 0%, $campudus-blue 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$light-color', endColorstr='#005993', GradientType=0); /* IE6-9 */
+    /*
+
+        background: $light-color; *//* Old browsers *//*
+        background: -moz-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* FF3.6+ *//*
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $light-color), color-stop(100%, $campudus-blue)); *//* Chrome,Safari4+ *//*
+        background: -webkit-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* Chrome10+,Safari5.1+ *//*
+        background: -o-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* Opera 11.10+ *//*
+        background: -ms-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* IE10+ *//*
+        background: linear-gradient(to bottom, $light-color 0%, $campudus-blue 100%); *//* W3C *//*
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$light-color', endColorstr='#005993', GradientType=0); *//* IE6-9 */
 
     &:hover {
-      background: $light-color;
+      background: $campudus-blue;
     }
 
     i {
-      position: absolute;
-      top: 50%;
-      margin-top: -1rem;
+      display: inline-block;
       font-size: 2rem;
-      right: 1rem;
+    }
+  }
+
+}
+
+.character {
+
+  .avatar {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background-color: $light-color;
+    border: 3px solid $dark-color;
+    margin: 0 auto 20px auto;
+  }
+
+  @media only screen and (min-width: 40.063em) {
+    .avatar {
+      width: 320px;
+      height: 320px;
     }
   }
 
@@ -285,4 +375,9 @@ footer {
       }
     }
   }
+
+  a:hover, a:focus {
+    color: $highlight-color;
+  }
+
 }
