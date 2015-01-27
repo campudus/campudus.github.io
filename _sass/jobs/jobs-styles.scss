@@ -1,11 +1,23 @@
 $sourcesans: 'Source Sans Pro', sans-serif;
 $leagueGothic: 'League Gothic', sans-serif;
 
+$text-color: #fff;
 $campudus-blue: #006db4;
-$lightblue: #0093eb;
-$yellow: #f7d933;
-$insetColor: rgba(0, 0, 0, 0.25);
-$darkblue: #005993;
+$light-color: #0093eb;
+$highlight-color: #f7d933;
+$dark-color: #005993;
+
+$tech-item-inset-color: rgba(0, 0, 0, 0.25);
+
+a {
+  color: $text-color;
+  &:hover,&:visited {
+    color: $text-color;
+  }
+  &:active {
+    color: $highlight-color;
+  }
+}
 
 // Foundation override
 .row {
@@ -76,7 +88,7 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
   }
 
   h1 {
-    background: $yellow;
+    background: $highlight-color;
     color: $campudus-blue;
     transform: rotate(-1deg);
     display: inline-block;
@@ -119,6 +131,10 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
 
 }
 
+.philosophy {
+  margin-top: 5%;
+}
+
 // Form
 
 form {
@@ -129,11 +145,11 @@ form {
 
 i.icon-check {
   font-size: 2.5rem;
-  color: $darkblue;
+  color: $dark-color;
 }
 
 .checked i.icon-check {
-  color: $yellow;
+  color: $highlight-color;
 }
 
 .tech-item {
@@ -165,9 +181,9 @@ i.icon-check {
   }
 
   &.checked {
-    -webkit-box-shadow: inset 0 0 100px $insetColor;
-    -moz-box-shadow: inset 0 0 100px $insetColor;
-    box-shadow: inset 0 0 100px $insetColor;
+    -webkit-box-shadow: inset 0 0 100px $tech-item-inset-color;
+    -moz-box-shadow: inset 0 0 100px $tech-item-inset-color;
+    box-shadow: inset 0 0 100px $tech-item-inset-color;
   }
 }
 
@@ -176,11 +192,11 @@ i.icon-check {
   input {
     border-radius: 8px;
     border-color: rgba(0, 0, 0, 0.25);
-    background-color: $darkblue;
-    height: 3vw;
+    background-color: $dark-color;
+    height: 3.5rem;
     font-family: $leagueGothic;
-    font-size: 1.75rem;
-    color: $yellow;
+    font-size: 2.5rem;
+    color: $highlight-color;
     text-align: center;
   }
 
@@ -190,16 +206,39 @@ i.icon-check {
   }
 
   label, button {
-    font-size: 2vw;
+    font-size: 2.5rem;
     font-family: $leagueGothic;
   }
 
   button {
+    position: relative;
+    padding: 0.5rem 4rem;
     border-radius: 8px;
-    background-color: $lightblue;
-    border: 3px solid $darkblue;
+    background-color: $light-color;
+    border: 3px solid $dark-color;
     text-transform: uppercase;
-    box-shadow: 0 5px 0 0 $darkblue;
+    box-shadow: 0 5px 0 0 $dark-color;
+
+    background: $light-color; /* Old browsers */
+    background: -moz-linear-gradient(top,  $light-color 0%, $campudus-blue 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$light-color), color-stop(100%,$campudus-blue)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $light-color 0%,$campudus-blue 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $light-color 0%,$campudus-blue 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $light-color 0%,$campudus-blue 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $light-color 0%,$campudus-blue 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$light-color', endColorstr='#005993',GradientType=0 ); /* IE6-9 */
+
+    &:hover {
+      background: $light-color;
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      margin-top: -1rem;
+      font-size: 2rem;
+      right: 1rem;
+    }
   }
 
 }
