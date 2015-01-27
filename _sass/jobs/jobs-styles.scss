@@ -6,12 +6,13 @@ $campudus-blue: #006db4;
 $light-color: #0093eb;
 $highlight-color: #f7d933;
 $dark-color: #005993;
+$gray: rgba(0, 0, 0, 0.25);
 
-$tech-item-inset-color: rgba(0, 0, 0, 0.25);
+$tech-item-inset-color: $gray;
 
 a {
   color: $text-color;
-  &:hover,&:visited {
+  &:hover, &:visited {
     color: $text-color;
   }
   &:active {
@@ -131,8 +132,8 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
 
 }
 
-.philosophy {
-  margin-top: 5%;
+.philosophy h2 {
+  text-align: center;
 }
 
 // Form
@@ -141,6 +142,10 @@ form {
   max-width: 30vw;
   margin: 0 auto;
   text-align: center;
+}
+
+.kind {
+  cursor: pointer;
 }
 
 i.icon-check {
@@ -153,6 +158,7 @@ i.icon-check {
 }
 
 .tech-item {
+  cursor: pointer;
   min-height: 150px;
   position: relative;
   padding: 2% 0 !important;
@@ -191,13 +197,29 @@ i.icon-check {
 
   input {
     border-radius: 8px;
-    border-color: rgba(0, 0, 0, 0.25);
+    border-color: $gray;
     background-color: $dark-color;
     height: 3.5rem;
     font-family: $leagueGothic;
     font-size: 2.5rem;
     color: $highlight-color;
     text-align: center;
+
+    &::-webkit-input-placeholder {
+      color: $gray;
+    }
+
+    &:-moz-placeholder {
+      color: $gray;
+    }
+
+    &::-moz-placeholder {
+      color: $gray;
+    }
+
+    &:-ms-input-placeholder {
+      color: $gray;
+    }
   }
 
   label {
@@ -220,13 +242,13 @@ i.icon-check {
     box-shadow: 0 5px 0 0 $dark-color;
 
     background: $light-color; /* Old browsers */
-    background: -moz-linear-gradient(top,  $light-color 0%, $campudus-blue 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$light-color), color-stop(100%,$campudus-blue)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  $light-color 0%,$campudus-blue 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  $light-color 0%,$campudus-blue 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  $light-color 0%,$campudus-blue 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  $light-color 0%,$campudus-blue 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$light-color', endColorstr='#005993',GradientType=0 ); /* IE6-9 */
+    background: -moz-linear-gradient(top, $light-color 0%, $campudus-blue 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $light-color), color-stop(100%, $campudus-blue)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, $light-color 0%, $campudus-blue 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, $light-color 0%, $campudus-blue 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, $light-color 0%, $campudus-blue 100%); /* IE10+ */
+    background: linear-gradient(to bottom, $light-color 0%, $campudus-blue 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$light-color', endColorstr='#005993', GradientType=0); /* IE6-9 */
 
     &:hover {
       background: $light-color;
