@@ -126,6 +126,7 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
   h1 {
     background: $highlight-color;
     color: $campudus-blue;
+    -webkit-transform: rotate(-1deg);
     transform: rotate(-1deg);
     display: inline-block;
     padding: 0 0.5em;
@@ -195,6 +196,7 @@ i.icon-check {
   padding: 4% 0 !important;
   height: 300px;
   margin: 1%;
+  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   background-color: $campudus-blue;
   z-index: 1;
@@ -212,6 +214,7 @@ i.icon-check {
     font-size: 4rem;
     line-height: 4rem;
     display: block;
+    -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
   }
 
@@ -237,6 +240,7 @@ html.no-touch {
     i.icon-check {
       //transform: translate(0, -10px);
     }
+    -webkit-transform: scale(1.2);
     transform: scale(1.2);
     z-index: 1;
   }
