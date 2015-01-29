@@ -47,9 +47,9 @@ a {
 }
 
 .character .kind {
-  margin-bottom: 0; //override
   padding-top: 3em;
   padding-bottom: 3em;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 header.row {
@@ -199,11 +199,15 @@ i.icon-check {
   position: relative;
   padding: 4% 0 !important;
   height: 300px;
-  margin: 1%;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-  background-color: $campudus-blue;
+  margin: 1% 0;
+  -webkit-transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
   z-index: 1;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  @media only screen and (min-width: 40.063em) {
+    margin: 1%;
+  }
 
   h3 {
     margin: 0.3em 0 0 0;
@@ -218,8 +222,8 @@ i.icon-check {
     font-size: 4rem;
     line-height: 4rem;
     display: block;
-    -webkit-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+    -webkit-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
   }
 
   i.icon-vertx {
@@ -231,10 +235,22 @@ i.icon-check {
   }
 
   &.checked {
-    z-index: 2;
-    -webkit-box-shadow: inset 0 0 100px $tech-item-inset-color;
-    -moz-box-shadow: inset 0 0 100px $tech-item-inset-color;
-    box-shadow: inset 0 0 100px $tech-item-inset-color;
+    .shadow {
+      opacity: 1;
+    }
+  }
+
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    z-index: -1;
+    background-color: $campudus-blue;
   }
 
 }
@@ -361,6 +377,13 @@ html.no-touch {
       background-position: center;
       margin: auto;
       margin-top: 7%;
+      -webkit-transition: transform 0.2s ease-out;
+      transition: transform 0.2s ease-out;
+
+      .no-touch &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
     }
 
     .svg & {
