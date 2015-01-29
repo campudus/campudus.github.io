@@ -183,10 +183,14 @@ form {
 i.icon-check {
   font-size: 2.5rem;
   color: $dark-color;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .checked i.icon-check {
   color: $highlight-color;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 .tech-item {
@@ -348,6 +352,44 @@ html.no-touch {
     background-color: $light-color;
     border: 3px solid $dark-color;
     margin: 0 auto 20px auto;
+
+    div {
+      width: 85%;
+      height: 85%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: auto;
+      margin-top: 7%;
+    }
+
+    .svg & {
+      .frontend-ninja {
+        background-image: url("/assets/jobs/fearless_frontend_ninja.svg");
+      }
+
+      .full-stack {
+        background-image: url("/assets/jobs/full_stack_hacker.svg");
+      }
+
+      .backend-bear {
+        background-image: url("/assets/jobs/blazing_backend_bear.svg");
+      }
+    }
+
+    .no-svg & {
+      .frontend-ninja {
+        background-image: url("/assets/jobs/fearless_frontend_ninja.png");
+      }
+
+      .full-stack {
+        background-image: url("/assets/jobs/full_stack_hacker.png");
+      }
+
+      .backend-bear {
+        background-image: url("/assets/jobs/blazing_backend_bear.png");
+      }
+    }
   }
 
   @media only screen and (min-width: 40.063em) {
