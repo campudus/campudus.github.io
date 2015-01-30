@@ -23,7 +23,7 @@ exclude:
 - vendor
 
 # Dependencies
-highlighter: true
+highlighter: pygments
 markdown: kramdown
 
 kramdown:
