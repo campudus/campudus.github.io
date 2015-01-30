@@ -450,9 +450,14 @@ footer {
       font-family: $leagueGothic;
       font-size: 1.75rem;
       text-transform: uppercase;
+      text-align: center;
 
       &.home {
         text-align: right;
+      }
+
+      &.imprint {
+        text-align: left;
       }
     }
   }
