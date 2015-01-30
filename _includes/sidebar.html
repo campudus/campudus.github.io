@@ -10,7 +10,7 @@
     </div>
 
     <nav class="sidebar-nav">
-      {% assign pages_list = site.pages | where: 'lang', page.lang | where: 'layout', 'main' | sort: 'order' %}
+      {% assign pages_list = site.pages | where: 'lang', page.lang | where: 'inMainMenu', 1 | sort: 'order' %}
       {% for node in pages_list %}
         {% if node.title != null %}
           <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>

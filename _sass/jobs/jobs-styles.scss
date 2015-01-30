@@ -1,0 +1,469 @@
+//@import "compass/css3";
+
+$sourcesans: 'Source Sans Pro', sans-serif;
+$leagueGothic: 'League Gothic', sans-serif;
+
+$text-color: #fff;
+$campudus-blue: #006db4;
+$light-color: #0093eb;
+$highlight-color: #f7d933;
+$dark-color: #005993;
+$gray: rgba(0, 0, 0, 0.25);
+$tech-item-inset-color: $gray;
+
+body, html {
+  font-size: 12px;
+  background-color: $campudus-blue;
+}
+
+// Font sizes
+@media only screen and (min-width: 64.063em) {
+  body, html {
+    font-size: 16px;
+  }
+}
+
+a {
+  color: $text-color;
+  &:hover, &:visited {
+    color: $text-color;
+  }
+  &:active {
+    color: $highlight-color;
+  }
+}
+
+// Foundation override
+.row {
+  max-width: 100rem;
+  border-bottom: 3px solid #fff;
+  padding: 15% 0;
+}
+
+@media only screen and (max-width: 64.063em) {
+  .content-wrapper .columns {
+    margin-bottom: 4em;
+  }
+}
+
+.character .kind {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+header.row {
+  border: none;
+  padding: 2% 0 0 0;
+}
+
+i {
+  font-style: normal;
+  //SEO Text
+  span {
+    display: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li, a {
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $leagueGothic;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1em;
+
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+p {
+  line-height: 1.5em;
+  font-family: $sourcesans;
+  font-weight: 300;
+  font-size: 1.25rem;
+  max-width: 30em;
+  text-align: center;
+  margin: 0 auto;
+
+  &.intro {
+    margin-bottom: 3rem;
+  }
+
+  &.small {
+    font-size: 16px;
+  }
+}
+
+#logo {
+  font-size: 30px;
+
+  @media only screen and (min-width: 40.063em) {
+    font-size: 40px;
+  }
+
+}
+
+header div, .headtext div, .content div, .character div, .technology div, .contact div {
+  text-align: center;
+}
+
+.headtext {
+  text-align: center;
+
+  @media only screen and (min-width: 40.063em) {
+    padding-top: 11%;
+  }
+
+  h1 {
+    background: $highlight-color;
+    color: $campudus-blue;
+    -webkit-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+    display: inline-block;
+    padding: 0 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 14vw;
+
+    @media only screen and (min-width: 40.063em) {
+      font-size: 6vw;
+      white-space: nowrap;
+    }
+  }
+
+  p {
+    max-width: 30em;
+    margin: 0 auto;
+
+    &.small {
+      &:before {
+        display: block;
+        width: 50px;
+        height: 1px;
+        background-color: #ffffff;
+        margin: 20px auto;
+        content: " ";
+      }
+    }
+
+    &.intro {
+      margin-bottom: 0.5em;
+      @media only screen and (min-width: 40.063em) {
+        font-size: 1.8vw;
+      }
+    }
+  }
+
+}
+
+.philosophy h2 {
+  text-align: center;
+}
+
+// Form
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.kind {
+  cursor: pointer;
+}
+
+i.icon-check {
+  font-size: 2.5rem;
+  color: $dark-color;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  position: relative;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.character .checked i.icon-check {
+  -webkit-transform: scale(2) translate(0, -10px);
+  transform: scale(2) translate(0, -10px);
+}
+
+.checked i.icon-check {
+  color: $highlight-color;
+  display: inline-block;
+}
+
+.technology .checked i.icon-check {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.tech-item {
+  cursor: pointer;
+  min-height: 150px;
+  position: relative;
+  padding: 4% 0 !important;
+  height: 300px;
+  margin: 1% 0;
+  -webkit-transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  z-index: 1;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  @media only screen and (min-width: 40.063em) {
+    margin: 1%;
+  }
+
+  h3 {
+    margin: 0.3em 0 0 0;
+    padding: 0;
+  }
+
+  .description {
+    display: none;
+  }
+
+  i {
+    font-size: 4rem;
+    line-height: 4rem;
+    display: block;
+    -webkit-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+  }
+
+  i.icon-vertx {
+    font-size: 2rem;
+  }
+
+  i.icon-check {
+    font-size: 2.5rem;
+  }
+
+  &.checked {
+    .shadow {
+      opacity: 1;
+    }
+  }
+
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    z-index: -1;
+    background-color: $campudus-blue;
+  }
+
+}
+
+html.no-touch {
+  .tech-item:hover {
+    i.icon-check {
+      //transform: translate(0, -10px);
+    }
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+  .tech-item.checked:hover {
+    position: relative;
+    z-index: 3;
+  }
+
+}
+
+@media only screen and (min-width: 40.063em) {
+  .technology .medium-block-grid-2 > li {
+    width: 48%;
+    list-style: none;
+  }
+}
+
+@media only screen and (min-width: 64.063em) {
+  .technology .large-block-grid-4 > li {
+    width: 23%;
+    list-style: none;
+  }
+}
+
+#recruitment {
+
+  input {
+    border-radius: 8px;
+    border: 0;
+    background-color: $dark-color;
+    height: 3.5rem;
+    font-family: $leagueGothic;
+    font-size: 2.5rem;
+    color: $highlight-color;
+    text-align: center;
+
+    &::-webkit-input-placeholder {
+      color: $gray;
+    }
+
+    &:-moz-placeholder {
+      color: $gray;
+    }
+
+    &::-moz-placeholder {
+      color: $gray;
+    }
+
+    &:-ms-input-placeholder {
+      color: $gray;
+    }
+  }
+
+  label {
+    color: white;
+    text-transform: uppercase;
+  }
+
+  label, button {
+    font-size: 2.5rem;
+    font-family: $leagueGothic;
+  }
+
+  button {
+    margin-top: 3rem;
+    position: relative;
+    padding: 0.5rem 2rem 0.5rem 2.5rem;
+    border-radius: 8px;
+    background-color: $light-color;
+    border: 2px solid $dark-color;
+    text-transform: uppercase;
+    box-shadow: 0 5px 0 0 $dark-color;
+    outline-style: none;
+
+    /*
+
+        background: $light-color; *//* Old browsers *//*
+        background: -moz-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* FF3.6+ *//*
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $light-color), color-stop(100%, $campudus-blue)); *//* Chrome,Safari4+ *//*
+        background: -webkit-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* Chrome10+,Safari5.1+ *//*
+        background: -o-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* Opera 11.10+ *//*
+        background: -ms-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* IE10+ *//*
+        background: linear-gradient(to bottom, $light-color 0%, $campudus-blue 100%); *//* W3C *//*
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$light-color', endColorstr='#005993', GradientType=0); *//* IE6-9 */
+
+    &:hover {
+      background: $campudus-blue;
+    }
+
+    i {
+      display: inline-block;
+      font-size: 2rem;
+    }
+  }
+
+}
+
+.character {
+
+  .avatar {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background-color: $light-color;
+    border: 3px solid $dark-color;
+    margin: 0 auto 20px auto;
+
+    div {
+      width: 85%;
+      height: 85%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: auto;
+      margin-top: 7%;
+      -webkit-transition: transform 0.2s ease-out;
+      transition: transform 0.2s ease-out;
+
+      .no-touch &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+    }
+
+    .svg & {
+      .frontend-ninja {
+        background-image: url("/assets/jobs/fearless_frontend_ninja.svg");
+      }
+
+      .full-stack {
+        background-image: url("/assets/jobs/full_stack_hacker.svg");
+      }
+
+      .backend-bear {
+        background-image: url("/assets/jobs/blazing_backend_bear.svg");
+      }
+    }
+
+    .no-svg & {
+      .frontend-ninja {
+        background-image: url("/assets/jobs/fearless_frontend_ninja.png");
+      }
+
+      .full-stack {
+        background-image: url("/assets/jobs/full_stack_hacker.png");
+      }
+
+      .backend-bear {
+        background-image: url("/assets/jobs/blazing_backend_bear.png");
+      }
+    }
+  }
+
+  @media only screen and (min-width: 40.063em) {
+    .avatar {
+      width: 320px;
+      height: 320px;
+    }
+  }
+
+}
+
+footer {
+
+  .row {
+    padding: 2%;
+    border: 0;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      font-family: $leagueGothic;
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      text-align: center;
+
+      &.home {
+        text-align: right;
+      }
+
+      &.imprint {
+        text-align: left;
+      }
+    }
+  }
+
+  a:hover, a:focus {
+    color: $highlight-color;
+  }
+
+}

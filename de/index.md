@@ -2,6 +2,7 @@
 layout: main
 title: Über Campudus
 order: a
+inMainMenu: 1
 ---
 
 # Campudus
