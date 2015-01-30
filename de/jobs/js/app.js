@@ -55,8 +55,9 @@ $(document).ready(function () {
 
     request = $.ajax({
       "url" : "https://script.google.com/macros/s/AKfycbwy_70uxGw1hsNbgXN0K9Lnjt2vFriM14qfdQmE0dIyNq6Vbjo/exec",
-      "content-type" : "application/json",
-      "type" : "post",
+      jsonp: "prefix",
+      dataType: "jsonp",
+      "type" : "GET",
       "data" : serializedData
     });
 
