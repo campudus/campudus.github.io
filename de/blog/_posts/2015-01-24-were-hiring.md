@@ -11,7 +11,7 @@ tags:
 - jobs
 - fun friday
 ---
-**TL;DR:** Wir basteln eine Seite, über die man sich bei Campudus bewerben kann.
+**TL;DR:** Wir haben eine Seite, über die man sich [bei Campudus bewerben](https://campudus.github.io/de/jobs/) kann.
 
 ## Konzept und Ablauf
 Es war mal wieder Fun Friday angesagt und unsere Idee für dieses mal war es, etwas sinnvolles für uns selbst zu basteln. Zur Zeit ist vor allem die Suche nach neuen Talenten zur Unterstützung unseres Teams wichtig. Daher haben wir beschlossen, eine kleine Seite zu basteln, die potentielle Bewerber nutzen können, um sich uns vorzustellen.
@@ -35,3 +35,5 @@ Am Ende des Tages fehlten uns nur noch einige wenige Grafiken, etwas JavaScript 
 
 ## Fazit
 Aus der Retrospektive betrachtet, sind wir diesen Freitag recht weit gekommen. Zeit haben uns vor allem die vielen Merge Konflikte gekostet, da wir zu viert an nur wenigen Dateien herumhantierten. Generell waren es aber weitaus weniger Probleme als wir gedacht haben.
+
+Edit vom 30.01.2015: Die Job-Seite ist fertig und auf [https://campudus.github.io/de/jobs/](https://campudus.github.io/de/jobs/) online!
