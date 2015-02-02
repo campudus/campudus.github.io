@@ -400,29 +400,29 @@ html.no-touch {
 
     .svg & {
       .frontend-ninja {
-        background-image: url("/assets/jobs/fearless_frontend_ninja.svg");
+        background-image: url("/assets/recruit/fearless_frontend_ninja.svg");
       }
 
       .full-stack {
-        background-image: url("/assets/jobs/full_stack_hacker.svg");
+        background-image: url("/assets/recruit/full_stack_hacker.svg");
       }
 
       .backend-bear {
-        background-image: url("/assets/jobs/blazing_backend_bear.svg");
+        background-image: url("/assets/recruit/blazing_backend_bear.svg");
       }
     }
 
     .no-svg & {
       .frontend-ninja {
-        background-image: url("/assets/jobs/fearless_frontend_ninja.png");
+        background-image: url("/assets/recruit/fearless_frontend_ninja.png");
       }
 
       .full-stack {
-        background-image: url("/assets/jobs/full_stack_hacker.png");
+        background-image: url("/assets/recruit/full_stack_hacker.png");
       }
 
       .backend-bear {
-        background-image: url("/assets/jobs/blazing_backend_bear.png");
+        background-image: url("/assets/recruit/blazing_backend_bear.png");
       }
     }
   }
