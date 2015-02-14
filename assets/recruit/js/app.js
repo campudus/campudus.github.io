@@ -11,6 +11,23 @@ $(document).foundation({
 $(document).ready(function () {
   var request;
 
+  var langs = {
+    de : {
+      id: 'de',
+      loading: 'Bewerbe',
+      success: 'Beworben!',
+      retry: 'Erneut senden'
+    },
+    en : {
+      id: 'en',
+      loading: 'Applying',
+      success: 'Applied!',
+      retry: 'Retry sending'
+    }
+  };
+
+  var lang = langs[getLanguage()];
+
   var $kinds = $('.kind');
   $kinds.click(function (event) {
     event.preventDefault();
@@ -52,6 +69,7 @@ $(document).ready(function () {
 
     serializedData.push({name : 'kind', value : selectedKind});
     serializedData.push({name : 'skills', value : skillArray.join(',')});
+    serializedData.push({name : 'language', value : lang.id});
 
     request = $.ajax({
       "url" : "https://script.google.com/macros/s/AKfycbwy_70uxGw1hsNbgXN0K9Lnjt2vFriM14qfdQmE0dIyNq6Vbjo/exec",
@@ -62,11 +80,11 @@ $(document).ready(function () {
     });
 
     $button.attr('disabled', 'disabled');
-    $button.text('Bewerbe');
+    $button.text(lang.loading);
 
     request.done(function (response, textStatus, jqXHR) {
       if (response.result == 'success') {
-        $button.text('Beworben!');
+        $button.text(lang.success);
       } else {
         console.error('The following error occured: ' + textStatus);
         resetAfterFail();
@@ -84,9 +102,13 @@ $(document).ready(function () {
     });
 
     function resetAfterFail() {
-      $button.text('Erneut senden');
+      $button.text(lang.retry);
       $button.removeAttr('disabled');
     }
 
   });
+
+  function getLanguage() {
+    return (location.href.match(/.*\/en\/.*/) ? 'en' : 'de');
+  }
 });
