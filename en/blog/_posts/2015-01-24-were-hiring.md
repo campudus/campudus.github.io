@@ -11,7 +11,7 @@ tags:
 - jobs
 - fun friday
 ---
-**TL;DR:** We have a page to [apply for a job at Campudus](https://campudus.github.io/de/recruit/).
+**TL;DR:** We have a page to [apply for a job at Campudus](https://campudus.github.io/en/recruit/).
 
 ## Concept and Workflow
 It's been fun friday again and this time we wanted to build something meaningful for ourselves. Right now it is important to find new talented developers to support our team. We decided to build a small page, that potential applicants can use to send us a message and tell us something about themselves.
@@ -36,4 +36,4 @@ At the end of the day we had a few missing images, a bit JavaScript and a bit mo
 ## Conclusion
 Looking at it from some distance, we came pretty far this friday. The biggest time killer were a lot of merge conflicts as four of us tried to work on just a few files. There were a lot less issues than we expected.
 
-Update from 30.01.2015: The job page is complete can be seen online at [https://campudus.github.io/de/recruit/](https://campudus.github.io/de/recruit/)!
+Updated at 30.01.2015: The job page is complete can be seen online at [https://campudus.github.io/en/recruit/](https://campudus.github.io/en/recruit/)!
