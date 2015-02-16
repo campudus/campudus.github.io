@@ -77,3 +77,4 @@ defaults:
       type: posts
     values:
       layout: post
+      idPrefix: "blog"

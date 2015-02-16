@@ -2,6 +2,7 @@
 layout: post
 title: Aufgepasst, wir rekrutieren!
 description: Unsere Talentsuche ist wohl etwas anders...
+blog-id: watch-out-we-are-recruiting
 date: 2015-01-24 02:06:00
 tags:
 - campudus

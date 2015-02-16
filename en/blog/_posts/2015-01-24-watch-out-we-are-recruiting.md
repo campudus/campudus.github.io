@@ -2,6 +2,7 @@
 layout: post
 title: Watch out, we're recruiting!
 description: A different approach to find talented people...
+blog-id: watch-out-we-are-recruiting
 date: 2015-01-24 02:06:00
 tags:
 - campudus

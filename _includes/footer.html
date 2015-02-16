@@ -1,7 +1,7 @@
 <footer class="site-footer">
   &copy; 2015 Campudus
 
-  {% if page.layout == "post" %}
+  {% if page.idPrefix == "blog" %}
   {% assign allPages = site.posts %}
   {% else %}
   {% assign allPages = site.pages %}
