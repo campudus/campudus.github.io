@@ -46,6 +46,12 @@ There is one other thing that we need to be able to use NW.js for future develop
 
 Our current approach with [SWF Studio](http://www.northcode.com/swfstudio.php) enables us to download and process files inside of Flash. This works well for our Windows machines but it's not possible to use on any other OS. As we have mixed OSes on our development machines, it would be better to have something more portable. It should also help us, if we ever find the need to switch from Windows machines to something else.
 
+### Setup flash plugin
+
+NW.js only allows Chromium plugins that are compatible with NPAPI. The newer Pepper API is not supported yet. In recent versions of Chrome/Chromium, the regular Flash player plugin is for the Pepper API and won't work out of the box with NW.js. To be able to use it, you need to install a version written against the NPAPI.
+
+You can find a version at the [official Flash site](https://get.adobe.com/en/flashplayer/otherversions/) and select the NPAPI version. After installation, NW.js will find the correct plugin - we only tested this on a Mac OS X, so YMMV. As you may want to include it later in the zip, you can also download it and put it into a `plugin` folder inside the NW.js project directory. As this bloats the Git repository quite bad, we decided against putting it in there for now, but it's good to know that you can supply the Flash version directly with the packaged NW.js application.
+
 ### Setup trust for local files
 
 In order to exchange data (or call functions) between Flash and browser, we first need to tell the Flash plugin, that it doesn't need a sandbox for our local files. We can do that by either writing the path of our Flash files into a special file that is read by Flash, or we can use a NPM module to do that for us. With the [nw-flash-trust](https://github.com/szwacz/nw-flash-trust) module (install via `npm install --save nw-flash-trust`), this is pretty straight forward. You can see its usage in [lines 6-23 of our Flash test-page](https://github.com/campudus/ff-nw-flash/blob/cb4e7adf5c1f31e42bf2096bd8ac72919541baab/page3.html#L6-L23).
