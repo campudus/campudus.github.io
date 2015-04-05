@@ -148,7 +148,7 @@ And be aware of a possible mail problem: [http://imakewebthings.com/blog/github-
 
 ### Making Jekyll multilingual
 
-Here is an article that gave us some ideas: [http://sylvain.durand.tf/making-jekyll-multilingual/](http://sylvain.durand.tf/making-jekyll-multilingual/)
+Here is an article that gave us some ideas: [Sylvain Durand](http://sylvaindurand.org/making-jekyll-multilingual/)
 
 Creating a multilingual site with Jekyll unveiled a problem with collections for us. If we'd use a collection for our projects, you won't be able to set a permalink to a path with the page language into it without writing some Ruby plugin. As this would break our intention to push and publish to GitHub pages directly, we kicked collections again and used path scopes plus includes to do what we wanted to achieve.
 
