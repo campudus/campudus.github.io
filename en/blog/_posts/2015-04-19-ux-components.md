@@ -25,7 +25,7 @@ We managed to get a small proof-of-concept working for the seamless image loadin
 
 Right now, the animation while scaling the image is still a bit laggy. There are a few hacks to get this more smooth but we didn't have a deeper look into this issue yet. Maybe we can find some time where we can try out various hacks.
 
-To get the progress bar done, we had to load the image via XmlHttpRequest and inject the resulting image data into the image `src` property directly. Otherwise we won't have the possibility to check how much we have loaded yet. The progress bar is just a single, absolute positioned div with the width of the progress.
+To get the progress bar done, we had to load the image via `XmlHttpRequest` and inject the resulting image data into the image `src` property directly. Otherwise we won't have the possibility to check how much we have loaded yet. The progress bar is just a single, absolute positioned div with the width of the progress.
 
 ## Grid layout
 
