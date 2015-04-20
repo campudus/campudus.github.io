@@ -27,6 +27,8 @@ Right now, the animation while scaling the image is still a bit laggy. There are
 
 To get the progress bar done, we had to load the image via `XmlHttpRequest` and inject the resulting image data into the image `src` property directly. Otherwise we won't have the possibility to check how much we have loaded yet. The progress bar is just a single, absolute positioned div with the width of the progress.
 
+**Update:** There is a [live demo](campudus.github.io/ff-gorilla-grid/image-loader/) now.
+
 ## Grid layout
 
 It's nice to work with tiles on responsive sites and many pages use them to display their portfolio or product pages. If you want to put some more content into a tile, they may not always have the same height and thus look pretty chaotic.
