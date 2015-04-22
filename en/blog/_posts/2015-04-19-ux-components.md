@@ -17,6 +17,8 @@ We had two ideas for nice components: One about a whole page design for portfoli
 
 First of all, we started a new project that builds SCSS and browserifies our JavaScript on the fly. As it's more or less a copy and paste of one of our other project, it is also set up to contain tests. We didn't include any during our fun friday as we're trying out different effects, how they look before settling on something.
 
+**Update:** Like always, we just had to add a new feature to our build: We can now deploy the `out/` directory to GitHub pages directly by issuing `npm run deploy`.
+
 ## Seamless image loading
 
 There are a lot of occasions where you need to load a full-size image in a lightbox. Most of the time, you click on a thumbnail, a progress spinner appears and when the image is loaded, the lightbox appears. Yes, that's nice asynchronous loading and it will only fetch the needed data if the user asks for it. But still, this doesn't really feel user friendly: No progress bar and even if there are animations, the user won't be able to see anything else than a progress bar.
