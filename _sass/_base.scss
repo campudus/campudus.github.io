@@ -1,8 +1,5 @@
 .slideshow {
-  position: relative;
-  height: 400px;
-
-  figure {
-    position: absolute;
-  }
+  width: 100%;
+  margin: 0 auto;
+  max-width: initial;
 }

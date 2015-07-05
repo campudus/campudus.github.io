@@ -3,13 +3,16 @@
 {% assign descriptions = include.descriptions | split: '#*#' %}
 {% endif %}
 {% assign upTo = images.size | minus: 1 %}
+<!-- dep: slideshow -->
 <div class="slideshow">
   {% for i in (0..upTo) %}
-  <figure>
-    <img src="{{ site.baseurl }}{% if include.assetDir %}{{ include.assetDir }}/{% endif %}{{ images[i] }}"/>
-    {% if descriptions[i] %}
-    <div class="description">{{ descriptions[i] }}</div>
-    {% endif %}
-  </figure>
+  <div class="slide">
+    <figure>
+      <img src="{{ site.baseurl }}{% if include.assetDir %}{{ include.assetDir }}/{% endif %}{{ images[i] }}"/>
+      {% if descriptions[i] %}
+      <div class="description">{{ descriptions[i] }}</div>
+      {% endif %}
+    </figure>
+  </div>
   {% endfor %}
 </div>

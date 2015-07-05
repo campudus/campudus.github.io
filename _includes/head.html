@@ -40,4 +40,10 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- Dependencies -->
+  {% if content contains '<!-- dep: slideshow -->' %}
+  <link rel="stylesheet" href="{{ site.baseurl }}assets/dependencies/slick/slick.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}assets/dependencies/slick/slick-theme.css">
+  {% endif %}
 </head>
