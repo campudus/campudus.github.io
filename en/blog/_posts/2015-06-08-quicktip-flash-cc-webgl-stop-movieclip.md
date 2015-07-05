@@ -1,5 +1,5 @@
 ---
-title: QuickTip: Flash CC WebGL stop movieclip at specific frame
+title: QuickTip&#58; Flash CC WebGL stop movieclip at specific frame
 description: A handy function to stop the animation of a Flash CC WebGL movieclip
 date: 2015-06-08 13:30:00
 tags:
