@@ -46,4 +46,7 @@
   <link rel="stylesheet" href="{{ site.baseurl }}assets/dependencies/slick/slick.css">
   <link rel="stylesheet" href="{{ site.baseurl }}assets/dependencies/slick/slick-theme.css">
   {% endif %}
+  {% if content contains '<!-- dep: jquery -->' %}
+  <script src="{{ site.baseurl }}assets/dependencies/jquery.min.js"></script>
+  {% endif %}
 </head>
