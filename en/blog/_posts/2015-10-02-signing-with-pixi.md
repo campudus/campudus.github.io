@@ -6,7 +6,7 @@ tags:
 - fun friday
 - graphics
 - html5
-- pixi
+- pixijs
 - signaturepad
 ---
 For a customer project, we have to let people sign a contract digitally. 
