@@ -1,7 +1,7 @@
 ---
 layout: post
-title: LINK CON am Donnerstag
-description: Die IT-Messe Niederbayern startet als einfache Hausmesse im LINKWORK
+title: Büro, Meetups und LINK CON
+description: Die IT-Messe Niederbayern startet als einfache Hausmesse im LINKWORK :)
 blog-id: linkcon-nr1
 date: 2015-10-25 00:30:00
 tags:
