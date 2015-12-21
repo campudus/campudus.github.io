@@ -10,7 +10,7 @@ title: Campudus Developers
     var defaultLang = 'en';
     var availableLanguages = {en : 'en', de : 'de'};
     var lang = getFavoriteLanguage(availableLanguages, navigator.languages);
-    window.location.href = '{{ site.baseurl }}' + lang;
+    window.location.href = '{{ site.baseurl }}' + lang + '/recruit';
 
     function getFavoriteLanguage(availableLangs, navLangs) {
       var l;
