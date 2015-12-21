@@ -20,7 +20,7 @@ function cleaner(cb) {
 }
 
 function copyAssets() {
-  return gulp.src(['src/assets/**'])
+  return gulp.src(['src/assets/**'], {dot : true})
     .pipe(gulp.dest(outDir));
 }
 
