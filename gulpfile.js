@@ -32,7 +32,9 @@ function compileSass() {
 
 function deployToGithub() {
   return gulp.src(outDir + '/**')
-    .pipe(ghPages());
+    .pipe(ghPages({
+      branch : 'master'
+    }));
 }
 
 function setupWatcher() {
