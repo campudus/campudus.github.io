@@ -5,6 +5,7 @@ var sass = require('gulp-sass');
 var ghPages = require('gulp-gh-pages');
 
 var outDir = 'out';
+var cacheDir = '.publish';
 
 gulp.task('clean', cleaner);
 
@@ -16,7 +17,7 @@ gulp.task('dev', ['build'], setupWatcher);
 gulp.task('deploy', ['build'], deployToGithub);
 
 function cleaner(cb) {
-  del([outDir], cb);
+  del([outDir, cacheDir], cb);
 }
 
 function copyAssets() {
@@ -31,9 +32,10 @@ function compileSass() {
 }
 
 function deployToGithub() {
-  return gulp.src(outDir + '/**')
+  return gulp.src(outDir + '/**', {dot : true})
     .pipe(ghPages({
-      branch : 'master'
+      branch : 'master',
+      cacheDir : cacheDir
     }));
 }
 
