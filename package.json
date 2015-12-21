@@ -1,0 +1,29 @@
+{
+  "name": "campudus.github.io",
+  "version": "1.0.0",
+  "description": "Campudus Homepage",
+  "scripts": {
+    "clean": "gulp clean",
+    "dev": "gulp clean && gulp dev",
+    "deploy": "gulp clean && gulp deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/campudus/campudus.github.io.git"
+  },
+  "author": "Campudus GmbH",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/campudus/campudus.github.io/issues"
+  },
+  "homepage": "https://github.com/campudus/campudus.github.io#readme",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.10.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-sass": "^2.1.1"
+  }
+}

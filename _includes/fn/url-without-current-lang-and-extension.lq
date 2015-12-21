@@ -1,9 +1,0 @@
-{% capture fnRes %}
-{% capture replacer %}/{{ include.page.lang }}/{% endcapture %}
-{% capture nameWithoutExt %}{% include fn/name-without-extension.lq page=include.page %}{% endcapture %}
-{% assign pname = include.page.name %}
-{% assign url = include.page.url | replace: pname, nameWithoutExt | replace: replacer, '' %}
-{% assign s = url | size %}
-{% assign t = s | minus: 1 %}
-{{ url | truncate: t, '' }}
-{% endcapture %}{{ fnRes | strip_newlines }}
