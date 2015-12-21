@@ -7,7 +7,7 @@
     var defaultLang = 'en';
     var availableLanguages = {en : 'en', de : 'de'};
     var lang = getFavoriteLanguage(availableLanguages, navigator.languages);
-    window.location.href = '{{ site.baseurl }}' + lang + '/recruit';
+    window.location.href = '/' + lang + '/recruit';
 
     function getFavoriteLanguage(availableLangs, navLangs) {
       var l;
@@ -21,5 +21,6 @@
   </script>
 </head>
 <body>
+
 </body>
 </html>
