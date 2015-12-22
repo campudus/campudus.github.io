@@ -11,7 +11,8 @@ gulp.task('clean', cleaner);
 
 gulp.task('build:assets', copyAssets);
 gulp.task('build:sass', compileSass);
-gulp.task('build', ['build:assets', 'build:sass']);
+gulp.task('build:copyFavicons', copyFavicons);
+gulp.task('build', ['build:assets', 'build:sass', 'build:copyFavicons']);
 
 gulp.task('dev', ['build'], setupWatcher);
 gulp.task('deploy', ['build'], deployToGithub);
@@ -20,8 +21,13 @@ function cleaner(cb) {
   del([outDir, cacheDir], cb);
 }
 
+function copyFavicons() {
+  return gulp.src(['src/assets/images/favicons/**'], {dot : true})
+    .pipe(gulp.dest(outDir));
+}
+
 function copyAssets() {
-  return gulp.src(['src/assets/**'], {dot : true})
+  return gulp.src(['src/assets/**', '!src/assets/images/favicons/', '!src/assets/images/favicons/**'], {dot : true})
     .pipe(gulp.dest(outDir));
 }
 
