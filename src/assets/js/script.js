@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
 
   var $header = $('#hero');
   var $heroImage = $header.find('.img-bg');
@@ -8,11 +8,7 @@ $(document).ready(function () {
 
   $imprint.css('height', $vh);
 
-  smoothScrolling();
-
-  $(window).on('load pagecontainerload', function () {
-    setViewPortProperties();
-  });
+  onloadEvent();
 
   $(window).on('resize', function () {
     if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -27,19 +23,23 @@ $(document).ready(function () {
     $('body').offset().top - 1;
   });
 
-  function smoothScrolling() {
-    $('a[href*=#]:not([href=#])').click(function () {
-      console.log('CLICKED');
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          scrollTo(target.offset().top);
-          return false;
-        }
-      }
+  function onloadEvent() {
+    $(window).on('load pagecontainerload', function () {
+      setViewPortProperties();
     });
   }
+
+  $('a[href*=#]:not([href=#])').click(function () {
+    console.log('CLICKED');
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        scrollTo(target.offset().top);
+        return false;
+      }
+    }
+  });
 
   function scrollTo(position) {
     $('html,body').animate({
