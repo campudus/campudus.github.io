@@ -251,6 +251,11 @@ address {
   }
 }
 
+.text-line-through {
+  text-decoration: line-through;
+  color: $colorYellow !important;
+}
+
 .grid-3 {
   width: 33.33%;
   float: left;
