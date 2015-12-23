@@ -1,0 +1,20 @@
+@mixin translateX($xValue) {
+  transform: translateX($xValue);
+  -ms-transform: translateX($xValue);
+  -webkit-transform: translateX($xValue);
+}
+
+@mixin transition-property($width) {
+  -webkit-transition-property: $width;
+  transition-property: $width;
+}
+
+@mixin transition-duration($sec) {
+  -webkit-transition-duration: $sec;
+  transition-duration: $sec;
+}
+
+@mixin transition-timing-function($timing) {
+  -webkit-transition-timing-function: $timing;
+  transition-timing-function: $timing;
+}

@@ -1,7 +1,419 @@
 @import "reset";
 @import "variables";
+@import "mixins";
 
 body, html {
-  font-size: 18px;
+  font-size: $paragraphText;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: $colorBlue;
+}
+
+h1 {
+  font-size: $heroText;
+  font-weight: 400;
+  color: $colorWhite;
+}
+
+h2 {
+  color: $colorYellow;
+  font-size: $headText;
+  font-weight: 400;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+address {
+  font-style: normal;
+  font-size: $paragraphText;
+  font-weight: 300;
+}
+
+.img-bg {
+  display: block;
+  z-index: 0;
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  @include translateX(-50%)
+}
+
+#hero {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+
+  .campudus-developer-logo {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 5%
+  }
+
+  .hero-wrapper-text {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .hero-head-text {
+      margin-bottom: 10%;
+      font-size: $heroText;
+      color: $colorYellow;
+      span {
+        color: $colorWhite;
+      }
+    }
+
+    p {
+      color: $colorWhite;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .arrow-down {
+      margin-top: 10%;
+      padding: 2%;
+      display: inline-block;
+      width: 100%;
+      max-width: $arrowDownWidth;
+    }
+  }
+
+}
+
+#about {
+  overflow: auto;
+  background-color: $colorBlack;
+  .grid-3 .about-text-wrapper {
+    padding: 20% 10%;
+    max-width: 400px;
+    margin: 0 auto;
+    .about-header {
+      font-size: $headText;
+      color: $colorWhite;
+      font-weight: 400;
+    }
+
+    p {
+      color: $colorTextGrey;
+    }
+  }
+}
+
+#footer {
+
+  p {
+    color: $colorTextGrey;
+    max-width: 550px;
+  }
+
+  section {
+    height: inherit;
+    text-align: center;
+    &.grid-left {
+      background-color: $colorDarkGrey;
+      h1, h2 {
+        margin: 0;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+    }
+
+    &.grid-right {
+      background: url("/images/campudus-office_mini.jpg") center center no-repeat;
+      background-size: cover;
+
+      address, address p, a {
+        color: $colorWhite;
+      }
+
+      address {
+        h1 {
+          margin-top: 0;
+        }
+
+      }
+    }
+    .footer-text-wrapper {
+      margin: 0 auto;
+      display: inline-block;
+      max-width: 23em;
+      text-align: left;
+
+    }
+  }
+}
+
+#imprint {
+  width: 100%;
+  padding: 0 10%;
+  h1, h2, h3, p, a {
+    color: $colorWhite;
+  }
+
+  h1, h2 {
+    text-align: center;
+    font-weight: normal;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    margin-bottom: 8%;
+  }
+
+  h3 {
+    margin-top: 5%;
+  }
+
+  p, a {
+    font-weight: 300;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .back-btn {
+    display: inline-block;
+    padding: 2% 0px 1% 0px;
+    text-decoration: none;
+    font-size: $paragraphText;
+    &:hover:after, &.active:after {
+      width: 100%;
+    }
+    & {
+      position: relative;
+
+    }
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+.pre-tag {
+  min-width: 100px;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.imprint-btn {
+  position: absolute;
+  display: block;
+  padding: 1% 0;
+  right: 3%;
+  bottom: 3%;
+  cursor: pointer;
+
+  &:hover:after, &.active:after {
+    width: 100%;
+  }
+
+}
+
+.button {
+  font-family: "Montserrat";
+  font-size: 15px;
+  display: inline-block;
+  color: $colorWhite;
+  text-transform: uppercase;
+  border: solid 2px $colorBlue;
+  padding: 3% 5%;;
+  white-space: nowrap;
+  .arrow-right {
+    width: 20px !important;
+    margin-left: 3%;
+  }
+}
+
+.table {
+  position: relative;
+  display: table;
+  width: 100%;
+
+  .cell {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.grid-3 {
+  width: 33.33%;
+  float: left;
+}
+
+.grid-2 {
+  width: 50%;
+  padding: 7% 0;
+}
+
+@media (min-width: 900px) and (max-width: 1280px) {
+  body {
+    font-size: $paragraphTextTablet;
+  }
+
+  h1 {
+    font-size: $heroTextTablet !important;
+  }
+
+  h2 {
+    font-size: $headTextTablet;
+  }
+
+  address {
+    font-size: $paragraphTextTablet;
+  }
+
+  #hero {
+    .campudus-developer-logo {
+      max-width: 175px;
+    }
+
+    .padding {
+      padding: 5%;
+    }
+  }
+
+  #about {
+    .about-header {
+      margin-top: 0;
+    }
+  }
+
+  #imprint {
+    h1 {
+      font-size: 30px !important;
+    }
+  }
+
+}
+
+@media(max-width: 900px) {
+  body {
+    font-size: $paragraphTextMobile;
+  }
+
+  h1 {
+    font-size: $heroTextMobile !important;
+  }
+
+  h2 {
+    font-size: $headTextMobile;
+  }
+
+  address {
+    font-size: $paragraphTextMobile;
+  }
+
+  #hero {
+    .campudus-developer-logo {
+      margin-top: 5%;
+      max-width: 150px;
+      margin-bottom: 5%;
+    }
+    .padding {
+      padding: 5%;
+    }
+    .hero-wrapper-text {
+      .hero-head-text {
+        margin: 0 0 5% 0;
+      }
+      .arrow-down {
+        margin-top: 10%;
+      }
+    }
+
+  }
+
+  #imprint {
+    h1 {
+      font-size: 30px !important;
+    }
+  }
+
+  .button {
+    font-size: 12px;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .imprint-btn, #imprint .back-btn {
+    &:after {
+      @include transition-property(width);
+      @include transition-duration(0.3s);
+      @include transition-timing-function(ease-out);
+      background-color: $colorWhite;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 0;
+      height: 3px;
+      content: " ";
+    }
+
+    & {
+      @include transition-property(width);
+      @include transition-duration(0.3s);
+      @include transition-timing-function(ease-out);
+    }
+  }
+}
+
+@media(max-width: 750px) {
+  #hero {
+    .campudus-developer-logo {
+      max-width: 150px;
+    }
+    .hero-wrapper-text {
+      .hero-head-text {
+        font-size: $heroTextMobile;
+      }
+    }
+
+  }
+
+  #about {
+    .grid-3 {
+      width: 100%;
+      float: none;
+      .about-text-wrapper {
+        padding: 0 10%;
+        margin: 13% 0;
+      }
+    }
+  }
+
+  #footer {
+    section {
+      padding: 0;
+      &.grid-2 {
+        width: 100%;
+        display: block;
+        .footer-text-wrapper {
+          display: block;
+          max-width: 400px;
+          padding: 10%;
+          margin: 0;
+        }
+      }
+      &.grid-right address .pre-tag {
+        min-width: 50px;
+      }
+    }
+  }
 }
