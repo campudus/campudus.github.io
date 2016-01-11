@@ -23,18 +23,21 @@ function cleaner(cb) {
 
 function copyFavicons() {
   return gulp.src(['src/assets/images/favicons/**'], {dot : true})
-    .pipe(gulp.dest(outDir));
+    .pipe(gulp.dest(outDir))
+    .pipe(browserSync.stream());
 }
 
 function copyAssets() {
   return gulp.src(['src/assets/**', '!src/assets/images/favicons/', '!src/assets/images/favicons/**'], {dot : true})
-    .pipe(gulp.dest(outDir));
+    .pipe(gulp.dest(outDir))
+    .pipe(browserSync.stream());
 }
 
 function compileSass() {
   return gulp.src(['src/sass/**/*.scss', '!src/sass/**/_*.scss'])
     .pipe(sass())
-    .pipe(gulp.dest(outDir + '/css'));
+    .pipe(gulp.dest(outDir + '/css'))
+    .pipe(browserSync.stream());
 }
 
 function deployToGithub() {
