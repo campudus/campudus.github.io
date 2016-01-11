@@ -11,9 +11,9 @@ $(function () {
   onloadEvent();
 
   $(window).on('resize', function () {
-    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      setViewPortProperties();
-    }
+    //if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    setViewPortProperties();
+    //}
   });
 
   $(window).on('orientationchange', function (event) {
@@ -51,11 +51,19 @@ $(function () {
     var $viewportHeight = $(window).height();
     var $viewportWidth = $(window).width();
 
-    if ($viewportWidth > 1920) {
-      $heroImage.css('width', $viewportWidth);
+    if ($viewportWidth > $viewportHeight) {
+      $heroImage.css('height', '100%');
+      $heroImage.css('width', 'auto');
       $header.css('height', $viewportHeight);
+      if ($heroImage.width() < $viewportWidth) {
+        $heroImage.css('width', '100%');
+        $heroImage.css('height', 'auto');
+      }
     } else {
+      console.log('portrait');
       $header.css('height', $viewportHeight);
+      $heroImage.css('height', '100%');
+      $heroImage.css('width', 'auto');
     }
   }
 
