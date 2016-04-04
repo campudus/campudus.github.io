@@ -392,6 +392,9 @@ address {
   -ms-transform: translateX(-50%);
   -webkit-transform: translateX(-50%); }
 
+#page-wrapper {
+  overflow: hidden; }
+
 #hero {
   text-align: center;
   overflow: hidden; }
