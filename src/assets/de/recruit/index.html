@@ -81,45 +81,80 @@ Campudus
     <div class="large-12 columns">
       <h2>Wähle Deine Klasse!</h2>
     </div>
-    <div class="large-4 columns kind" id="frontend-ninja">
+    <div class="large-6 columns kind" id="design-doctor">
+      <div class="large-12 columns">
+        <div class="kindColumn large-6 columns avatar">
+          <div class="avatar-icon design-doctor"></div>
+          <div class="pointsContainer add" data-operator="add">
+            <!--<a data-operator="reduce" class="reduce"> - </a>-->
+            <a class="add" data-operator="add"> + </a>
+            <div class="value"><span>0</span></div>
+          </div>
+        </div>
+        <div class="kindColumn large-6 columns">
+          <h3>Magnific Design Doctor</h3>
 
-      <div class="avatar">
-        <div class="frontend-ninja"></div>
+          <p>Mit einem scharfsinnigen Gespür für Ästhetik ist Dein Einsatzgebiet die vorderste Front. Mit Konzept und
+            Design
+            ziehst Du in das Schlachtfeld, um Deinen schlimmsten Gegner zu bezwingen: Den Internet Explorer.</p>
+        </div>
       </div>
-
-      <i class="icon-check"></i>
-
-      <h3>Fearless Frontend Ninja</h3>
-
-      <p>Mit einem scharfsinnigen Gespür für Ästhetik ist Dein Einsatzgebiet die vorderste Front. Mit Konzept und Design
-        ziehst Du in das Schlachtfeld, um Deinen schlimmsten Gegner zu bezwingen: Den Internet Explorer.</p>
-
     </div>
-    <div class="large-4 columns kind" id="full-stack">
-      <div class="avatar">
-        <div class="full-stack"></div>
+    <div class="large-6 columns kind" id="frontend-ninja">
+      <div class="large-12 columns">
+        <div class="kindColumn large-6 columns avatar">
+          <div class="avatar-icon frontend-ninja"></div>
+          <div class="pointsContainer add" data-operator="add">
+            <!--<a data-operator="reduce" class="reduce"> - </a>-->
+            <a class="add" data-operator="add"> + </a>
+            <div class="value"><span>0</span></div>
+          </div>
+        </div>
+        <div class="kindColumn large-6 columns">
+          <h3>Fearless Frontend Ninja</h3>
+          <p>Mit einem scharfsinnigen Gespür für Ästhetik ist Dein Einsatzgebiet die vorderste Front. Mit Konzept und
+            Design
+            ziehst Du in das Schlachtfeld, um Deinen schlimmsten Gegner zu bezwingen: Den Internet Explorer.</p>
+
+        </div>
       </div>
-      <i class="icon-check"></i>
-
-      <h3>Full Stack Hacker</h3>
-
-      <p>Du bist unaufhaltbar. Egal, ob Bugs das Frontend zerfressen oder das Backend unter schwerem Beschuss steht. Du
-        neutralisierst jede Gefahr die Dir in den Weg kommt und stürzt Dich gnadenlos in die nächste Mission.
-      </p>
-
     </div>
-    <div class="large-4 columns kind" id="backend-bear">
-      <div class="avatar">
-        <div class="backend-bear"></div>
+    <div class="large-6 columns kind" id="full-stack">
+      <div class="large-12 columns">
+        <div class="kindColumn large-6 columns avatar">
+          <div class="avatar-icon full-stack"></div>
+          <div class="pointsContainer add" data-operator="add" >
+            <!--<a data-operator="reduce" class="reduce"> - </a>-->
+            <a class="add" data-operator="add"> + </a>
+            <div class="value"><span>0</span></div>
+          </div>
+        </div>
+        <div class="kindColumn large-6 columns">
+          <h3>Full Stack Hacker</h3>
+          <p>Du bist unaufhaltbar. Egal, ob Bugs das Frontend zerfressen oder das Backend unter schwerem Beschuss steht.
+            Du
+            neutralisierst jede Gefahr die Dir in den Weg kommt und stürzt Dich gnadenlos in die nächste Mission.
+          </p>
+        </div>
       </div>
-      <i class="icon-check"></i>
-
-      <h3>Bashing Backend Bear</h3>
-
-      <p>Mit Tastatur und Terminal zerhackst Du Bugs als gäbe es kein Morgen. Die Maus benutzt Du nur im Notfall und
-        bist die rettende Unterstützung, wenn im Frontend mal wieder schwere Waffen benötigt werden.
-      </p>
-
+    </div>
+    <div class="large-6 columns kind" id="backend-bear">
+      <div class="large-12 columns">
+        <div class="kindColumn large-6 columns avatar">
+          <div class="avatar-icon backend-bear"></div>
+          <div class="pointsContainer add" data-operator="add" >
+            <!--<a data-operator="reduce" class="reduce"> - </a>-->
+            <a class="add" data-operator="add"> + </a>
+            <div class="value"><span>0</span></div>
+          </div>
+        </div>
+        <div class="kindColumn large-6 columns">
+          <h3>Bashing Backend Bear</h3>
+          <p>Mit Tastatur und Terminal zerhackst Du Bugs als gäbe es kein Morgen. Die Maus benutzt Du nur im Notfall und
+            bist die rettende Unterstützung, wenn im Frontend mal wieder schwere Waffen benötigt werden.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
   <div class="technology row" data-equalizer>
@@ -315,15 +350,22 @@ Campudus
   </ul>
 </footer>
 
-
+<script src="/js/lodash.min.js"></script>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/foundation.min.js"></script>
 <script src="/js/recruit.js"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
   ga('create', 'UA-35536346-2', 'auto');
   ga('send', 'pageview');

@@ -13,28 +13,120 @@ $(document).ready(function () {
 
   var langs = {
     de : {
-      id: 'de',
-      loading: 'Bewerbe',
-      success: 'Beworben!',
-      retry: 'Erneut senden'
+      id : 'de',
+      loading : 'Bewerbe',
+      success : 'Beworben!',
+      retry : 'Erneut senden'
     },
     en : {
-      id: 'en',
-      loading: 'Applying',
-      success: 'Applied!',
-      retry: 'Retry sending'
+      id : 'en',
+      loading : 'Applying',
+      success : 'Applied!',
+      retry : 'Retry sending'
     }
   };
 
+  var kind = [];
+  var MAX_POINTS = 10;
+  var pointsLeft = 10;
+  var sumOfAllPoints;
+
   var lang = langs[getLanguage()];
 
-  var $kinds = $('.kind');
-  $kinds.click(function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    $kinds.removeClass('checked');
-    $(this).addClass('checked');
-  });
+  var $add = $('.add');
+  var $reduce = $('.reduce');
+
+  callPointsFN($add);
+  callPointsFN($reduce);
+
+  function callPointsFN(jqueryObj) {
+    jqueryObj.click(function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      var $kindObject = $(this).closest('.kind');
+      var kindName = $kindObject.attr('id');
+      var operatorName = $(this).data('operator');
+      kind = fillKindWithValues(kind, kindName, operatorName);
+      sumOfAllPoints = getSumOfAllPoints(kind);
+
+      var getKindObject = _.find(kind, function (value) {
+        return value.kind === kindName;
+      });
+      var $pointValueObject = $kindObject.find('.value span');
+
+      if (!_.isEmpty(getKindObject)) {
+        var points = getKindObject.points;
+        $pointValueObject.text(points);
+
+        var $pointsContainer = $pointValueObject.closest('.pointsContainer');
+
+        console.log("$pointsContainer: ", $pointsContainer);
+        if (points > 0) {
+          $pointsContainer.addClass('highlight');
+        } else {
+          $pointsContainer.removeClass('highlight');
+        }
+      }
+    });
+  }
+
+  function fillKindWithValues(array, kind, operator) {
+    var kindIndex = _.findIndex(array, ['kind', kind]);
+
+    if (operator === 'reduce' && _.isEmpty(array)) {
+      return array;
+    }
+
+    if (_.isEmpty(array) || kindIndex === -1 && sumOfAllPoints < MAX_POINTS) {
+      array.push({kind : kind, points : 1});
+      --pointsLeft;
+    } else {
+      var currentPoints = _.get(array[kindIndex], 'points');
+      var kindObject = _.get(array, [kindIndex]);
+
+      if (operator === 'add' && sumOfAllPoints <= MAX_POINTS) {
+        add(kindObject, currentPoints);
+      }
+
+      if (operator === 'reduce' && sumOfAllPoints >= 0) {
+        reduce(kindObject, currentPoints);
+      }
+
+      array[kindIndex] = kindObject;
+    }
+    return array;
+
+  }
+
+  function add(kindObject, currentPoints) {
+    if (sumOfAllPoints === MAX_POINTS) {
+      pointsLeft = 0;
+    } else {
+      kindObject.points = ++currentPoints;
+      --pointsLeft;
+    }
+  }
+
+  function reduce(kindObject, currentPoints) {
+    if (currentPoints > 0) {
+      kindObject.points = --currentPoints;
+      ++pointsLeft;
+    }
+  }
+
+  function getSumOfAllPoints(array) {
+    if (!_.isEmpty(array)) {
+      var sum = _.reduce(array, function (result, value) {
+        result.push(value.points);
+        return result;
+      }, []);
+      return _.sum(sum);
+    } else {
+      return 0;
+    }
+  }
+
 
   var $techItems = $('.tech-item');
   $techItems.click(function (event) {
@@ -73,8 +165,8 @@ $(document).ready(function () {
 
     request = $.ajax({
       "url" : "https://script.google.com/macros/s/AKfycbwy_70uxGw1hsNbgXN0K9Lnjt2vFriM14qfdQmE0dIyNq6Vbjo/exec",
-      jsonp: "prefix",
-      dataType: "jsonp",
+      jsonp : "prefix",
+      dataType : "jsonp",
       "type" : "GET",
       "data" : serializedData
     });

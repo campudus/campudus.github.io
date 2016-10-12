@@ -272,9 +272,9 @@ html.no-touch {
     i.icon-check {
       //transform: translate(0, -10px);
     }
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    z-index: 1;
+    //-webkit-transform: scale(1.2);
+    //transform: scale(1.2);
+    //z-index: 1;
   }
 
   .tech-item.checked:hover {
@@ -381,7 +381,45 @@ html.no-touch {
     border: 3px solid $dark-color;
     margin: 0 auto 20px auto;
 
-    div {
+    .pointsContainer {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      .add{
+        display: inline-block;
+        padding: 0.1em;
+        font-size: 2rem;
+        top: -35px;
+        right: 0;
+        position: absolute;
+        z-index: 1;
+        color: $highlight-color;
+        box-sizing: border-box;
+      }
+
+      .value {
+        position: relative;
+        width: 5rem;
+        height: 5rem;
+        display: block;
+        border-radius: 50%;
+        background-color: $light-color;
+        border: 7px solid $dark-color;
+        font-size: 2rem;
+
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate3d(-50%, -50%, 0); /* Safari */
+          transform: translate3d(-50%, -50%, 0);
+          color: $text-color;
+        }
+      }
+    }
+
+    .avatar-icon {
       width: 85%;
       height: 85%;
       background-size: contain;
@@ -393,18 +431,22 @@ html.no-touch {
       transition: transform 0.2s ease-out;
 
       .no-touch &:hover {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
+        //-webkit-transform: scale(1.1);
+        //transform: scale(1.1);
       }
     }
 
     .svg & {
+      .design-doctor {
+        background-image: url("/images/recruit/designDoctor.svg");
+      }
+
       .frontend-ninja {
         background-image: url("/images/recruit/fearless_frontend_ninja.svg");
       }
 
       .full-stack {
-        background-image: url("/images/recruit/full_stack_hacker.svg");
+        background-image: url("/images/recruit/hulk.svg");
       }
 
       .backend-bear {
@@ -429,8 +471,15 @@ html.no-touch {
 
   @media only screen and (min-width: 40.063em) {
     .avatar {
-      width: 320px;
+      width: 50%;
+      max-width: 320px;
       height: 320px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .avatar {
+      float: none;
     }
   }
 
