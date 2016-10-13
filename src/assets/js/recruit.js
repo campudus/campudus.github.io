@@ -26,18 +26,47 @@ $(document).ready(function () {
     }
   };
 
+  var lang = langs[getLanguage()];
+
   var kind = [];
   var MAX_POINTS = 10;
   var pointsLeft = 10;
-  var sumOfAllPoints;
-
-  var lang = langs[getLanguage()];
+  var sumOfAllPoints = 0;
 
   var $add = $('.add');
   var $reduce = $('.reduce');
+  var $resetButton = $('.reset-points');
 
   callPointsFN($add);
   callPointsFN($reduce);
+  resetButton($resetButton);
+
+  function resetButton(jqueryObj) {
+    jqueryObj.click(function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      var $kindObject = $(this).closest('.kind');
+      var $pointValueObject = $kindObject.find('.value span');
+      var kindName = $kindObject.attr('id');
+
+      var getKindObject = _.find(kind, function (value) {
+        return value.kind === kindName;
+      });
+      pointsLeft += getKindObject.points;
+      kind = removeKindByName(kindName, kind);
+      sumOfAllPoints = getSumOfAllPoints(kind);
+
+      checkPoints(kindName, $pointValueObject, $kindObject);
+      renderNotification($kindObject, sumOfAllPoints, pointsLeft);
+    });
+  }
+
+  function removeKindByName(kindName, kind) {
+    return _.filter(kind, function (value) {
+      return value.kind !== kindName
+    });
+  }
 
   function callPointsFN(jqueryObj) {
     jqueryObj.click(function (event) {
@@ -45,30 +74,62 @@ $(document).ready(function () {
       event.stopPropagation();
 
       var $kindObject = $(this).closest('.kind');
+      var $pointValueObject = $kindObject.find('.value span');
+
       var kindName = $kindObject.attr('id');
       var operatorName = $(this).data('operator');
+
       kind = fillKindWithValues(kind, kindName, operatorName);
       sumOfAllPoints = getSumOfAllPoints(kind);
 
-      var getKindObject = _.find(kind, function (value) {
-        return value.kind === kindName;
-      });
-      var $pointValueObject = $kindObject.find('.value span');
-
-      if (!_.isEmpty(getKindObject)) {
-        var points = getKindObject.points;
-        $pointValueObject.text(points);
-
-        var $pointsContainer = $pointValueObject.closest('.pointsContainer');
-
-        console.log("$pointsContainer: ", $pointsContainer);
-        if (points > 0) {
-          $pointsContainer.addClass('highlight');
-        } else {
-          $pointsContainer.removeClass('highlight');
-        }
-      }
+      checkPoints(kindName, $pointValueObject, $kindObject);
+      renderNotification($kindObject, sumOfAllPoints, pointsLeft);
     });
+  }
+
+  function checkPoints(kindName, pointValueObj, kindObj) {
+    var getKindObject = _.find(kind, function (value) {
+      return value.kind === kindName;
+    });
+    var $pointsContainer = pointValueObj.closest('.pointsContainer');
+
+    if (!_.isEmpty(getKindObject)) {
+      var points = getKindObject.points;
+      pointValueObj.text(points);
+      checkClasses(points, $pointsContainer, kindObj);
+    } else {
+      pointValueObj.text(0);
+      checkClasses(0, $pointsContainer, kindObj)
+    }
+  }
+
+  function checkClasses(points, pointsContainer, kindObj) {
+    if (points > 0) {
+      pointsContainer.addClass('highlight');
+      kindObj.addClass('checked');
+    } else {
+      pointsContainer.removeClass('highlight');
+      kindObj.removeClass('checked');
+    }
+  }
+
+  function renderNotification(kindObj, sumOfAllPoints, pointsLeft) {
+    var $notifyObj = kindObj.closest('.character').find('.notify');
+
+    console.log("sumOfAllPoints. ", sumOfAllPoints);
+    if (sumOfAllPoints >= 0 && sumOfAllPoints < 10) {
+      $notifyObj.html(renderHtmWithSumOfAllPoints(pointsLeft));
+    } else if (sumOfAllPoints === 10) {
+      $notifyObj.html(renderSuccesMessage());
+    }
+  }
+
+  function renderHtmWithSumOfAllPoints(pointsLeft) {
+    return "Du hast noch <span class='number'>" + pointsLeft + "</span> Skillpunkte zu verteilen."
+  }
+
+  function renderSuccesMessage() {
+    return "<span>Good Job! </span> Du hast alle Punkte verteilt.";
   }
 
   function fillKindWithValues(array, kind, operator) {
@@ -96,7 +157,6 @@ $(document).ready(function () {
       array[kindIndex] = kindObject;
     }
     return array;
-
   }
 
   function add(kindObject, currentPoints) {
@@ -128,11 +188,23 @@ $(document).ready(function () {
   }
 
 
-  var $techItems = $('.tech-item');
+  var $techItems = $('.choose-tech span');
   $techItems.click(function (event) {
     event.preventDefault();
     event.stopPropagation();
-    $(this).toggleClass('checked');
+    var $val = $(this).closest('.choose-tech').find('span');
+
+    if ($(this).hasClass('checked')) {
+      $val.removeClass('checked');
+    } else {
+      $.each($val, function (index, elem) {
+        var $item = $(elem);
+        if ($item.hasClass('checked')) {
+          $item.removeClass('checked');
+        }
+      });
+      $(this).toggleClass('checked');
+    }
   });
 
   var $recruitment = $('#recruitment');

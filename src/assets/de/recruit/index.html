@@ -83,11 +83,11 @@ Campudus
     </div>
     <div class="large-6 columns kind" id="design-doctor">
       <div class="large-12 columns">
-        <div class="kindColumn large-6 columns avatar">
+        <div class="kindColumn large-6 columns avatar add" data-operator="add">
           <div class="avatar-icon design-doctor"></div>
-          <div class="pointsContainer add" data-operator="add">
+          <div class="pointsContainer">
             <!--<a data-operator="reduce" class="reduce"> - </a>-->
-            <a class="add" data-operator="add"> + </a>
+            <i class="icon-plus plus"></i>
             <div class="value"><span>0</span></div>
           </div>
         </div>
@@ -97,16 +97,17 @@ Campudus
           <p>Mit einem scharfsinnigen Gespür für Ästhetik ist Dein Einsatzgebiet die vorderste Front. Mit Konzept und
             Design
             ziehst Du in das Schlachtfeld, um Deinen schlimmsten Gegner zu bezwingen: Den Internet Explorer.</p>
+          <a class="reset-points">Punkte zurücksetzen</a>
         </div>
       </div>
     </div>
     <div class="large-6 columns kind" id="frontend-ninja">
       <div class="large-12 columns">
-        <div class="kindColumn large-6 columns avatar">
+        <div class="kindColumn large-6 columns avatar add" data-operator="add">
           <div class="avatar-icon frontend-ninja"></div>
-          <div class="pointsContainer add" data-operator="add">
+          <div class="pointsContainer">
             <!--<a data-operator="reduce" class="reduce"> - </a>-->
-            <a class="add" data-operator="add"> + </a>
+            <i class="icon-plus plus"></i>
             <div class="value"><span>0</span></div>
           </div>
         </div>
@@ -115,17 +116,17 @@ Campudus
           <p>Mit einem scharfsinnigen Gespür für Ästhetik ist Dein Einsatzgebiet die vorderste Front. Mit Konzept und
             Design
             ziehst Du in das Schlachtfeld, um Deinen schlimmsten Gegner zu bezwingen: Den Internet Explorer.</p>
-
+          <a class="reset-points">Punkte zurücksetzen</a>
         </div>
       </div>
     </div>
     <div class="large-6 columns kind" id="full-stack">
       <div class="large-12 columns">
-        <div class="kindColumn large-6 columns avatar">
+        <div class="kindColumn large-6 columns avatar add" data-operator="add">
           <div class="avatar-icon full-stack"></div>
-          <div class="pointsContainer add" data-operator="add" >
+          <div class="pointsContainer add" data-operator="add">
             <!--<a data-operator="reduce" class="reduce"> - </a>-->
-            <a class="add" data-operator="add"> + </a>
+            <i class="icon-plus plus"></i>
             <div class="value"><span>0</span></div>
           </div>
         </div>
@@ -135,16 +136,17 @@ Campudus
             Du
             neutralisierst jede Gefahr die Dir in den Weg kommt und stürzt Dich gnadenlos in die nächste Mission.
           </p>
+          <a class="reset-points">Punkte zurücksetzen</a>
         </div>
       </div>
     </div>
     <div class="large-6 columns kind" id="backend-bear">
       <div class="large-12 columns">
-        <div class="kindColumn large-6 columns avatar">
+        <div class="kindColumn large-6 columns avatar add" data-operator="add">
           <div class="avatar-icon backend-bear"></div>
-          <div class="pointsContainer add" data-operator="add" >
+          <div class="pointsContainer add" data-operator="add">
             <!--<a data-operator="reduce" class="reduce"> - </a>-->
-            <a class="add" data-operator="add"> + </a>
+            <i class="icon-plus plus"></i>
             <div class="value"><span>0</span></div>
           </div>
         </div>
@@ -153,141 +155,225 @@ Campudus
           <p>Mit Tastatur und Terminal zerhackst Du Bugs als gäbe es kein Morgen. Die Maus benutzt Du nur im Notfall und
             bist die rettende Unterstützung, wenn im Frontend mal wieder schwere Waffen benötigt werden.
           </p>
+          <a class="reset-points">Punkte zurücksetzen</a>
         </div>
       </div>
     </div>
+    <div class="large-12 columns notify">Du hast noch <span class="number">10</span> Skillpunkte zu verteilen.</div>
   </div>
   <div class="technology row" data-equalizer>
     <div class="large-12 columns">
-      <h2>Wähle Deine Ausrüstung</h2>
 
-      <p class="intro">Das wichtigste für unsere Rekruten ist die Bereitschaft Neues zu lernen. Welche der folgenden
-        Technologien kennst Du bereits oder möchtest Du bei uns lernen?</p>
-
+      <div class="technology-header row">
+        <div class="large-5 columns tech-header-column">
+          <h2>Wähle Deine Fertigkeiten</h2>
+          <div class="skill">
+            <i class="icon-check" data-equalizer-watch></i>
+            <h3 data-equalizer-watch>Kann ich</h3>
+          </div>
+        </div>
+        <div class="large-2 columns tech-header-column ampersand">
+          <h2>&</h2>
+        </div>
+        <div class="large-5 columns tech-header-column">
+          <h2>Ergänze deine Interessen</h2>
+          <div class="interest">
+            <i class="icon-star"></i>
+            <h3>Interessiert mich</h3>
+          </div>
+        </div>
+      </div>
       <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">
-        <li data-equalizer-watch class="tech-item" id="javascript"><i class="icon-javascript"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>JavaScript</h3>
-
-          <div class="description">Unsere Grundausstattung und in vielen Bereichen super einsetzbar.</div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="html5"><i class="icon-html5"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>HTML 5</h3>
-
-          <div class="description">Irgendwann muss man auch mal loslassen und alte Browser aus dem Netz verbannen.</div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="css3"><i class="icon-css3"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>CSS3/Sass</h3>
-
-          <div class="description">Bringt den fancy Style in das Frontend. Designs umsetzen wie es sein sollte.</div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="angular-js"><i class="icon-angularJs"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>Angular JS</h3>
-
-          <div class="description">Schwere Geschütze sind teilweise auch im Frontend sinnvoll. Angular JS bietet für
-            Single-Page-Apps eine sehr gute Basis.
+        <li data-equalizer-watch class="tech-item" id="javascript">
+          <div class="tech-icon">
+            <i class="icon-javascript"></i>
+            <h3>JavaScript</h3>
           </div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="git"><i class="icon-github5"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>Git</h3>
-
-          <div class="description">Versionskontrolle vom Feinsten und dank Pull Requests das beste Mittel, um Code
-            Reviews zu ermöglichen.
+          <div class="choose-tech">
+            <span>
+              <i class="icon-check"></i>
+              <p>Kann ich</p>
+            </span>
+            <span>
+              <i class="icon-star"></i>
+              <p>Interessiert mich</p>
+            </span>
           </div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="ios"><i class="icon-apple"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>iOS</h3>
-
-          <div class="description">Auch vor Monstern wie Obj-C machen wir nicht halt.</div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="android"><i class="icon-android"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>Android</h3>
-
-          <div class="description">Manch spezieller Einsatz verlangt nativen Code.</div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="cordova"><i class="icon-cordova"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>Cordova/PhoneGap</h3>
-
-          <div class="description">Für die schnelle Umsetzung auf verschiedenen Endgeräten arbeiten wir mit unserer
-            liebsten Technologie: Dem Web.
+        </li>
+        <li data-equalizer-watch class="tech-item" id="html5">
+          <div class="tech-icon">
+            <i class="icon-html5"></i>
+            <h3>HTML 5</h3>
           </div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="sql"><i class="icon-database"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>SQL</h3>
-
-          <div class="description">Sichert unsere Daten bei einigen unserer Produkte.</div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="shell"><i class="icon-terminal"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>Shell</h3>
-
-          <div class="description">Kleine Skripte helfen uns bei der automatisierten Lösung von Alltagsproblemen.</div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="php"><i class="icon-php"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>PHP</h3>
-
-          <div class="description">In manchen Fällen greifen wir auf das fast überall verfügbare PHP zurück.</div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="gulp"><i class="icon-gulp"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>Gulp</h3>
-
-          <div class="description">Build-Tool für den Skripter.</div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="nodejs"><i class="icon-nodeJs"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>Node.JS</h3>
-
-          <div class="description">Schnelle Prototypen und magische Skripte lassen wir hiermit gerne entstehen.</div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="vertx"><i class="icon-vertx"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>Vert.x</h3>
-
-          <div class="description">Als Contributor helfen wir Vert.x zu verbessern. Polyglotes, event-driven Framework
-            ala Node.JS mit dem sich allerlei Problemstellungen lösen lassen.
+          <div class="choose-tech">
+            <span>
+              <i class="icon-check"></i>
+              <p>Kann ich</p>
+            </span>
+            <span>
+              <i class="icon-star"></i>
+              <p>Interessiert mich</p>
+            </span>
           </div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="scala"><i class="icon-scala"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>Scala</h3>
-
-          <div class="description">Funktionale Programmierung trifft auf Objekte. Im Backend unser beliebtestes
-            Werkzeug.
+        </li>
+        <li data-equalizer-watch class="tech-item" id="css3">
+          <div class="tech-icon">
+            <i class="icon-css3"></i>
+            <h3>CSS3/Sass</h3>
           </div>
-          <i class="icon-check"></i></li>
-        <li data-equalizer-watch class="tech-item" id="wordpress"><i class="icon-wordpress"></i>
-          <img class="shadow" src="/images/recruit/shadow.png"/>
-
-          <h3>Wordpress</h3>
-
-          <div class="description">Hilft uns, Webseiten speziell an die Wünsche der Kunden anzupassen.</div>
-          <i class="icon-check"></i></li>
+          <div class="choose-tech">
+            <span>
+              <i class="icon-check"></i>
+              <p>Kann ich</p>
+            </span>
+            <span>
+              <i class="icon-star"></i>
+              <p>Interessiert mich</p>
+            </span>
+          </div>
+        </li>
+        <li data-equalizer-watch class="tech-item" id="git">
+          <div class="tech-icon">
+            <i class="icon-github5"></i>
+            <h3>Git</h3>
+          </div>
+          <div class="choose-tech">
+            <span>
+              <i class="icon-check"></i>
+              <p>Kann ich</p>
+            </span>
+            <span>
+              <i class="icon-star"></i>
+              <p>Interessiert mich</p>
+            </span>
+          </div>
+        </li>
       </ul>
+
+      <!--<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">-->
+      <!--<li data-equalizer-watch class="tech-item" id="javascript"><i class="icon-javascript"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>JavaScript</h3>-->
+
+      <!--<div class="description">Unsere Grundausstattung und in vielen Bereichen super einsetzbar.</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="html5"><i class="icon-html5"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>HTML 5</h3>-->
+
+      <!--<div class="description">Irgendwann muss man auch mal loslassen und alte Browser aus dem Netz verbannen.</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="css3"><i class="icon-css3"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>CSS3/Sass</h3>-->
+
+      <!--<div class="description">Bringt den fancy Style in das Frontend. Designs umsetzen wie es sein sollte.</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="angular-js"><i class="icon-angularJs"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>Angular JS</h3>-->
+
+      <!--<div class="description">Schwere Geschütze sind teilweise auch im Frontend sinnvoll. Angular JS bietet für-->
+      <!--Single-Page-Apps eine sehr gute Basis.-->
+      <!--</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="git"><i class="icon-github5"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>Git</h3>-->
+
+      <!--<div class="description">Versionskontrolle vom Feinsten und dank Pull Requests das beste Mittel, um Code-->
+      <!--Reviews zu ermöglichen.-->
+      <!--</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="ios"><i class="icon-apple"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>iOS</h3>-->
+
+      <!--<div class="description">Auch vor Monstern wie Obj-C machen wir nicht halt.</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="android"><i class="icon-android"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>Android</h3>-->
+
+      <!--<div class="description">Manch spezieller Einsatz verlangt nativen Code.</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="cordova"><i class="icon-cordova"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>Cordova/PhoneGap</h3>-->
+
+      <!--<div class="description">Für die schnelle Umsetzung auf verschiedenen Endgeräten arbeiten wir mit unserer-->
+      <!--liebsten Technologie: Dem Web.-->
+      <!--</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="sql"><i class="icon-database"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>SQL</h3>-->
+
+      <!--<div class="description">Sichert unsere Daten bei einigen unserer Produkte.</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="shell"><i class="icon-terminal"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>Shell</h3>-->
+
+      <!--<div class="description">Kleine Skripte helfen uns bei der automatisierten Lösung von Alltagsproblemen.</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="php"><i class="icon-php"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>PHP</h3>-->
+
+      <!--<div class="description">In manchen Fällen greifen wir auf das fast überall verfügbare PHP zurück.</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="gulp"><i class="icon-gulp"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>Gulp</h3>-->
+
+      <!--<div class="description">Build-Tool für den Skripter.</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="nodejs"><i class="icon-nodeJs"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>Node.JS</h3>-->
+
+      <!--<div class="description">Schnelle Prototypen und magische Skripte lassen wir hiermit gerne entstehen.</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="vertx"><i class="icon-vertx"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>Vert.x</h3>-->
+
+      <!--<div class="description">Als Contributor helfen wir Vert.x zu verbessern. Polyglotes, event-driven Framework-->
+      <!--ala Node.JS mit dem sich allerlei Problemstellungen lösen lassen.-->
+      <!--</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="scala"><i class="icon-scala"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>Scala</h3>-->
+
+      <!--<div class="description">Funktionale Programmierung trifft auf Objekte. Im Backend unser beliebtestes-->
+      <!--Werkzeug.-->
+      <!--</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--<li data-equalizer-watch class="tech-item" id="wordpress"><i class="icon-wordpress"></i>-->
+      <!--<img class="shadow" src="/images/recruit/shadow.png"/>-->
+
+      <!--<h3>Wordpress</h3>-->
+
+      <!--<div class="description">Hilft uns, Webseiten speziell an die Wünsche der Kunden anzupassen.</div>-->
+      <!--<i class="icon-check"></i></li>-->
+      <!--</ul>-->
     </div>
   </div>
 

@@ -23,6 +23,18 @@ i {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-times:before {
+	content: "\e902";
+}
+
+.icon-plus:before {
+	content: "\e900";
+}
+
+.icon-star:before {
+	content: "\e901";
+}
+
 .icon-gulp:before {
 	content: "\e609";
 }
