@@ -8,6 +8,7 @@ $campudus-blue: #006db4;
 $light-color: #0093eb;
 $highlight-color: #f7d933;
 $dark-color: #005993;
+$darker-color: #00446E;
 $gray: rgba(0, 0, 0, 0.25);
 $tech-item-inset-color: $gray;
 
@@ -180,7 +181,7 @@ form {
   cursor: pointer;
 }
 
-i.icon-check {
+i.icon-check, i.icon-star, i.icon-plus, i.icon-commenting-o, .icon-bubble {
   position: relative;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -189,15 +190,6 @@ i.icon-check {
 i.icon-plus {
   font-size: 2.5rem;
   color: $highlight-color;
-  position: relative;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-i.icon-star {
-  position: relative;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
 }
 
 .character .checked i.icon-check {
@@ -267,9 +259,74 @@ i.icon-star {
   font-size: 1rem;
 
   .tech-icon {
+    position: relative;
     background-color: $dark-color;
     padding: 2em;
     border-bottom: 5px solid $campudus-blue;
+
+    .icon-times {
+      position: absolute;
+      color: $darker-color;
+      top: 0;
+      right: 0;
+      font-size: 32px;
+      width: 51px;
+      z-index: 333;
+    }
+
+    .icon-bubble, .icon-times {
+      display: block;
+    }
+
+    .icon-commenting-o {
+      display: none;
+    }
+
+    &.add-tech {
+      .icon-bubble, .icon-times {
+        display: none;
+      }
+
+      .icon-commenting-o {
+        display: block;
+      }
+    }
+
+    &.own-tech {
+
+      input:focus::-webkit-input-placeholder { color:transparent; }
+      input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+      input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+      input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+      input {
+        display: inline-block;
+        width: 100%;
+        border: none;
+        border-bottom: 5px solid $text-color;
+        padding: 1.5rem 0.5rem 0.5rem 0;
+        background-color: $dark-color;
+        outline: none;
+        text-transform: uppercase;
+        color: $text-color;
+        font-family: $leagueGothic;
+        font-size: 2.25em;
+        text-align: center;
+
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+          color: $darker-color;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+          color: $darker-color;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+          color: $darker-color;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+          color: $darker-color;
+        }
+      }
+    }
   }
 
   .choose-tech {
@@ -354,7 +411,6 @@ i.icon-star {
 
   i {
     font-size: 4rem;
-    line-height: 4rem;
     display: block;
     -webkit-transition: transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
@@ -419,6 +475,11 @@ html.no-touch {
 }
 
 @media only screen and (max-width: 64.063em) {
+
+  .tech-item:last-child{
+    margin-bottom: 15%;
+  }
+
   .technology-header {
     .ampersand h2 {
       margin: 0;
@@ -444,7 +505,7 @@ html.no-touch {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 385px) {
   .technology-header {
     font-size: 0.6rem;
   }
@@ -548,7 +609,7 @@ html.no-touch {
     .pointsContainer {
       position: absolute;
       right: 0;
-      top: 25px;
+      top: 3%;
 
       &.highlight .value {
         background-color: $text-color;
@@ -561,10 +622,9 @@ html.no-touch {
 
       .plus {
         display: inline-block;
-        padding: 0.1em;
-        font-size: 2rem;
-        top: -35px;
-        right: -5px;
+        font-size: 30px;
+        top: -33px;
+        right: 0;
         position: absolute;
         z-index: 1;
         box-sizing: border-box;
@@ -648,7 +708,7 @@ html.no-touch {
 
   .notify {
     background-color: $dark-color;
-    padding: 1rem 0;
+    padding: 1rem;
     color: $text-color;
     font-size: 2rem;
     font-weight: 300;

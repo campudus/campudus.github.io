@@ -29,6 +29,7 @@ $(document).ready(function () {
   var lang = langs[getLanguage()];
 
   var kind = [];
+  var capabilities = [];
   var MAX_POINTS = 10;
   var pointsLeft = 10;
   var sumOfAllPoints = 0;
@@ -116,19 +117,18 @@ $(document).ready(function () {
   function renderNotification(kindObj, sumOfAllPoints, pointsLeft) {
     var $notifyObj = kindObj.closest('.character').find('.notify');
 
-    console.log("sumOfAllPoints. ", sumOfAllPoints);
     if (sumOfAllPoints >= 0 && sumOfAllPoints < 10) {
-      $notifyObj.html(renderHtmWithSumOfAllPoints(pointsLeft));
+      $notifyObj.html(renderPointsLeftNotify(pointsLeft));
     } else if (sumOfAllPoints === 10) {
-      $notifyObj.html(renderSuccesMessage());
+      $notifyObj.html(renderSuccessNotify());
     }
   }
 
-  function renderHtmWithSumOfAllPoints(pointsLeft) {
+  function renderPointsLeftNotify(pointsLeft) {
     return "Du hast noch <span class='number'>" + pointsLeft + "</span> Skillpunkte zu verteilen."
   }
 
-  function renderSuccesMessage() {
+  function renderSuccessNotify() {
     return "<span>Good Job! </span> Du hast alle Punkte verteilt.";
   }
 
@@ -187,28 +187,154 @@ $(document).ready(function () {
     }
   }
 
-
   var $techItems = $('.choose-tech span');
-  $techItems.click(function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    var $val = $(this).closest('.choose-tech').find('span');
 
-    if ($(this).hasClass('checked')) {
-      $val.removeClass('checked');
-    } else {
-      $.each($val, function (index, elem) {
-        var $item = $(elem);
-        if ($item.hasClass('checked')) {
-          $item.removeClass('checked');
-        }
-      });
-      $(this).toggleClass('checked');
+  chooseTechCapabilities($techItems);
+
+  function chooseTechCapabilities(jqueryObj) {
+    jqueryObj.click(function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var $techItem = $(this).closest('.tech-item');
+      var $capability = $(this).closest('.choose-tech').find('span');
+
+      var techName = $techItem.attr('id');
+      var capability = $(this).data('capability');
+
+      if ($(this).hasClass('checked')) {
+        capabilities = removeCapability(capabilities, techName);
+        $capability.removeClass('checked');
+      } else {
+        $.each($capability, function (index, elem) {
+          var $item = $(elem);
+          if ($item.hasClass('checked')) {
+            $item.removeClass('checked');
+          }
+        });
+        capabilities = addCapabilities(capabilities, techName, capability);
+        $(this).addClass('checked');
+      }
+    });
+  }
+
+  function removeCapability(capabilityArr, name) {
+    return _.remove(capabilityArr, function (val) {
+      return !val[name]
+    });
+  }
+
+  function addCapabilities(capabilityArr, name, capability) {
+    var capabilityEntry = {};
+    var index;
+    var capabilityObject = _.find(capabilityArr, function (value, idx) {
+      if (value[name]) {
+        index = idx;
+        return value[name];
+      }
+    });
+
+    if (_.isEmpty(capabilityArr) || _.isNil(capabilityObject)) {
+      capabilityEntry[name] = capability;
+      capabilityArr.push(capabilityEntry);
+      return capabilityArr;
+    } else if (capabilityObject[name] !== capability && !_.isNil(index)) {
+      capabilityEntry[name] = capability;
+      capabilityArr[index] = capabilityEntry;
+      return capabilityArr;
     }
-  });
+    return capabilityArr;
+  }
 
   var $recruitment = $('#recruitment');
   var $button = $recruitment.find('button');
+  var removeButtonClassName = '.remove-button';
+  var inputElementName = 'input';
+
+  removeButton(removeButtonClassName);
+  inputOnFocusHandler(inputElementName);
+  inputOnFocusOutHandler(inputElementName);
+
+  function inputOnFocusHandler(inputElementName) {
+    $(document).on('focus', inputElementName, function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      inputKeyUpHandler($(this));
+    });
+  }
+
+  function inputOnFocusOutHandler(inputElementName) {
+    $(document).on('focusout', inputElementName, function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      removeEmptyValueTechItem($(this));
+    });
+  }
+
+  function inputKeyUpHandler(jqueryObj) {
+    jqueryObj.keyup(function (event) {
+      var keyCode = event.keyCode;
+      var value = this.value;
+
+      var keyCodeArr = [13, 9];
+      var keyCodeIndex = _.indexOf(keyCodeArr, keyCode);
+      if (keyCodeIndex !== -1) {
+        removeEmptyValueTechItem($(this));
+      } else if (!_.isEmpty(value)) {
+        addButton($(this));
+      }
+    })
+  }
+
+  function removeEmptyValueTechItem($this) {
+    $this.closest('.custom-capabilities').find('.own-tech-item').each(function (index, value) {
+      var $ownTech = $(value).find('.own-tech');
+      var $input = $ownTech.find('input');
+      var hasAddTechClass = $ownTech.hasClass('add-tech');
+      if (!hasAddTechClass && !$input.val()) {
+        $ownTech.closest('.own-tech-item').remove();
+      }
+    });
+  }
+
+  function addButton($this) {
+    var hasClassArr = [];
+    var $ownTech = $this.closest('.own-tech');
+    var $customCapabilities = $ownTech.closest('.custom-capabilities');
+    var $ownTechItem = $customCapabilities.find('.own-tech-item');
+
+    $ownTech.removeClass('add-tech');
+    $ownTechItem.each(function (index, val) {
+      var $valOwnTech = $(val).find('.own-tech');
+      var hasClass = $valOwnTech.hasClass('add-tech');
+      hasClassArr.push(hasClass);
+    });
+
+    var appendAddCustomTechTile = _.every(hasClassArr, function (value) {
+      return value === false;
+    });
+
+    if (appendAddCustomTechTile) {
+      $ownTechItem.last().after(renderNewAddSkillTile());
+    }
+  }
+
+  function removeButton(removeButtonClassName) {
+    $(document).on('click', removeButtonClassName, function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      $(this).closest('.own-tech-item').remove();
+    })
+  }
+
+  function renderNewAddSkillTile() {
+    return '<li data-equalizer-watch="" class="tech-item own-tech-item" style="height: inherit;">' +
+      '<div class="own-tech tech-icon add-tech">' +
+      '<i class="icon-times remove-button"></i>' +
+      '<i class="icon-commenting-o"></i>' +
+      '<i class="icon-bubble"></i>' +
+      '<input placeholder="Fähigkeit hinzufügen"/>' +
+      '</div></li>'
+  }
 
   $recruitment.submit(function (event) {
     event.preventDefault();
