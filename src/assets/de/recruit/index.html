@@ -70,19 +70,25 @@ Campudus
 
     </div>
     <div class="large-4 medium-12 small-12 columns" data-equalizer-watch>
-      <h2>Das Team</h2>
-
-      <p>300 Spartiaten brauchen wir nicht. Sechs Köpfe und wir bestreiten jeden Auftrag - unverletzt. Unser Team gibt
-        Dir bei Deinen Einsätzen Rückendeckung.</p>
+      <h2>Dein Team</h2>
+      <p>
+        300 Spartiaten brauchen wir nicht. Wir sind 7 an der Zahl und mit Dir an unserer Seite bestreiten wir jeden
+        Auftrag - unversehrt. Auf Rückendeckung kannst Du jederzeit zählen.
+      </p>
 
     </div>
   </div>
   <div class="character row">
-    <div class="large-12 columns">
-      <h2>Wähle Deine Klasse!</h2>
+    <div class="head-line large-12 columns">
+      <h2>Wie viel Held steckt in dir?</h2>
+      <p>
+        Verteile <span class="number">7</span> Fähigkeitspunkte auf die jeweiligen Klassen.
+        So können wir Deine Missionen bestmöglich an Deine Skills und Interessen anpassen.
+        Du bist besonders erfahren oder spezialisiert? Erhöhe die Punkte Deiner Klasse.
+      </p>
     </div>
     <div class="large-6 columns kind" id="design-doctor">
-      <div class="large-12 columns">
+      <div class="large-12 columns kind-wrapper">
         <div class="kindColumn large-6 columns avatar add" data-operator="add">
           <div class="avatar-icon design-doctor"></div>
           <div class="pointsContainer">
@@ -93,16 +99,17 @@ Campudus
         </div>
         <div class="kindColumn large-6 columns">
           <h3>Magnific Design Doctor</h3>
-
-          <p>Mit einem scharfsinnigen Gespür für Ästhetik ist Dein Einsatzgebiet die vorderste Front. Mit Konzept und
-            Design
-            ziehst Du in das Schlachtfeld, um Deinen schlimmsten Gegner zu bezwingen: Den Internet Explorer.</p>
+          <p>
+            Durch visuelle Verführung formst Du die Realität neu. Deine UI/UX Kampfwaffen mischt Du in
+            Deinem Testlabor wie kein anderer zu einem paralysierenden Elixier. Deine Verbündeten sind
+            die Fearless Frontend Ninjas.
+          </p>
           <a class="reset-points">Punkte zurücksetzen</a>
         </div>
       </div>
     </div>
     <div class="large-6 columns kind" id="frontend-ninja">
-      <div class="large-12 columns">
+      <div class="large-12 columns kind-wrapper">
         <div class="kindColumn large-6 columns avatar add" data-operator="add">
           <div class="avatar-icon frontend-ninja"></div>
           <div class="pointsContainer">
@@ -120,28 +127,8 @@ Campudus
         </div>
       </div>
     </div>
-    <div class="large-6 columns kind" id="full-stack">
-      <div class="large-12 columns">
-        <div class="kindColumn large-6 columns avatar add" data-operator="add">
-          <div class="avatar-icon full-stack"></div>
-          <div class="pointsContainer add" data-operator="add">
-            <!--<a data-operator="reduce" class="reduce"> - </a>-->
-            <i class="icon-plus plus"></i>
-            <div class="value"><span>0</span></div>
-          </div>
-        </div>
-        <div class="kindColumn large-6 columns">
-          <h3>Full Stack Hacker</h3>
-          <p>Du bist unaufhaltbar. Egal, ob Bugs das Frontend zerfressen oder das Backend unter schwerem Beschuss steht.
-            Du
-            neutralisierst jede Gefahr die Dir in den Weg kommt und stürzt Dich gnadenlos in die nächste Mission.
-          </p>
-          <a class="reset-points">Punkte zurücksetzen</a>
-        </div>
-      </div>
-    </div>
     <div class="large-6 columns kind" id="backend-bear">
-      <div class="large-12 columns">
+      <div class="large-12 columns kind-wrapper">
         <div class="kindColumn large-6 columns avatar add" data-operator="add">
           <div class="avatar-icon backend-bear"></div>
           <div class="pointsContainer add" data-operator="add">
@@ -159,7 +146,29 @@ Campudus
         </div>
       </div>
     </div>
-    <div class="large-12 columns notify">Du hast noch <span class="number">10</span> Skillpunkte zu verteilen.</div>
+    <div class="large-6 columns kind" id="dev-op">
+      <div class="large-12 columns kind-wrapper">
+        <div class="kindColumn large-6 columns avatar add" data-operator="add">
+          <div class="avatar-icon full-stack"></div>
+          <div class="pointsContainer add" data-operator="add">
+            <!--<a data-operator="reduce" class="reduce"> - </a>-->
+            <i class="icon-plus plus"></i>
+            <div class="value"><span>0</span></div>
+          </div>
+        </div>
+        <div class="kindColumn large-6 columns">
+          <h3>Superior Devop Engineer</h3>
+          <p>
+            Du bist der Spezialist für schwere servergesteuerte Geschütze.
+            Deine Deployment Pipeline bildet das Rückgrat jeder Operation.
+            Deine Skripte führen präzise automatisierte Kampfhandlungen aus.
+            Wenn andere aufgeben, bildest Du die undurchdringbare Verteidigung.
+          </p>
+          <a class="reset-points">Punkte zurücksetzen</a>
+        </div>
+      </div>
+    </div>
+    <div class="large-12 columns notify">Du hast noch <span class="number">7</span> Skillpunkte zu verteilen.</div>
   </div>
   <div class="technology row" data-equalizer>
     <div class="large-12 columns">
@@ -183,74 +192,74 @@ Campudus
           </div>
         </div>
       </div>
-      <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">
-        <li data-equalizer-watch class="tech-item" id="javascript">
+      <ul class="tech-item-wrapper row">
+        <li data-equalizer-watch class="tech-item large-4 medium-6 small-12 columns" id="javascript">
           <div class="tech-icon">
             <i class="icon-javascript"></i>
             <h3>JavaScript</h3>
           </div>
           <div class="choose-tech">
             <span data-capability="skill">
-              <i class="icon-check"></i>
-              <p>Kann ich</p>
+                <i class="icon-check"></i>
+                <p>Kann ich</p>
             </span>
             <span data-capability="interest">
-              <i class="icon-star"></i>
-              <p>Interessiert mich</p>
+                <i class="icon-star"></i>
+                <p>Interessiert mich</p>
             </span>
           </div>
         </li>
-        <li data-equalizer-watch class="tech-item" id="html5">
+        <li data-equalizer-watch class="tech-item large-4 medium-6 small-12 columns" id="html5">
           <div class="tech-icon">
             <i class="icon-html5"></i>
             <h3>HTML 5</h3>
           </div>
           <div class="choose-tech">
             <span data-capability="skill">
-              <i class="icon-check"></i>
-              <p>Kann ich</p>
+                <i class="icon-check"></i>
+                <p>Kann ich</p>
             </span>
             <span data-capability="interest">
-              <i class="icon-star"></i>
-              <p>Interessiert mich</p>
+                <i class="icon-star"></i>
+                <p>Interessiert mich</p>
             </span>
           </div>
         </li>
-        <li data-equalizer-watch class="tech-item" id="css3">
+        <li data-equalizer-watch class="tech-item large-4 medium-6 small-12 columns" id="css3">
           <div class="tech-icon">
             <i class="icon-css3"></i>
             <h3>CSS3/Sass</h3>
           </div>
           <div class="choose-tech">
             <span data-capability="skill">
-              <i class="icon-check"></i>
-              <p>Kann ich</p>
+                <i class="icon-check"></i>
+                <p>Kann ich</p>
             </span>
             <span data-capability="interest">
-              <i class="icon-star"></i>
-              <p>Interessiert mich</p>
+                <i class="icon-star"></i>
+                <p>Interessiert mich</p>
             </span>
           </div>
         </li>
-        <li data-equalizer-watch class="tech-item" id="git">
+        <li data-equalizer-watch class="tech-item large-4 medium-6 small-12 columns" id="git">
           <div class="tech-icon">
             <i class="icon-github5"></i>
             <h3>Git</h3>
           </div>
           <div class="choose-tech">
             <span data-capability="skill">
-              <i class="icon-check"></i>
-              <p>Kann ich</p>
+                <i class="icon-check"></i>
+                <p>Kann ich</p>
             </span>
             <span data-capability="interest">
-              <i class="icon-star"></i>
-              <p>Interessiert mich</p>
+                <i class="icon-star"></i>
+                <p>Interessiert mich</p>
             </span>
           </div>
         </li>
       </ul>
-      <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4 custom-capabilities">
-        <li data-equalizer-watch class="tech-item own-tech-item">
+      <ul class="custom-capabilities row">
+        <li data-equalizer-watch class="tech-item own-tech-item large-4 medium-6 small-12 columns">
           <div class="own-tech tech-icon add-tech">
             <i class="icon-times remove-button"></i>
             <i class="icon-commenting-o"></i>
@@ -447,6 +456,7 @@ Campudus
   </ul>
 </footer>
 
+<script type='application/javascript' src='/js/fastclick.js'></script>
 <script src="/js/lodash.min.js"></script>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/foundation.min.js"></script>

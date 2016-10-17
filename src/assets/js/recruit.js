@@ -30,8 +30,8 @@ $(document).ready(function () {
 
   var kind = [];
   var capabilities = [];
-  var MAX_POINTS = 10;
-  var pointsLeft = 10;
+  var MAX_POINTS = 7;
+  var pointsLeft = 7;
   var sumOfAllPoints = 0;
 
   var $add = $('.add');
@@ -50,6 +50,7 @@ $(document).ready(function () {
       var $kindObject = $(this).closest('.kind');
       var $pointValueObject = $kindObject.find('.value span');
       var kindName = $kindObject.attr('id');
+      var $avatarIcon = $kindObject.find('.avatar-icon');
 
       var getKindObject = _.find(kind, function (value) {
         return value.kind === kindName;
@@ -57,7 +58,7 @@ $(document).ready(function () {
       pointsLeft += getKindObject.points;
       kind = removeKindByName(kindName, kind);
       sumOfAllPoints = getSumOfAllPoints(kind);
-
+      scaleAvatar($avatarIcon, 1);
       checkPoints(kindName, $pointValueObject, $kindObject);
       renderNotification($kindObject, sumOfAllPoints, pointsLeft);
     });
@@ -80,7 +81,7 @@ $(document).ready(function () {
       var kindName = $kindObject.attr('id');
       var operatorName = $(this).data('operator');
 
-      kind = fillKindWithValues(kind, kindName, operatorName);
+      kind = fillKindWithValues($kindObject, kind, kindName, operatorName);
       sumOfAllPoints = getSumOfAllPoints(kind);
 
       checkPoints(kindName, $pointValueObject, $kindObject);
@@ -117,9 +118,9 @@ $(document).ready(function () {
   function renderNotification(kindObj, sumOfAllPoints, pointsLeft) {
     var $notifyObj = kindObj.closest('.character').find('.notify');
 
-    if (sumOfAllPoints >= 0 && sumOfAllPoints < 10) {
+    if (sumOfAllPoints >= 0 && sumOfAllPoints < MAX_POINTS) {
       $notifyObj.html(renderPointsLeftNotify(pointsLeft));
-    } else if (sumOfAllPoints === 10) {
+    } else if (sumOfAllPoints === MAX_POINTS) {
       $notifyObj.html(renderSuccessNotify());
     }
   }
@@ -132,8 +133,15 @@ $(document).ready(function () {
     return "<span>Good Job! </span> Du hast alle Punkte verteilt.";
   }
 
-  function fillKindWithValues(array, kind, operator) {
+  function scaleAvatar(avatarIcon, scaleRatio) {
+    avatarIcon.css('transform', 'scale(' + scaleRatio + ')');
+    avatarIcon.css('-webkit-transform', 'scale(' + scaleRatio + ')');
+  }
+
+  function fillKindWithValues($kindObj, array, kind, operator) {
     var kindIndex = _.findIndex(array, ['kind', kind]);
+    var $avatarIcon = $kindObj.find('.avatar-icon');
+    var currentPoints = _.get(array[kindIndex], 'points');
 
     if (operator === 'reduce' && _.isEmpty(array)) {
       return array;
@@ -141,13 +149,13 @@ $(document).ready(function () {
 
     if (_.isEmpty(array) || kindIndex === -1 && sumOfAllPoints < MAX_POINTS) {
       array.push({kind : kind, points : 1});
+      scaleAvatar($avatarIcon, 1.1);
       --pointsLeft;
     } else {
-      var currentPoints = _.get(array[kindIndex], 'points');
       var kindObject = _.get(array, [kindIndex]);
 
       if (operator === 'add' && sumOfAllPoints <= MAX_POINTS) {
-        add(kindObject, currentPoints);
+        add(kindObject, currentPoints, $avatarIcon);
       }
 
       if (operator === 'reduce' && sumOfAllPoints >= 0) {
@@ -159,11 +167,13 @@ $(document).ready(function () {
     return array;
   }
 
-  function add(kindObject, currentPoints) {
+  function add(kindObject, currentPoints, avatarIcon) {
     if (sumOfAllPoints === MAX_POINTS) {
       pointsLeft = 0;
     } else {
       kindObject.points = ++currentPoints;
+      var scaleRatio = 1 + (currentPoints * 0.1);
+      scaleAvatar(avatarIcon, scaleRatio);
       --pointsLeft;
     }
   }
@@ -248,7 +258,7 @@ $(document).ready(function () {
   var $recruitment = $('#recruitment');
   var $button = $recruitment.find('button');
   var removeButtonClassName = '.remove-button';
-  var inputElementName = 'input';
+  var inputElementName = '.tech-icon input';
 
   removeButton(removeButtonClassName);
   inputOnFocusHandler(inputElementName);
@@ -303,6 +313,7 @@ $(document).ready(function () {
     var $ownTechItem = $customCapabilities.find('.own-tech-item');
 
     $ownTech.removeClass('add-tech');
+    $ownTech.addClass('custom-tech');
     $ownTechItem.each(function (index, val) {
       var $valOwnTech = $(val).find('.own-tech');
       var hasClass = $valOwnTech.hasClass('add-tech');
@@ -327,7 +338,7 @@ $(document).ready(function () {
   }
 
   function renderNewAddSkillTile() {
-    return '<li data-equalizer-watch="" class="tech-item own-tech-item" style="height: inherit;">' +
+    return '<li data-equalizer-watch class="tech-item own-tech-item large-4 medium-6 small-12 columns" style="height: inherit;">' +
       '<div class="own-tech tech-icon add-tech">' +
       '<i class="icon-times remove-button"></i>' +
       '<i class="icon-commenting-o"></i>' +
@@ -346,19 +357,34 @@ $(document).ready(function () {
     var $form = $(this);
     var serializedData = $form.serializeArray();
 
-    var selectedKind = '';
-    $kinds.filter('.checked').each(function () {
-      selectedKind = $(this).attr('id');
-    });
-
     var skills = $techItems.filter('.checked');
+
     var skillArray = [];
-    skills.each(function () {
-      skillArray.push($(this).attr("id"));
+    skills.each(function (idx, value) {
+      var techItem = $(value).closest('.tech-item');
+      var skillName = $(techItem).attr('id');
+      var capability = $(value).data('capability');
+      skillArray.push({name : skillName, capability : capability});
     });
 
-    serializedData.push({name : 'kind', value : selectedKind});
-    serializedData.push({name : 'skills', value : skillArray.join(',')});
+    var custom = $('.custom-tech');
+    custom.filter('.custom-tech');
+
+    var customSkillArray = [];
+    custom.each(function (idx, value) {
+      var inputValue = $(value).find('input').val();
+      customSkillArray.push(_.upperCase(inputValue));
+    });
+
+    serializedData.push({name : 'kind', value : kind});
+    serializedData.push({
+      name : 'skills', value : _.map(skillArray, function (value) {
+        return value.name + ': ' + value.capability
+      }).join(', ')
+    });
+    serializedData.push({
+      name : 'customSkills', value : customSkillArray.join(',')
+    });
     serializedData.push({name : 'language', value : lang.id});
 
     request = $.ajax({

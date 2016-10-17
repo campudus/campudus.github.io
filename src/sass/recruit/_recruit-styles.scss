@@ -49,8 +49,19 @@ a {
 
 .character .kind {
   padding-top: 3em;
-  padding-bottom: 3em;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.kind {
+  cursor: pointer;
+
+  .kind-wrapper {
+    margin-bottom: 0;
+
+    .kindColumn:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 header.row {
@@ -102,6 +113,15 @@ p {
   &.small {
     font-size: 16px;
   }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 #logo {
@@ -177,10 +197,6 @@ form {
   text-align: center;
 }
 
-.kind {
-  cursor: pointer;
-}
-
 i.icon-check, i.icon-star, i.icon-plus, i.icon-commenting-o, .icon-bubble {
   position: relative;
   -webkit-animation-fill-mode: forwards;
@@ -254,15 +270,30 @@ i.icon-plus {
   }
 }
 
+.tech-item-wrapper.row {
+  padding: 0;
+  border-bottom: none;
+}
+
+.custom-capabilities {
+  border-bottom: none;
+  padding: 0;
+}
+
 .tech-item {
   cursor: pointer;
   font-size: 1rem;
+  margin-bottom: 2rem;
+
+  &[class*="column"] + [class*="column"]:last-child {
+    float: left;
+  }
 
   .tech-icon {
     position: relative;
     background-color: $dark-color;
     padding: 2em;
-    border-bottom: 5px solid $campudus-blue;
+    border-bottom: 3px solid $campudus-blue;
 
     .icon-times {
       position: absolute;
@@ -294,10 +325,21 @@ i.icon-plus {
 
     &.own-tech {
 
-      input:focus::-webkit-input-placeholder { color:transparent; }
-      input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
-      input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
-      input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+      input:focus::-webkit-input-placeholder {
+        color: transparent;
+      }
+      input:focus:-moz-placeholder {
+        color: transparent;
+      }
+      /* FF 4-18 */
+      input:focus::-moz-placeholder {
+        color: transparent;
+      }
+      /* FF 19+ */
+      input:focus:-ms-input-placeholder {
+        color: transparent;
+      }
+      /* IE 10+ */
 
       input {
         display: inline-block;
@@ -312,6 +354,8 @@ i.icon-plus {
         font-family: $leagueGothic;
         font-size: 2.25em;
         text-align: center;
+        margin-bottom: 3.5rem;
+        -webkit-appearance: none;
 
         &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
           color: $darker-color;
@@ -331,73 +375,65 @@ i.icon-plus {
 
   .choose-tech {
     background-color: $campudus-blue;
-    border-bottom: none;
-    padding: 0;
-    margin: 0;
     position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    float: left;
 
     span {
+      display: block;
       background-color: $dark-color;
-      color: $campudus-blue;
-      display: inline-block;
-      vertical-align: top;
-      width: 50%;
-      box-sizing: border-box;
-      align-items: center;
+      width: calc(50% - 1.5px);
+      position: relative;
+      margin: 0;
+      height: 100%;
+
+      &:first-child {
+        float: left;
+      }
+      &:last-child {
+        float: right;
+      }
+
+      i, p {
+        top: 50%;
+        transform: translateY(-50%);
+        -ms-transform: translateY(-50%); /* IE 9 */
+        -webkit-transform: translateY(-50%); /* Safari */
+      }
 
       i {
-        display: inline-block;
+        color: $darker-color;
         font-size: 2.5em;
       }
 
       p {
         display: none;
+        font-family: $leagueGothic;
       }
 
       &.checked {
-        position: relative;
+        height: 100%;
 
         i {
           display: none;
         }
 
         p {
+          display: inherit;
+          width: 100%;
           color: $highlight-color;
-          font-family: $leagueGothic;
           text-transform: uppercase;
           text-align: center;
-          display: inline-block;
-          height: inherit;
           position: absolute;
           font-size: 1.5em;
           white-space: nowrap;
-          left: 50%;
-          top: 50%;
-          transform: translate3d(-50%, -50%, 0);
-          //letter-spacing: 1px;
           -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
         }
       }
 
-      &:first-child {
-        border-right: 2.5px solid $campudus-blue;
-      }
-
-      &:last-child {
-        border-left: 2.5px solid $campudus-blue;
-      }
     }
-  }
-
-  @media only screen and (min-width: 40.063em) {
-    margin: 1%;
   }
 
   h3 {
@@ -442,15 +478,6 @@ i.icon-plus {
 }
 
 html.no-touch {
-  .tech-item:hover {
-    i.icon-check {
-      //transform: translate(0, -10px);
-    }
-    //-webkit-transform: scale(1.2);
-    //transform: scale(1.2);
-    //z-index: 1;
-  }
-
   .tech-item.checked:hover {
     position: relative;
     z-index: 3;
@@ -467,6 +494,7 @@ html.no-touch {
 }
 
 @media only screen and (min-width: 64.063em) {
+
   .technology .large-block-grid-4 > li {
     width: 23%;
     list-style: none;
@@ -475,10 +503,6 @@ html.no-touch {
 }
 
 @media only screen and (max-width: 64.063em) {
-
-  .tech-item:last-child{
-    margin-bottom: 15%;
-  }
 
   .technology-header {
     .ampersand h2 {
@@ -496,6 +520,20 @@ html.no-touch {
 @media only screen and (max-width: 1231px) and (min-width: 64.063em) {
   .technology-header {
     font-size: 0.6rem;
+  }
+}
+
+@media only screen and (max-width: 641px) {
+  .tech-item {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+    float: none;
+    overflow: hidden;
+
+    &[class*="column"] + [class*="column"]:last-child {
+      float: none;
+    }
   }
 }
 
@@ -561,17 +599,6 @@ html.no-touch {
     box-shadow: 0 5px 0 0 $dark-color;
     outline-style: none;
 
-    /*
-
-        background: $light-color; *//* Old browsers *//*
-        background: -moz-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* FF3.6+ *//*
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $light-color), color-stop(100%, $campudus-blue)); *//* Chrome,Safari4+ *//*
-        background: -webkit-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* Chrome10+,Safari5.1+ *//*
-        background: -o-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* Opera 11.10+ *//*
-        background: -ms-linear-gradient(top, $light-color 0%, $campudus-blue 100%); *//* IE10+ *//*
-        background: linear-gradient(to bottom, $light-color 0%, $campudus-blue 100%); *//* W3C *//*
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$light-color', endColorstr='#005993', GradientType=0); *//* IE6-9 */
-
     &:hover {
       background: $campudus-blue;
     }
@@ -587,6 +614,13 @@ html.no-touch {
   visibility: visible;
 }
 
+.number {
+  font-size: 2rem;
+  color: $highlight-color;
+  font-weight: 600;
+  margin: 0 5px;
+}
+
 .reset-points {
   display: block;
   visibility: hidden;
@@ -597,6 +631,10 @@ html.no-touch {
 }
 
 .character {
+
+  .head-line {
+    padding-bottom: 5%;
+  }
 
   .avatar {
     width: 280px;
@@ -655,18 +693,15 @@ html.no-touch {
     .avatar-icon {
       width: 85%;
       height: 85%;
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      transition: transform 0.2s ease-in-out;
+      -webkit-transition: -webkit-transform 0.2s ease-in-out;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
       margin: auto;
       margin-top: 7%;
-      -webkit-transition: transform 0.2s ease-out;
-      transition: transform 0.2s ease-out;
-
-      .no-touch &:hover {
-        //-webkit-transform: scale(1.1);
-        //transform: scale(1.1);
-      }
     }
 
     .svg & {
@@ -726,11 +761,14 @@ html.no-touch {
     }
   }
 
-  @media only screen and (max-width: 1440px) and (min-width: 1025px) {
-
+  @media only screen and (max-width: 1439px) and (min-width: 1025px) {
     .avatar {
       width: 225px;
       height: 225px;
+
+      .pointsContainer {
+        top: -3%;
+      }
     }
 
     h3 {
@@ -798,5 +836,4 @@ footer {
   a:hover, a:focus {
     color: $highlight-color;
   }
-
 }
