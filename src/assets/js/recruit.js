@@ -36,6 +36,7 @@ $(document).ready(function () {
   var $add = $('.add');
   var $reduce = $('.reduce');
   var $resetButton = $('.reset-points');
+  var $avatarObject = $('.avatar');
 
   callPointsFN($add);
   callPointsFN($reduce);
@@ -132,14 +133,28 @@ $(document).ready(function () {
     return "<span>Good Job! </span> Du hast alle Punkte verteilt.";
   }
 
-  function scaleAvatar(avatarIcon, scaleRatio) {
+  function scaleAvatar(avatarIcon, scaleRatio, avatar) {
     avatarIcon.css('transform', 'scale(' + scaleRatio + ')');
     avatarIcon.css('-webkit-transform', 'scale(' + scaleRatio + ')');
+    if (avatar) {
+      console.log("triggerPressAnim: ", avatar);
+      setAnimationClass(avatar, 'press');
+    }
+  }
+
+  function setAnimationClass(avatar, animClass) {
+    if (!avatar.hasClass(animClass)) {
+      avatar.addClass(animClass);
+      avatar.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        avatar.removeClass(animClass);
+      });
+    }
   }
 
   function fillKindWithValues($kindObj, array, kind, operator) {
     var kindIndex = _.findIndex(array, ['kind', kind]);
     var $avatarIcon = $kindObj.find('.avatar-icon');
+    var $avatar = $kindObj.find('.avatar');
     var currentPoints = _.get(array[kindIndex], 'points');
 
     if (operator === 'reduce' && _.isEmpty(array)) {
@@ -148,13 +163,13 @@ $(document).ready(function () {
 
     if (_.isEmpty(array) || kindIndex === -1 && sumOfAllPoints < MAX_POINTS) {
       array.push({kind : kind, points : 1});
-      scaleAvatar($avatarIcon, 1.05);
+      scaleAvatar($avatarIcon, 1.05, $avatar);
       --pointsLeft;
     } else {
       var kindObject = _.get(array, [kindIndex]);
 
       if (operator === 'add' && sumOfAllPoints <= MAX_POINTS) {
-        add(kindObject, currentPoints, $avatarIcon);
+        add(kindObject, currentPoints, $avatarIcon, $avatar);
       }
 
       if (operator === 'reduce' && sumOfAllPoints >= 0) {
@@ -166,13 +181,14 @@ $(document).ready(function () {
     return array;
   }
 
-  function add(kindObject, currentPoints, avatarIcon) {
+  function add(kindObject, currentPoints, avatarIcon, $avatar) {
     if (sumOfAllPoints === MAX_POINTS) {
       pointsLeft = 0;
+      setAnimationClass($avatar, 'shake');
     } else {
       kindObject.points = ++currentPoints;
       var scaleRatio = 1 + (currentPoints * 0.05);
-      scaleAvatar(avatarIcon, scaleRatio);
+      scaleAvatar(avatarIcon, scaleRatio, $avatar);
       --pointsLeft;
     }
   }

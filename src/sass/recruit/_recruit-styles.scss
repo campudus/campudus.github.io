@@ -13,16 +13,16 @@ $gray: rgba(0, 0, 0, 0.25);
 $tech-item-inset-color: $gray;
 
 body, html {
-  font-size: 12px;
+  font-size: 1rem;
   background-color: $campudus-blue;
 }
 
 // Font sizes
-@media only screen and (min-width: 64.063em) {
-  body, html {
-    font-size: 16px;
-  }
-}
+//@media only screen and (min-width: 64.063em) {
+//  body, html {
+//    font-size: 16px;
+//  }
+//}
 
 a {
   color: $text-color;
@@ -44,26 +44,19 @@ a {
 @media only screen and (max-width: 64.063em) {
   .content-wrapper .columns {
     margin-bottom: 4em;
-  }
-}
 
-.character .kind {
-  padding-top: 3em;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-.kind {
-  cursor: pointer;
-
-  .kind-wrapper {
-    margin-bottom: 0;
-    padding: 0;
-
-    .kindColumn:last-child {
+    &:last-child {
       margin-bottom: 0;
     }
   }
 }
+
+@media only screen and (max-width: 700px) {
+  .row {
+    padding: 4em 0;
+  }
+}
+
 
 header.row {
   border: none;
@@ -91,18 +84,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  font-size: 5rem;
+  font-size: 5em;
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 2.5em;
 }
 
 p {
   line-height: 1.5em;
   font-family: $sourcesans;
   font-weight: 300;
-  font-size: 1.25rem;
+  font-size: 1.25em;
   max-width: 30em;
   text-align: center;
   margin: 0 auto;
@@ -127,7 +120,7 @@ p {
 }
 
 .marginBottom {
-  margin-bottom: 11%;
+  margin-bottom: 7rem;
 }
 
 ul {
@@ -169,7 +162,7 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
     font-size: 14vw;
 
     @media only screen and (min-width: 40.063em) {
-      font-size: 6vw;
+      //font-size: 6vw;
       white-space: nowrap;
     }
   }
@@ -192,7 +185,7 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
     &.intro {
       margin-bottom: 0.5em;
       @media only screen and (min-width: 40.063em) {
-        font-size: 1.8vw;
+        //font-size: 1.8vw;
       }
     }
   }
@@ -221,6 +214,29 @@ i.icon-plus {
   color: $highlight-color;
 }
 
+
+.character .kind {
+  padding-top: 3em;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.kind {
+  cursor: pointer;
+
+  &.columns {
+    margin: 0;
+  }
+
+  .kind-wrapper {
+    margin-bottom: 0;
+    padding: 0;
+
+    .kindColumn:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .character .checked i.icon-check {
   -webkit-transform: scale(2) translate(0, -10px);
   transform: scale(2) translate(0, -10px);
@@ -231,9 +247,17 @@ i.icon-plus {
   display: inline-block;
 }
 
-.technology .checked i.icon-check {
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
+.technology, .philosophy {
+  > .columns {
+    margin: 0;
+  }
+}
+
+.technology {
+  .checked i.icon-check {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
 }
 
 .technology-header {
@@ -283,7 +307,7 @@ i.icon-plus {
   }
 }
 
-.tech-item-wrapper.row, .custom-capabilities {
+.tech-item-wrapper.row, .custom-capabilities.row {
   padding: 0 0.9375rem;
   border-bottom: none;
 }
@@ -292,7 +316,7 @@ i.icon-plus {
   cursor: pointer;
   font-size: 1rem;
 
-  &.columns {
+  &.columns, &.columns:last-child {
     margin-bottom: 2rem;
   }
 
@@ -447,13 +471,16 @@ i.icon-plus {
           -webkit-font-smoothing: antialiased;
         }
       }
-
     }
   }
 
   h3 {
     margin: 0.3em 0 0 0;
     padding: 0;
+    position: absolute;
+    bottom: 1.5em;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .description {
@@ -638,11 +665,73 @@ html.no-touch {
   box-sizing: border-box;
 }
 
-.character {
+@-webkit-keyframes doit /* Safari and Chrome */
+{
+  0% {
 
-  .head-line {
-    padding-bottom: 3rem;
+    transform:scale(1,1);
+    -ms-transform:scale(1,1);
+    -moz-transform:scale(1,1);
+    -webkit-transform:scale(1,1);
+    -o-transform:scale(1,1);
+
   }
+
+  50% {
+
+    transform:scale(1.1,1.1);
+    -ms-transform:scale(1.1,1.1);
+    -moz-transform:scale(1.1,1.1);
+    -webkit-transform:scale(1.1,1.1);
+    -o-transform:scale(1.1,1.1);
+
+
+  }
+
+  100% {
+    transform:scale(1,1);
+    -ms-transform:scale(1,1);
+    -moz-transform:scale(1,1);
+    -webkit-transform:scale(1,1);
+    -o-transform:scale(1,1);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+    -ms-transform:translate3d(-1px, 0, 0);
+    -moz-transform:translate3d(-1px, 0, 0);
+    -webkit-transform:translate3d(-1px, 0, 0);
+    -o-transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+    -ms-transform:translate3d(2px, 0, 0);
+    -moz-transform:translate3d(2px, 0, 0);
+    -webkit-transform:translate3d(2px, 0, 0);
+    -o-transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+    -ms-transform:translate3d(-4px, 0, 0);
+    -moz-transform:translate3d(-4px, 0, 0);
+    -webkit-transform:translate3d(-4px, 0, 0);
+    -o-transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+    -ms-transform:translate3d(4px, 0, 0);
+    -moz-transform:translate3d(4px, 0, 0);
+    -webkit-transform:translate3d(4px, 0, 0);
+    -o-transform: translate3d(4px, 0, 0);
+  }
+}
+
+.character {
 
   .avatar {
     position: relative;
@@ -652,6 +741,34 @@ html.no-touch {
     background-color: $light-color;
     border: 3px solid $dark-color;
     margin: 0 auto;
+
+    transform:scale(1,1);
+    -ms-transform:scale(1,1);
+    -moz-transform:scale(1,1);
+    -webkit-transform:scale(1,1);
+    -o-transform:scale(1,1);
+
+    &.shake {
+      animation: shake 0.52s cubic-bezier(.36,.07,.19,.97) both;
+      -moz-animation: shake 0.52s cubic-bezier(.36,.07,.19,.97) both;
+      -webkit-animation: shake 0.52s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      -ms-transform:translate3d(0, 0, 0);
+      -moz-transform:translate3d(0, 0, 0);
+      -webkit-transform:translate3d(0, 0, 0);
+      -o-transform:translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    &.press {
+      animation: doit 0.2s;
+      -moz-animation: doit 1s; /* Firefox */
+      -webkit-animation: doit 0.2s; /* Safari and Chrome */
+      -webkit-animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      -webkit-animation-fill-mode: forwards;
+    }
 
     .pointsContainer {
       position: absolute;
@@ -771,7 +888,7 @@ html.no-touch {
     }
   }
 
-  @media only screen and (max-width: 1439px) and (min-width: 1025px) {
+  @media only screen and (max-width: 1439px) and (min-width: 64.063rem) {
     .avatar {
       width: 100%;
       max-width: 225px;
@@ -806,6 +923,12 @@ html.no-touch {
   }
 
   @media only screen and (max-width: 1024px) {
+    h3, .description {
+      text-align: center;
+    }
+  }
+
+  @media only screen and (max-width: 64.063rem) {
     .reset-points {
       text-align: center;
       font-size: 1.5rem;
