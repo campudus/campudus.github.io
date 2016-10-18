@@ -3,9 +3,8 @@
 $(document).foundation({
   equalizer : {
     // Specify if Equalizer should make elements equal height once they become stacked.
-    equalize_on_stack : false
+    equalize_on_stack : true
   }
-
 });
 
 $(document).ready(function () {
@@ -149,7 +148,7 @@ $(document).ready(function () {
 
     if (_.isEmpty(array) || kindIndex === -1 && sumOfAllPoints < MAX_POINTS) {
       array.push({kind : kind, points : 1});
-      scaleAvatar($avatarIcon, 1.1);
+      scaleAvatar($avatarIcon, 1.05);
       --pointsLeft;
     } else {
       var kindObject = _.get(array, [kindIndex]);
@@ -172,7 +171,7 @@ $(document).ready(function () {
       pointsLeft = 0;
     } else {
       kindObject.points = ++currentPoints;
-      var scaleRatio = 1 + (currentPoints * 0.1);
+      var scaleRatio = 1 + (currentPoints * 0.05);
       scaleAvatar(avatarIcon, scaleRatio);
       --pointsLeft;
     }
@@ -376,19 +375,25 @@ $(document).ready(function () {
       customSkillArray.push(_.upperCase(inputValue));
     });
 
-    serializedData.push({name : 'kind', value : kind});
+    serializedData.push({
+      name : 'kind', value : _.map(kind, function (value) {
+        return value.kind + ': ' + value.points + ' points'
+      }).join(', ')
+    });
     serializedData.push({
       name : 'skills', value : _.map(skillArray, function (value) {
         return value.name + ': ' + value.capability
       }).join(', ')
     });
     serializedData.push({
-      name : 'customSkills', value : customSkillArray.join(',')
+      name : 'customSkills', value : customSkillArray.join(', ')
     });
     serializedData.push({name : 'language', value : lang.id});
 
+    console.log("serializedData: ", serializedData);
+
     request = $.ajax({
-      "url" : "https://script.google.com/macros/s/AKfycbwy_70uxGw1hsNbgXN0K9Lnjt2vFriM14qfdQmE0dIyNq6Vbjo/exec",
+      // "url" : "https://script.google.com/macros/s/AKfycbwy_70uxGw1hsNbgXN0K9Lnjt2vFriM14qfdQmE0dIyNq6Vbjo/exec",
       jsonp : "prefix",
       dataType : "jsonp",
       "type" : "GET",
