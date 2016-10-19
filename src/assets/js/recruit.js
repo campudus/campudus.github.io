@@ -126,7 +126,7 @@ $(document).ready(function () {
   }
 
   function renderPointsLeftNotify(pointsLeft) {
-    return "Du hast noch <span class='number'>" + pointsLeft + "</span> Skillpunkte zu verteilen."
+    return "<p>Du hast noch <span class='number'>" + pointsLeft + "</span> Skillpunkte zu verteilen.</p>"
   }
 
   function renderSuccessNotify() {
@@ -212,6 +212,40 @@ $(document).ready(function () {
     }
   }
 
+  $.fn.isOnScreen = function () {
+
+    var win = $(window);
+
+    var viewport = {
+      top : win.scrollTop(),
+      left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+
+    var bounds = this.offset();
+    bounds.right = bounds.left + this.outerWidth();
+    bounds.bottom = bounds.top + this.outerHeight();
+
+    var boundsTop = (bounds.top + bounds.top * 0.35);
+    var boundsBottom = (bounds.bottom + bounds.bottom * 0.1);
+
+    if (win.width > 1024) {
+      return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < boundsTop || viewport.bottom > boundsBottom));
+    } else {
+      return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < boundsTop || viewport.bottom > bounds.bottom));
+    }
+  };
+
+  $(window).scroll(function () {
+    var $notify = $('.notify');
+    if ($('.character').isOnScreen() == true) {
+      $notify.addClass('visible');
+    } else {
+      $notify.removeClass('visible');
+    }
+  });
+
   var $techItems = $('.choose-tech span');
 
   chooseTechCapabilities($techItems);
@@ -235,6 +269,11 @@ $(document).ready(function () {
           if ($item.hasClass('checked')) {
             $item.removeClass('checked');
           }
+        });
+        var $techItm = $capability.closest('.tech-item');
+        $techItm.addClass('anim');
+        $techItm.one('transitionend, webkitTransitionEnd', function () {
+          $techItm.removeClass('anim');
         });
         capabilities = addCapabilities(capabilities, techName, capability);
         $(this).addClass('checked');
@@ -311,7 +350,7 @@ $(document).ready(function () {
   }
 
   function removeEmptyValueTechItem($this) {
-    $this.closest('.custom-capabilities').find('.own-tech-item').each(function (index, value) {
+    $this.closest('.tech-item-wrapper').find('.own-tech-item').each(function (index, value) {
       var $ownTech = $(value).find('.own-tech');
       var $input = $ownTech.find('input');
       var hasAddTechClass = $ownTech.hasClass('add-tech');
@@ -324,8 +363,8 @@ $(document).ready(function () {
   function addButton($this) {
     var hasClassArr = [];
     var $ownTech = $this.closest('.own-tech');
-    var $customCapabilities = $ownTech.closest('.custom-capabilities');
-    var $ownTechItem = $customCapabilities.find('.own-tech-item');
+    var $techItemWrapper = $ownTech.closest('.tech-item-wrapper');
+    var $ownTechItem = $techItemWrapper.find('.own-tech-item');
 
     $ownTech.removeClass('add-tech');
     $ownTech.addClass('custom-tech');
@@ -373,6 +412,7 @@ $(document).ready(function () {
     var serializedData = $form.serializeArray();
 
     var skills = $techItems.filter('.checked');
+    var custom = $('.tech-item').filter('.own-tech-item');
 
     var skillArray = [];
     skills.each(function (idx, value) {
@@ -381,9 +421,6 @@ $(document).ready(function () {
       var capability = $(value).data('capability');
       skillArray.push({name : skillName, capability : capability});
     });
-
-    var custom = $('.custom-tech');
-    custom.filter('.custom-tech');
 
     var customSkillArray = [];
     custom.each(function (idx, value) {
