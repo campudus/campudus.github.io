@@ -36,7 +36,6 @@ $(document).ready(function () {
   var $add = $('.add');
   var $reduce = $('.reduce');
   var $resetButton = $('.reset-points');
-  var $avatarObject = $('.avatar');
 
   callPointsFN($add);
   callPointsFN($reduce);
@@ -228,9 +227,9 @@ $(document).ready(function () {
     bounds.bottom = bounds.top + this.outerHeight();
 
     var boundsTop = (bounds.top + bounds.top * 0.35);
-    var boundsBottom = (bounds.bottom + bounds.bottom * 0.1);
+    var boundsBottom = (bounds.bottom + bounds.bottom * 0.15);
 
-    if (win.width > 1024) {
+    if (win.width() > 1024) {
       return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < boundsTop || viewport.bottom > boundsBottom));
     } else {
       return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < boundsTop || viewport.bottom > bounds.bottom));
@@ -425,28 +424,26 @@ $(document).ready(function () {
     var customSkillArray = [];
     custom.each(function (idx, value) {
       var inputValue = $(value).find('input').val();
-      customSkillArray.push(_.upperCase(inputValue));
+      customSkillArray.push(_.lowerCase(inputValue));
     });
 
-    serializedData.push({
-      name : 'kind', value : _.map(kind, function (value) {
-        return value.kind + ': ' + value.points + ' points'
-      }).join(', ')
-    });
     serializedData.push({
       name : 'skills', value : _.map(skillArray, function (value) {
         return value.name + ': ' + value.capability
-      }).join(', ')
+      }).join(',')
     });
     serializedData.push({
-      name : 'customSkills', value : customSkillArray.join(', ')
+      name : 'customSkills', value : customSkillArray.join(',')
+    });
+    serializedData.push({
+      name : 'kind', value : _.map(kind, function (value) {
+        return value.kind + ': ' + value.points + ' points'
+      }).join(',')
     });
     serializedData.push({name : 'language', value : lang.id});
 
-    console.log("serializedData: ", serializedData);
-
     request = $.ajax({
-      // "url" : "https://script.google.com/macros/s/AKfycbwy_70uxGw1hsNbgXN0K9Lnjt2vFriM14qfdQmE0dIyNq6Vbjo/exec",
+      "url" : "https://script.google.com/macros/s/AKfycbwy_70uxGw1hsNbgXN0K9Lnjt2vFriM14qfdQmE0dIyNq6Vbjo/exec",
       jsonp : "prefix",
       dataType : "jsonp",
       "type" : "GET",
