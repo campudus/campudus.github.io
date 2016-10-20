@@ -23,20 +23,48 @@ i {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-jenkins:before {
+	content: "\e900"
+}
+
+.icon-linux:before {
+	content: "\e901"
+}
+
+.icon-reactjs:before {
+	content: "\e902"
+}
+
+.icon-scrum:before {
+	content: "\e903"
+}
+
+.icon-windows:before {
+	content: "\e904"
+}
+
 .icon-commenting-o:before {
-	content: "\e900";
+	content: "\e905";
 }
 
 .icon-plus:before {
-	content: "\e901";
+	content: "\e906";
 }
 
 .icon-star:before {
-	content: "\e902";
+	content: "\e907";
 }
 
 .icon-times:before {
-	content: "\e903";
+	content: "\e908";
+}
+
+.icon-photoshop:before {
+	content: "\e909"
+}
+
+.icon-animate:before {
+	content: "\e90a"
 }
 
 .icon-bubble:before {

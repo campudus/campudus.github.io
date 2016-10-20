@@ -153,7 +153,6 @@ $(document).ready(function () {
     avatarIcon.css('transform', 'scale(' + scaleRatio + ')');
     avatarIcon.css('-webkit-transform', 'scale(' + scaleRatio + ')');
     if (avatar) {
-      console.log("triggerPressAnim: ", avatar);
       setAnimationClass(avatar, 'press');
     }
   }
@@ -359,10 +358,21 @@ $(document).ready(function () {
       var keyCodeIndex = _.indexOf(keyCodeArr, keyCode);
       if (keyCodeIndex !== -1) {
         removeEmptyValueTechItem($(this));
+        if (keyCode === 13) {
+          event.preventDefault();
+          focusNextInput(this);
+        }
       } else if (!_.isEmpty(value)) {
         addButton($(this));
       }
     })
+  }
+
+  function focusNextInput(_this) {
+    var $input = $('.own-tech input');
+    var index = $input.index(_this) + 1;
+    if (index >= $input.length) index;
+    $input.eq(index).focus();
   }
 
   function removeEmptyValueTechItem($this) {

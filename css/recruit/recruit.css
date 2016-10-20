@@ -6210,6 +6210,8 @@ i.icon-plus {
     padding: 2em;
     border-bottom: 3px solid #006db4;
     height: calc(100% - 60px); }
+    .tech-item .tech-icon .tech-icon-wrapper {
+      height: 100%; }
     .tech-item .tech-icon.own-tech {
       border-bottom: none; }
     .tech-item .tech-icon .icon-times {
@@ -6325,7 +6327,8 @@ i.icon-plus {
         white-space: nowrap;
         -webkit-font-smoothing: antialiased; }
   .tech-item h3 {
-    margin: 0.3em 0 0 0; }
+    margin: 0.3em 0 0 0;
+    -webkit-backface-visibility: hidden; }
   .tech-item .description {
     display: none; }
   .tech-item i {
