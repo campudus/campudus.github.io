@@ -49,6 +49,7 @@ $(document).ready(function () {
   var MAX_POINTS = 7;
   var pointsLeft = 7;
   var sumOfAllPoints = 0;
+  var skepticalDog = false;
 
   var $add = $('.add');
   var $reduce = $('.reduce');
@@ -290,6 +291,7 @@ $(document).ready(function () {
         $techItm.one('transitionend, webkitTransitionEnd', function () {
           $techItm.removeClass('anim');
         });
+        handleSkepticalDog(this);
         capabilities = addCapabilities(capabilities, techName, capability);
         $(this).addClass('checked');
       }
@@ -328,10 +330,15 @@ $(document).ready(function () {
   var $button = $recruitment.find('button');
   var removeButtonClassName = '.remove-button';
   var inputElementName = '.tech-icon input';
+  var $continue = $('.continue');
 
   removeButton(removeButtonClassName);
   inputOnFocusHandler(inputElementName);
   inputOnFocusOutHandler(inputElementName);
+
+  $continue.click(function () {
+    $(this).closest('.popup').removeClass('active');
+  });
 
   function inputOnFocusHandler(inputElementName) {
     $(document).on('focus', inputElementName, function (event) {
@@ -362,10 +369,26 @@ $(document).ready(function () {
           event.preventDefault();
           focusNextInput(this);
         }
+
+        handleSkepticalDog(this);
+
       } else if (!_.isEmpty(value)) {
         addButton($(this));
       }
     })
+  }
+
+  function handleSkepticalDog(_this) {
+    var $customTechTiles = $(_this).closest('.tech-item-wrapper').find('.tech-item').filter('.own-tech-item');
+    var $skills = $(_this).closest('.tech-item-wrapper').find('.choose-tech .checked').filter(function () {
+      return $(this).data('capability') === 'skill';
+    });
+    if ($customTechTiles.length >= 4 && $skills.length >= 7) {
+      if (!skepticalDog) {
+        $('.popup').addClass('active');
+        skepticalDog = true;
+      }
+    }
   }
 
   function focusNextInput(_this) {

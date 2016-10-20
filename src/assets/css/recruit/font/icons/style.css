@@ -75,6 +75,10 @@ i {
 	content: "\e609";
 }
 
+.icon-undo:before {
+	content: "\e90b";
+}
+
 .icon-php:before {
 	content: "\e60a";
 }
