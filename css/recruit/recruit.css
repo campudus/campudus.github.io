@@ -3175,16 +3175,16 @@ kbd {
     background-color: #a0d3e8;
     color: #333333; }
 
-[data-magellan-expedition], [data-magellan-expedition-clone] {
+"[data-magellan-expedition]", [data-magellan-expedition-clone] {
   background: #FFFFFF;
   z-index: 50;
   min-width: 100%;
   padding: 10px; }
-  [data-magellan-expedition] .sub-nav, [data-magellan-expedition-clone] .sub-nav {
+  "[data-magellan-expedition]" .sub-nav, [data-magellan-expedition-clone] .sub-nav {
     margin-bottom: 0; }
-    [data-magellan-expedition] .sub-nav dd, [data-magellan-expedition-clone] .sub-nav dd {
+    "[data-magellan-expedition]" .sub-nav dd, [data-magellan-expedition-clone] .sub-nav dd {
       margin-bottom: 0; }
-    [data-magellan-expedition] .sub-nav a, [data-magellan-expedition-clone] .sub-nav a {
+    "[data-magellan-expedition]" .sub-nav a, [data-magellan-expedition-clone] .sub-nav a {
       line-height: 1.8em; }
 
 @-webkit-keyframes rotate {
@@ -5906,7 +5906,7 @@ th.hide-for-touch {
   th.show-for-print {
     display: table-cell !important; } }
 
-@-webkit-keyframes doit /* Safari and Chrome */ {
+@-webkit-keyframes doit {
   0% {
     transform: scale(1, 1);
     -ms-transform: scale(1, 1);
@@ -6463,6 +6463,9 @@ i.icon-plus {
 
 .contact-headtext {
   margin-bottom: 4rem; }
+
+.contact-intro {
+  margin-bottom: 3em; }
 
 .character .avatar {
   position: relative;
