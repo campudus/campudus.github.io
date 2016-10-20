@@ -153,7 +153,6 @@ $(document).ready(function () {
     avatarIcon.css('transform', 'scale(' + scaleRatio + ')');
     avatarIcon.css('-webkit-transform', 'scale(' + scaleRatio + ')');
     if (avatar) {
-      console.log("triggerPressAnim: ", avatar);
       setAnimationClass(avatar, 'press');
     }
   }

@@ -459,6 +459,10 @@ i.icon-plus {
     border-bottom: 3px solid $campudus-blue;
     height: calc(100% - 60px);
 
+    .tech-icon-wrapper {
+      height: 100%;
+    }
+
     &.own-tech {
       border-bottom: none;
     }
@@ -619,6 +623,7 @@ i.icon-plus {
 
   h3 {
     margin: 0.3em 0 0 0;
+    -webkit-backface-visibility: hidden;
   }
 
   .description {
