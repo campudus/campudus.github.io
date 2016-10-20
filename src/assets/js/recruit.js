@@ -25,6 +25,23 @@ $(document).ready(function () {
     }
   };
 
+  var strings = {
+    successNotify : {
+      en : "<span>Good Job! </span> You have distributed all points.",
+      de : "<span>Good Job! </span> Du hast alle Punkte verteilt."
+    },
+    pointsLeftNotify : function (pointsLeft) {
+      return {
+        en : "<p>You have still <span class='number'>" + pointsLeft + "</span> points left.</p>",
+        de : "<p>Du hast noch <span class='number'>" + pointsLeft + "</span> Skillpunkte zu verteilen.</p>"
+      }
+    },
+    addSkill : {
+      en : "Add skill",
+      de : "Fähigkeit hinzufügen"
+    }
+  };
+
   var lang = langs[getLanguage()];
 
   var kind = [];
@@ -125,11 +142,11 @@ $(document).ready(function () {
   }
 
   function renderPointsLeftNotify(pointsLeft) {
-    return "<p>Du hast noch <span class='number'>" + pointsLeft + "</span> Skillpunkte zu verteilen.</p>"
+    return strings.pointsLeftNotify(pointsLeft)[lang.id];
   }
 
   function renderSuccessNotify() {
-    return "<span>Good Job! </span> Du hast alle Punkte verteilt.";
+    return strings.successNotify[lang.id];
   }
 
   function scaleAvatar(avatarIcon, scaleRatio, avatar) {
@@ -396,7 +413,7 @@ $(document).ready(function () {
       '<i class="icon-times remove-button"></i>' +
       '<i class="icon-commenting-o"></i>' +
       '<i class="icon-bubble"></i>' +
-      '<input placeholder="Fähigkeit hinzufügen"/>' +
+      '<input placeholder="' + strings.addSkill[lang.id] + '"/>' +
       '</div></li>'
   }
 
