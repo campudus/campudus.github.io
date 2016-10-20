@@ -486,10 +486,10 @@ $(document).ready(function () {
     serializedData.push({
       name : 'skills', value : _.map(skillArray, function (value) {
         return value.name + ': ' + value.capability
-      }).join(',')
+      }).join('\n')
     });
     serializedData.push({
-      name : 'customSkills', value : customSkillArray.join(',')
+      name : 'customSkills', value : customSkillArray.join('\n')
     });
     serializedData.push({
       name : 'kind', value : _.map(kind, function (value) {
