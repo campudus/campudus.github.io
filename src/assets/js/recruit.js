@@ -291,9 +291,9 @@ $(document).ready(function () {
         $techItm.one('transitionend, webkitTransitionEnd', function () {
           $techItm.removeClass('anim');
         });
-        handleSkepticalDog(this);
         capabilities = addCapabilities(capabilities, techName, capability);
         $(this).addClass('checked');
+        handleSkepticalDog(this);
       }
     });
   }
@@ -383,7 +383,12 @@ $(document).ready(function () {
     var $skills = $(_this).closest('.tech-item-wrapper').find('.choose-tech .checked').filter(function () {
       return $(this).data('capability') === 'skill';
     });
-    if ($customTechTiles.length >= 4 && $skills.length >= 7) {
+
+    var customSkillCount = $customTechTiles.length - 1;
+    var skillsCount = $skills.length;
+    var totalCount = customSkillCount + skillsCount;
+
+    if (totalCount === 10) {
       if (!skepticalDog) {
         $('.popup').addClass('active');
         skepticalDog = true;
@@ -441,7 +446,8 @@ $(document).ready(function () {
   }
 
   function renderNewAddSkillTile() {
-    return '<li data-equalizer-watch class="tech-item own-tech-item large-4 medium-6 small-12 columns" style="height: inherit;">' +
+    var height = $('.tech-item').first().height();
+    return '<li data-equalizer-watch class="tech-item own-tech-item large-4 medium-6 small-12 columns" style="height:' + height + 'px;">' +
       '<div class="own-tech tech-icon add-tech">' +
       '<i class="icon-times remove-button"></i>' +
       '<i class="icon-commenting-o"></i>' +

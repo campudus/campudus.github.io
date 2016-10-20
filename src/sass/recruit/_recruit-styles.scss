@@ -463,7 +463,7 @@ i.icon-plus {
     }
 
     &.icon-vertx:before {
-      font-size: 0.8em;
+      font-size: 0.6em;
     }
 
     &:before {
@@ -471,7 +471,12 @@ i.icon-plus {
       position: absolute;
       margin: 0 auto;
       left: 50%;
-      transform: translateX(-50%);
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      -ms-transform: translate3d(-50%, -50%, 0);
+      -moz-transform: translate3d(-50%, -50%, 0);
+      -webkit-transform: translate3d(-50%, -50%, 0);
+      -o-transform: translate3d(-50%, -50%, 0);
       line-height: 1em;
 
     }
@@ -812,6 +817,10 @@ i.icon-plus {
   }
 }
 
+.contact-headtext {
+  margin-bottom: 4rem;
+}
+
 .character {
 
   .avatar {
@@ -1060,13 +1069,12 @@ i.icon-plus {
 }
 
 .popup {
-  opacity: 0;
-  z-index: -1;
+  display: none;
 }
 
 .popup.active {
   top: 0;
-  opacity: 1;
+  display: block;
   z-index: 999999999;
   position: fixed;
   width: 100%;
@@ -1084,6 +1092,8 @@ i.icon-plus {
       top: 50%;
       left: 50%;
       text-align: center;
+      width: 100%;
+      max-width: 600px;
       transform: translate3d(-50%, -50%, 0);
       -ms-transform: translate3d(-50%, -50%, 0);
       -moz-transform: translate3d(-50%, -50%, 0);
@@ -1093,6 +1103,7 @@ i.icon-plus {
 
     img {
       display: block;
+      width: 100%;
     }
 
     .continue {
