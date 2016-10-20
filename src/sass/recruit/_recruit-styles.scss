@@ -165,6 +165,10 @@ p {
   text-align: center;
   margin: 0 auto;
 
+  a, a:link, a:visited{
+    color: $highlight-color;
+  }
+
   &.intro {
     margin-bottom: 3rem;
   }
