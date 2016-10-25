@@ -5968,6 +5968,23 @@ a {
   border-bottom: 3px solid #fff;
   padding: 11% 0; }
 
+.langSwitcher {
+  margin-bottom: 4em;
+  width: 100%; }
+  .langSwitcher .languageWrapper {
+    float: right;
+    text-transform: uppercase;
+    display: inline-block;
+    overflow: hidden; }
+    .langSwitcher .languageWrapper li {
+      display: inline-block;
+      float: left; }
+      .langSwitcher .languageWrapper li a {
+        display: inline-block;
+        padding: 0.5rem 0.5rem; }
+  .langSwitcher a {
+    font-family: "Source Sans Pro", sans-serif; }
+
 @media only screen and (max-width: 64.063em) {
   .content-wrapper .columns {
     margin-bottom: 4em; }
