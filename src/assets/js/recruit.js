@@ -54,6 +54,11 @@ $(document).ready(function () {
   var $add = $('.add');
   var $reduce = $('.reduce');
   var $resetButton = $('.reset-points');
+  var $langSwitcherBtn = $('.langSwitcherBtn');
+
+  $langSwitcherBtn.click(function(){
+    $(this).closest('.langSwitcher').find('.languageWrapper').toggle();
+  });
 
   callPointsFN($add);
   callPointsFN($reduce);

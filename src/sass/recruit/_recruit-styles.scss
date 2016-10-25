@@ -99,6 +99,38 @@ a {
   padding: 11% 0;
 }
 
+.langSwitcher {
+  margin-bottom: 4em;
+  width: 100%;
+
+  .languageWrapper {
+    //background-color: $darker-color;
+    //border: 2px solid #005993;
+    float: right;
+    text-transform: uppercase;
+    display: inline-block;
+    overflow: hidden;
+
+    li {
+      display: inline-block;
+      float: left;
+
+      a {
+        //background-color: #0093eb;
+        display: inline-block;
+        padding: 0.5rem 0.5rem;
+      }
+      //&:first-child {
+      //  padding-right: 0;
+      //}
+    }
+  }
+
+  a {
+    font-family: $sourcesans;
+  }
+}
+
 @media only screen and (max-width: 64.063em) {
   .content-wrapper .columns {
     margin-bottom: 4em;
@@ -165,7 +197,7 @@ p {
   text-align: center;
   margin: 0 auto;
 
-  a, a:link, a:visited{
+  a, a:link, a:visited {
     color: $highlight-color;
   }
 
