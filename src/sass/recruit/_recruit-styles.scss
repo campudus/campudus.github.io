@@ -3,10 +3,10 @@
 $sourcesans: 'Source Sans Pro', sans-serif;
 $leagueGothic: 'League Gothic', sans-serif;
 
-$text-color: #fff;
-$campudus-blue: #006db4;
-$light-color: #0093eb;
-$highlight-color: #f7d933;
+$text-color: #FFFFFF;
+$campudus-blue: #006DB4;
+$light-color: #0093EB;
+$highlight-color: #F7D933;
 $dark-color: #005993;
 $darker-color: #00446E;
 $gray: rgba(0, 0, 0, 0.25);
@@ -95,7 +95,7 @@ a {
 // Foundation override
 .row {
   max-width: 100rem;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid #FFFFFF;
   padding: 11% 0;
 }
 
@@ -154,7 +154,7 @@ i {
   }
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, li, a, div, span, i {
+h1, h2, h3, h4, h5, h6, p, ul, li, a, div, span, i, address {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -163,11 +163,11 @@ h1, h2, h3, h4, h5, h6, p, ul, li, a, div, span, i {
   user-select: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, li, a {
+h1, h2, h3, h4, h5, h6, p, ul, li, a, address {
   color: white;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, address {
   font-family: $leagueGothic;
   text-transform: uppercase;
   text-align: center;
@@ -180,6 +180,37 @@ h2 {
 
 h3 {
   font-size: 2.5em;
+}
+
+address {
+  .address-email-tel {
+    width: 100%;
+
+    p {
+      font-size: 1rem;
+
+      a, span {
+        display: inline-block;
+      }
+
+      span.pre-tag {
+        margin-right: 2.5%;
+      }
+
+      a {
+        text-transform: lowercase;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .address-email-tel p, .address-data p {
+    font-style: normal;
+  }
+
+  .address-data {
+    margin-bottom: 1rem;
+  }
 }
 
 p {
@@ -311,7 +342,7 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
         display: block;
         width: 50px;
         height: 1px;
-        background-color: #ffffff;
+        background-color: #FFFFFF;
         margin: 20px auto;
         content: " ";
       }
@@ -1006,7 +1037,7 @@ i.icon-plus {
     -o-transition: opacity 0.2s ease-out;
     transition: opacity 0.2s ease-out;
     opacity: 0;
-    z-index: 0;
+    z-index: -9999;
     left: 0;
     float: none !important;
 
@@ -1147,7 +1178,7 @@ i.icon-plus {
       font-size: 3em;
       padding: 0.5rem 2rem 0.5rem 2.5rem;
       border-radius: 8px;
-      background-color: #0093eb;
+      background-color: #0093EB;
       border: 2px solid #005993;
       text-transform: uppercase;
       box-shadow: 0 5px 0 0 #005993;
@@ -1160,7 +1191,7 @@ i.icon-plus {
 }
 
 footer {
-  .row {
+  .uncollapse.row {
     padding: 2%;
     border: 0;
   }
