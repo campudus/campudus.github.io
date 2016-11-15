@@ -3175,16 +3175,16 @@ kbd {
     background-color: #a0d3e8;
     color: #333333; }
 
-"[data-magellan-expedition]", [data-magellan-expedition-clone] {
+[data-magellan-expedition], [data-magellan-expedition-clone] {
   background: #FFFFFF;
   z-index: 50;
   min-width: 100%;
   padding: 10px; }
-  "[data-magellan-expedition]" .sub-nav, [data-magellan-expedition-clone] .sub-nav {
+  [data-magellan-expedition] .sub-nav, [data-magellan-expedition-clone] .sub-nav {
     margin-bottom: 0; }
-    "[data-magellan-expedition]" .sub-nav dd, [data-magellan-expedition-clone] .sub-nav dd {
+    [data-magellan-expedition] .sub-nav dd, [data-magellan-expedition-clone] .sub-nav dd {
       margin-bottom: 0; }
-    "[data-magellan-expedition]" .sub-nav a, [data-magellan-expedition-clone] .sub-nav a {
+    [data-magellan-expedition] .sub-nav a, [data-magellan-expedition-clone] .sub-nav a {
       line-height: 1.8em; }
 
 @-webkit-keyframes rotate {
@@ -5906,7 +5906,7 @@ th.hide-for-touch {
   th.show-for-print {
     display: table-cell !important; } }
 
-@-webkit-keyframes doit {
+@-webkit-keyframes doit /* Safari and Chrome */ {
   0% {
     transform: scale(1, 1);
     -ms-transform: scale(1, 1);
@@ -5954,18 +5954,18 @@ th.hide-for-touch {
 
 body, html {
   font-size: 1rem;
-  background-color: #006db4; }
+  background-color: #006DB4; }
 
 a {
-  color: #fff; }
+  color: #FFFFFF; }
   a:hover, a:visited {
-    color: #fff; }
+    color: #FFFFFF; }
   a:active {
-    color: #f7d933; }
+    color: #F7D933; }
 
 .row {
   max-width: 100rem;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid #FFFFFF;
   padding: 11% 0; }
 
 .langSwitcher {
@@ -6004,7 +6004,7 @@ i {
   i span {
     display: none; }
 
-h1, h2, h3, h4, h5, h6, p, ul, li, a, div, span, i {
+h1, h2, h3, h4, h5, h6, p, ul, li, a, div, span, i, address {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -6012,10 +6012,10 @@ h1, h2, h3, h4, h5, h6, p, ul, li, a, div, span, i {
   -ms-user-select: none;
   user-select: none; }
 
-h1, h2, h3, h4, h5, h6, p, ul, li, a {
+h1, h2, h3, h4, h5, h6, p, ul, li, a, address {
   color: white; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, address {
   font-family: "League Gothic", sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -6027,6 +6027,22 @@ h2 {
 h3 {
   font-size: 2.5em; }
 
+address .address-email-tel {
+  width: 100%; }
+  address .address-email-tel p a, address .address-email-tel p span {
+    display: inline-block; }
+  address .address-email-tel p span.pre-tag {
+    margin-right: 2.5%; }
+  address .address-email-tel p a {
+    text-transform: lowercase;
+    cursor: pointer; }
+
+address .address-email-tel p, address .address-data p {
+  font-style: normal; }
+
+address .address-data {
+  margin-bottom: 1rem; }
+
 p {
   line-height: 1.5em;
   font-family: "Source Sans Pro", sans-serif;
@@ -6036,7 +6052,7 @@ p {
   text-align: center;
   margin: 0 auto; }
   p a, p a:link, p a:visited {
-    color: #f7d933; }
+    color: #F7D933; }
   p.intro {
     margin-bottom: 3rem; }
   p.small {
@@ -6097,8 +6113,8 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
     .headtext {
       padding-top: 11%; } }
   .headtext h1 {
-    background: #f7d933;
-    color: #006db4;
+    background: #F7D933;
+    color: #006DB4;
     -webkit-transform: rotate(-1deg);
     transform: rotate(-1deg);
     display: inline-block;
@@ -6116,7 +6132,7 @@ header div, .headtext div, .content div, .character div, .technology div, .conta
       display: block;
       width: 50px;
       height: 1px;
-      background-color: #ffffff;
+      background-color: #FFFFFF;
       margin: 20px auto;
       content: " "; }
     .headtext p.intro {
@@ -6137,7 +6153,7 @@ i.icon-check, i.icon-star, i.icon-plus, i.icon-commenting-o, .icon-bubble {
 
 i.icon-plus {
   font-size: 2.5em;
-  color: #f7d933; }
+  color: #F7D933; }
 
 .character .kind {
   padding-top: 3em;
@@ -6154,7 +6170,7 @@ i.icon-plus {
       margin-bottom: 2rem; } }
 
 .checked i.icon-check {
-  color: #f7d933;
+  color: #F7D933;
   display: inline-block; }
 
 .technology > .columns, .philosophy > .columns {
@@ -6186,7 +6202,7 @@ i.icon-plus {
       font-size: 4em; }
     .technology-header .skill i, .technology-header .skill h3, .technology-header .interest i, .technology-header .interest h3 {
       display: inline-block;
-      color: #f7d933;
+      color: #F7D933;
       vertical-align: middle; }
   @media only screen and (max-width: 64.063em) {
     .technology-header .ampersand h2 {
@@ -6248,7 +6264,7 @@ i.icon-plus {
     position: relative;
     background-color: #005993;
     padding: 2em;
-    border-bottom: 3px solid #006db4;
+    border-bottom: 3px solid #006DB4;
     height: calc(100% - 60px); }
     .tech-item .tech-icon .tech-icon-wrapper {
       height: 100%; }
@@ -6290,12 +6306,12 @@ i.icon-plus {
         width: 100%;
         max-width: 300px;
         border: none;
-        border-bottom: 5px solid #fff;
+        border-bottom: 5px solid #FFFFFF;
         padding: 1.5rem 0.5rem 0.5rem 0;
         background-color: #005993;
         outline: none;
         text-transform: uppercase;
-        color: #fff;
+        color: #FFFFFF;
         font-family: "League Gothic", sans-serif;
         font-size: 2.25em;
         text-align: center;
@@ -6314,7 +6330,7 @@ i.icon-plus {
           /* Firefox 18- */
           color: #00446E; }
   .tech-item .choose-tech {
-    background-color: #006db4;
+    background-color: #006DB4;
     position: relative;
     width: 100%;
     height: 60px;
@@ -6358,7 +6374,7 @@ i.icon-plus {
         opacity: 1; }
       .tech-item .choose-tech span p {
         opacity: 0;
-        color: #f7d933;
+        color: #F7D933;
         font-family: "League Gothic", sans-serif;
         position: absolute;
         top: 0;
@@ -6389,7 +6405,7 @@ i.icon-plus {
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     z-index: -1;
-    background-color: #006db4; }
+    background-color: #006DB4; }
 
 @media only screen and (min-width: 40.063em) {
   .technology .medium-block-grid-2 > li {
@@ -6422,7 +6438,7 @@ i.icon-plus {
   height: 3.5rem;
   font-family: "League Gothic", sans-serif;
   font-size: 2.5em;
-  color: #f7d933;
+  color: #F7D933;
   text-align: center; }
   #recruitment input::-webkit-input-placeholder {
     color: rgba(0, 0, 0, 0.25); }
@@ -6446,13 +6462,13 @@ i.icon-plus {
   position: relative;
   padding: 0.5rem 2rem 0.5rem 2.5rem;
   border-radius: 8px;
-  background-color: #0093eb;
+  background-color: #0093EB;
   border: 2px solid #005993;
   text-transform: uppercase;
   box-shadow: 0 5px 0 0 #005993;
   outline-style: none; }
   #recruitment button:hover {
-    background: #006db4; }
+    background: #006DB4; }
   #recruitment button i {
     display: inline-block;
     font-size: 2rem; }
@@ -6461,7 +6477,7 @@ i.icon-plus {
   font-size: 1.7em;
   font-weight: 400;
   margin: 0 5px;
-  color: #f7d933; }
+  color: #F7D933; }
   @media only screen and (max-width: 64.063rem) {
     .number {
       font-size: 1.3rem; } }
@@ -6474,7 +6490,7 @@ i.icon-plus {
   visibility: hidden;
   padding: 1rem 0;
   font-size: 1.3em;
-  color: #f7d933;
+  color: #F7D933;
   text-align: left;
   box-sizing: border-box; }
   .reset-points .icon-undo {
@@ -6491,7 +6507,7 @@ i.icon-plus {
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background-color: #0093eb;
+  background-color: #0093EB;
   border: 3px solid #005993;
   margin: 0 auto;
   transform: scale(1, 1);
@@ -6524,8 +6540,8 @@ i.icon-plus {
     right: 0;
     top: 5%; }
     .character .avatar .pointsContainer.highlight .value {
-      background-color: #fff;
-      border: 7px solid #f7d933; }
+      background-color: #FFFFFF;
+      border: 7px solid #F7D933; }
       .character .avatar .pointsContainer.highlight .value span {
         color: #005993; }
     .character .avatar .pointsContainer .plus {
@@ -6542,7 +6558,7 @@ i.icon-plus {
       height: 80px;
       display: block;
       border-radius: 50%;
-      background-color: #0093eb;
+      background-color: #0093EB;
       border: 7px solid #005993;
       font-size: 3em;
       font-family: "League Gothic", sans-serif; }
@@ -6553,7 +6569,7 @@ i.icon-plus {
         -webkit-transform: translate3d(-50%, -50%, 0);
         /* Safari */
         transform: translate3d(-50%, -50%, 0);
-        color: #fff; }
+        color: #FFFFFF; }
   .character .avatar .avatar-icon {
     width: 85%;
     height: 85%;
@@ -6589,7 +6605,7 @@ i.icon-plus {
   padding: 1rem 0;
   position: fixed;
   bottom: -1px;
-  color: #fff;
+  color: #FFFFFF;
   font-size: 1.5em;
   font-weight: 300;
   font-family: "Source Sans Pro", sans-serif;
@@ -6598,7 +6614,7 @@ i.icon-plus {
   -o-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
   opacity: 0;
-  z-index: 0;
+  z-index: -9999;
   left: 0;
   float: none !important; }
   .character .notify.visible {
@@ -6607,7 +6623,7 @@ i.icon-plus {
   .character .notify p {
     vertical-align: middle; }
   .character .notify span {
-    color: #f7d933;
+    color: #F7D933;
     font-size: 1.7em;
     font-weight: 600;
     margin: 0 5px; }
@@ -6699,7 +6715,7 @@ i.icon-plus {
       font-size: 3em;
       padding: 0.5rem 2rem 0.5rem 2.5rem;
       border-radius: 8px;
-      background-color: #0093eb;
+      background-color: #0093EB;
       border: 2px solid #005993;
       text-transform: uppercase;
       box-shadow: 0 5px 0 0 #005993;
@@ -6707,7 +6723,7 @@ i.icon-plus {
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
 
-footer .row {
+footer .uncollapse.row {
   padding: 2%;
   border: 0; }
 
@@ -6724,4 +6740,4 @@ footer ul {
       text-align: left; }
 
 footer a:hover, footer a:focus {
-  color: #f7d933; }
+  color: #F7D933; }
