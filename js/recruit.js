@@ -517,7 +517,7 @@ $(document).ready(function () {
     request.done(function (response, textStatus, jqXHR) {
       if (response.result == 'success') {
         $button.text(lang.success);
-        ga('send', 'event', 'Berechnung', 'gesendet');
+        ga('send', 'event', 'Bewerbung', 'gesendet');
       } else {
         console.error('The following error occured from script: ' + textStatus);
         resetAfterFail();
