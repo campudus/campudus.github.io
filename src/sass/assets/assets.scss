@@ -1,3 +1,249 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  background-color: black;
+  margin: 35px 0;
+  font-size: 18px;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+
+  b {
+    color: #44A9A2;
+  }
+}
+
+.page {
+  background-color: white;
+  max-width: 55em;
+  margin: 0 auto;
+
+  .header {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+
+    h1, .just-img {
+      float: left;
+      width: 50%;
+    }
+
+    h1 {
+      display: inline-block;
+      margin: 0;
+      text-align: center;
+      line-height: 60px;
+      font-size: 20px;
+    }
+
+    .just-img {
+      position: relative;
+      height: inherit;
+      background-color: black;
+
+      img {
+        width: 60%;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  .intro, .lists {
+    padding: 3em 5em 3em 2em;
+  }
+
+  .intro {
+    a {
+      font-size: 1em;
+      color: #44A9A2;
+      display: inline-block;
+    }
+  }
+
+  .unsorted-list {
+    margin-bottom: 35px;
+  }
+
+  .black-logo {
+    max-width: 17em;
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 35px;
+    padding-top: 50px;
+  }
+
+  .footer {
+    background-color: black;
+    padding-top: 5em;
+    overflow: hidden;
+
+    .digitize-logo {
+      width: 13.5em;
+    }
+
+    address {
+      color: white;
+      font-style: normal;
+      display: inline-block;
+      float: right;
+      text-align: right;
+      font-size: 12px;
+
+      a {
+        color: white;
+        font-size: 16px;
+        margin-top: 8px;
+        display: block;
+        font-weight: bold;
+      }
+
+      span {
+        display: inline-block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      .imprint {
+        font-size: 12px;
+        display: inline-block;
+        margin-top: 10px;
+        color: #44A9A2;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 300;
+}
+
+.body-office-img {
+  width: 100%;
+}
+
+.header-img {
+  background-color: black;
+}
+
+//Smartphone
+@media (max-width: 40em) {
+
+  .title {
+    font-size: 18px;
+  }
+
+  a {
+    font-size: 12px;
+
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  .page {
+
+    p, li {
+      font-size: 12px;
+    }
+
+    .header {
+      height: 100%;
+
+      h1 {
+        line-height: normal;
+        text-align: left;
+        padding: 20px 20px 0px 20px;
+        box-sizing: border-box;
+      }
+
+      h1, .just-img {
+        float: none;
+        width: 100%;
+      }
+
+      .just-img {
+        img {
+          position: relative;
+          width: 80%;
+          transform: none;
+          padding-bottom: 15px;
+        }
+
+      }
+
+    }
+
+    .intro, .lists {
+      padding: 20px;
+    }
+
+    .black-logo {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .footer {
+      padding-top: 2em;
+      .digitize-logo {
+        width: 11.5em;
+      }
+
+      address {
+        float: left;
+        text-align: left;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+      }
+    }
+
+  }
+
+}
+
+//Tablet
+@media (min-width: 40.063em) and (max-width: 64em) {
+  .page {
+
+    a{
+      font-size: 14px;
+    }
+    p, li {
+      font-size: 14px;
+    }
+
+    .title{
+      font-size: 20px;
+    }
+
+    .header{
+
+      h1{
+        font-size: 16px;
+      }
+
+    }
+
+    .black-logo {
+      padding-top: 0px;
+    }
+
+    .footer {
+
+      .digitize-logo{
+        width: 10.5em;
+      }
+
+    }
+
+  }
 }
