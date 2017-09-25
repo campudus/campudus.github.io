@@ -18,7 +18,7 @@ a {
 
 .page {
   background-color: white;
-  max-width: 55em;
+  max-width: 50em;
   margin: 0 auto;
 
   .header {
@@ -36,7 +36,7 @@ a {
       margin: 0;
       text-align: center;
       line-height: 60px;
-      font-size: 20px;
+      font-size: 1.2em;
     }
 
     .just-img {
@@ -46,6 +46,7 @@ a {
 
       img {
         width: 60%;
+        min-width: 15em;
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
@@ -54,7 +55,7 @@ a {
   }
 
   .intro, .lists {
-    padding: 3em 5em 3em 2em;
+    padding: 3em 4em 3em 2em;
   }
 
   .intro {
@@ -83,7 +84,7 @@ a {
     overflow: hidden;
 
     .digitize-logo {
-      width: 13.5em;
+      width: 11.5em;
     }
 
     address {
@@ -92,11 +93,11 @@ a {
       display: inline-block;
       float: right;
       text-align: right;
-      font-size: 12px;
+      font-size: 0.6em;
 
       a {
         color: white;
-        font-size: 16px;
+        font-size: 0.9em;
         margin-top: 8px;
         display: block;
         font-weight: bold;
@@ -109,7 +110,7 @@ a {
       }
 
       .imprint {
-        font-size: 12px;
+        font-size: 0.6em;
         display: inline-block;
         margin-top: 10px;
         color: #44A9A2;
@@ -125,6 +126,7 @@ a {
 }
 
 .body-office-img {
+  display: block;
   width: 100%;
 }
 
@@ -132,8 +134,42 @@ a {
   background-color: black;
 }
 
+//Tablet
+@media (min-width: 640px) and (max-width: 50em) {
+  .page {
+
+    a {
+      font-size: 14px;
+    }
+
+    p, li {
+      font-size: 14px;
+    }
+
+    .title {
+      font-size: 20px;
+    }
+
+    .header {
+
+      h1 {
+        font-size: 16px;
+      }
+
+    }
+
+    .lists .unsorted-list {
+      margin-bottom: 20px;
+    }
+
+    .black-logo {
+      padding-top: 0px;
+    }
+  }
+}
+
 //Smartphone
-@media (max-width: 40em) {
+@media (max-width: 641px) {
 
   .title {
     font-size: 18px;
@@ -142,10 +178,6 @@ a {
   a {
     font-size: 12px;
 
-  }
-
-  ul {
-    padding-left: 20px;
   }
 
   .page {
@@ -185,65 +217,34 @@ a {
       padding: 20px;
     }
 
+    .lists .unsorted-list {
+      margin-bottom: 20px;
+
+      ul {
+        padding-left: 20px;
+        margin: 15px 0;
+      }
+
+    }
+
     .black-logo {
       width: 100%;
       padding: 20px;
       box-sizing: border-box;
     }
-
-    .footer {
-      padding-top: 2em;
-      .digitize-logo {
-        width: 11.5em;
-      }
-
-      address {
-        float: left;
-        text-align: left;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        width: 100%;
-      }
-    }
-
   }
-
 }
 
-//Tablet
-@media (min-width: 40.063em) and (max-width: 64em) {
-  .page {
+@media (max-width: 450px){
+  .page .footer {
+    padding-top: 2em;
 
-    a{
-      font-size: 14px;
+    address {
+      float: left;
+      text-align: left;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 100%;
     }
-    p, li {
-      font-size: 14px;
-    }
-
-    .title{
-      font-size: 20px;
-    }
-
-    .header{
-
-      h1{
-        font-size: 16px;
-      }
-
-    }
-
-    .black-logo {
-      padding-top: 0px;
-    }
-
-    .footer {
-
-      .digitize-logo{
-        width: 10.5em;
-      }
-
-    }
-
   }
 }
