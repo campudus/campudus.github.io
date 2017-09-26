@@ -1,0 +1,152 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: black;
+  margin: 35px 0;
+  font-size: 18px;
+  padding: 20px; }
+
+a {
+  text-decoration: none;
+  color: black;
+  display: inline-block; }
+  a b {
+    color: #44A9A2; }
+
+.page {
+  background-color: white;
+  max-width: 50em;
+  margin: 0 auto; }
+  .page .header {
+    width: 100%;
+    height: 60px;
+    overflow: hidden; }
+    .page .header h1, .page .header .just-img {
+      float: left;
+      width: 50%; }
+    .page .header h1 {
+      display: inline-block;
+      margin: 0;
+      text-align: center;
+      line-height: 60px;
+      font-size: 1.2em; }
+    .page .header .just-img {
+      position: relative;
+      height: inherit;
+      background-color: black; }
+      .page .header .just-img img {
+        width: 60%;
+        min-width: 15em;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%); }
+  .page .intro, .page .lists {
+    padding: 3em 4em 3em 2em; }
+  .page .intro a {
+    font-size: 1em;
+    color: #44A9A2;
+    display: inline-block; }
+  .page .unsorted-list {
+    margin-bottom: 35px; }
+  .page .black-logo {
+    max-width: 17em;
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 35px;
+    padding-top: 50px; }
+  .page .footer {
+    background-color: black;
+    padding-top: 5em;
+    overflow: hidden; }
+    .page .footer .digitize-logo {
+      width: 12.5em; }
+    .page .footer address {
+      color: white;
+      font-style: normal;
+      display: inline-block;
+      float: right;
+      text-align: right;
+      font-size: 0.8em; }
+      .page .footer address a {
+        color: white;
+        font-size: 0.9em;
+        margin-top: 8px;
+        display: block;
+        font-weight: bold; }
+      .page .footer address span {
+        display: inline-block;
+        margin-bottom: 8px;
+        font-weight: bold; }
+      .page .footer address .imprint {
+        display: inline-block;
+        margin-top: 10px;
+        color: #44A9A2; }
+
+.title {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 300; }
+
+.body-office-img {
+  display: block;
+  width: 100%; }
+
+.header-img {
+  background-color: black; }
+
+@media (min-width: 640px) and (max-width: 50em) {
+  .page a {
+    font-size: 14px; }
+  .page p, .page li {
+    font-size: 14px; }
+  .page .title {
+    font-size: 20px; }
+  .page .header h1 {
+    font-size: 16px; }
+  .page .lists .unsorted-list {
+    margin-bottom: 20px; }
+  .page .black-logo {
+    padding-top: 0px; } }
+
+@media (max-width: 641px) {
+  .title {
+    font-size: 18px; }
+  a {
+    font-size: 12px; }
+  .page p, .page li {
+    font-size: 12px; }
+  .page .header {
+    height: 100%; }
+    .page .header h1 {
+      line-height: normal;
+      text-align: left;
+      padding: 20px 20px 0px 20px;
+      box-sizing: border-box; }
+    .page .header h1, .page .header .just-img {
+      float: none;
+      width: 100%; }
+    .page .header .just-img img {
+      position: relative;
+      width: 80%;
+      transform: none;
+      padding-bottom: 15px; }
+  .page .intro, .page .lists {
+    padding: 20px; }
+  .page .lists .unsorted-list {
+    margin-bottom: 20px; }
+    .page .lists .unsorted-list ul {
+      padding-left: 20px;
+      margin: 15px 0; }
+  .page .black-logo {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; } }
+
+@media (max-width: 450px) {
+  .page .footer {
+    padding-top: 2em; }
+    .page .footer address {
+      float: left;
+      text-align: left;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 100%; } }
