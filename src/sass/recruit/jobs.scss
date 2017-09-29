@@ -1,0 +1,97 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #333333;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.jobs {
+  padding: 0 2.5em;
+  box-sizing: border-box;
+  max-width: 35em;
+  margin: 0 auto;
+  background-color: #333333;
+
+  .campudus-logo {
+    display: block;
+    margin: 8em 0 3em 0;
+  }
+
+  h4 {
+    color: white;
+    text-align: center;
+    font-weight: normal;
+    margin: 0 0 3em 0;
+  }
+
+  .jobLink {
+    display: block;
+    color: #333333;
+    background: white;
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    font-weight: bold;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer {
+    margin-top: 3em;
+    overflow: hidden;
+
+    .digitize-logo {
+      width: 12.5em;
+    }
+
+    address {
+      color: white;
+      font-style: normal;
+      display: inline-block;
+      float: right;
+      text-align: right;
+      font-size: 0.8em;
+
+      a {
+        color: white;
+        font-size: 0.9em;
+        margin-top: 8px;
+        display: block;
+        font-weight: bold;
+      }
+
+      span {
+        display: inline-block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      .imprint {
+        display: inline-block;
+        margin-top: 10px;
+        color: #44A9A2;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .jobs {
+    .footer {
+      padding-top: 2em;
+
+      address {
+        float: left;
+        text-align: left;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+      }
+    }
+  }
+}
