@@ -199,7 +199,7 @@ address {
 
 #imprint-wrapper {
 
-  background-color: #fff;
+  background-color: #FFFFFF;
   #imprint {
 
     color: $colorBlack;
@@ -264,7 +264,7 @@ address {
   line-height: 1.5;
 }
 
-.imprint-btn {
+.footer-menu {
   position: absolute;
   display: block;
   padding: 1% 0;
@@ -272,11 +272,26 @@ address {
   bottom: 3%;
   cursor: pointer;
   font-weight: 100;
+  margin: 0;
 
-  &:hover:after, &.active:after {
-    width: 100%;
+  ul, li {
+    list-style: none;
   }
 
+  li {
+    display: inline-block;
+    padding: 0 0.5em;
+  }
+
+  a {
+    display: block;
+    position: relative;
+    padding: 0.3em 0;
+    font-weight: 500;
+    &:hover:after, &.active:after {
+      width: 100%;
+    }
+  }
 }
 
 .button {
@@ -386,7 +401,7 @@ address {
 }
 
 @media screen and (min-width: 1200px) {
-  .imprint-btn, #imprint .back-btn {
+  .imprint-btn, #imprint .back-btn, .footer-menu a {
     &:after {
       @include transition-property(width);
       @include transition-duration(0.3s);
@@ -409,6 +424,17 @@ address {
 }
 
 @media(max-width: 750px) {
+
+  .footer-menu {
+    position: absolute;
+    bottom: 1em;
+    left: 10%;
+
+    li:first-child {
+      padding-left: 0;
+    }
+  }
+
   #hero {
     .hero-wrapper-text {
       .hero-head-text {
@@ -438,7 +464,7 @@ address {
         .footer-text-wrapper {
           display: block;
           max-width: 400px;
-          padding: 10%;
+          padding: 10% 10% 8em 10%;
           margin: 0;
         }
       }
