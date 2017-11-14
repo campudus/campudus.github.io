@@ -34,14 +34,14 @@ a {
     margin-top: 3em;
     overflow: hidden; }
     .jobs .footer .digitize-logo {
-      width: 11em; }
+      width: 12.5em; }
     .jobs .footer address {
       color: white;
       font-style: normal;
       display: inline-block;
       float: right;
       text-align: right;
-      font-size: 0.9em; }
+      font-size: 0.8em; }
       .jobs .footer address a {
         color: white;
         font-size: 0.9em;
@@ -52,21 +52,17 @@ a {
         display: inline-block;
         margin-bottom: 8px;
         font-weight: bold; }
-    .jobs .footer .imprint {
-      display: block;
-      margin-top: 4em;
-      color: #44A9A2;
-      text-align: right; }
+      .jobs .footer address .imprint {
+        display: inline-block;
+        margin-top: 10px;
+        color: #44A9A2; }
 
 @media (max-width: 450px) {
   .jobs .footer {
     padding-top: 2em; }
     .jobs .footer address {
-      float: none;
+      float: left;
       text-align: left;
       padding-top: 20px;
       padding-bottom: 20px;
-      width: 100%; }
-    .jobs .footer .imprint {
-      text-align: left;
-      margin: 1em 0 2em 0; } }
+      width: 100%; } }
