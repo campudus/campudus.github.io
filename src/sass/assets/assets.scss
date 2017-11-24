@@ -42,14 +42,15 @@ a {
     .just-img {
       position: relative;
       height: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: black;
 
       img {
         width: 60%;
-        min-width: 15em;
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
+        min-width: 9em;
+        display: inline-block;
       }
     }
   }
@@ -189,6 +190,7 @@ a {
       height: 100%;
 
       h1 {
+        font-size: 16px;
         line-height: normal;
         text-align: left;
         padding: 20px 20px 0px 20px;
@@ -198,18 +200,10 @@ a {
       h1, .just-img {
         float: none;
         width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        justify-content: flex-start;
       }
-
-      .just-img {
-        img {
-          position: relative;
-          width: 80%;
-          transform: none;
-          padding-bottom: 15px;
-        }
-
-      }
-
     }
 
     .intro, .lists {
