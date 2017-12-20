@@ -55,16 +55,30 @@ a {
     padding-bottom: 35px;
     padding-top: 50px; }
   .page .footer {
+    display: flex;
+    position: relative;
     background-color: black;
-    padding-top: 5em;
-    overflow: hidden; }
+    padding: 5em 0 2em 0; }
     .page .footer .digitize-logo {
-      width: 12.5em; }
+      position: relative;
+      z-index: 1;
+      width: 12.5em;
+      display: block; }
+    .page .footer .rocket-launch {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: auto;
+      height: 105%;
+      z-index: 0; }
     .page .footer address {
+      position: relative;
+      z-index: 1;
+      flex: 1;
       color: white;
       font-style: normal;
-      display: inline-block;
-      float: right;
+      display: block;
       text-align: right;
       font-size: 0.8em; }
       .page .footer address a {
@@ -139,13 +153,19 @@ a {
   .page .black-logo {
     width: 100%;
     padding: 20px;
-    box-sizing: border-box; } }
+    box-sizing: border-box; }
+  .page .footer .rocket-launch {
+    height: 50%; } }
 
 @media (max-width: 450px) {
   .page .footer {
-    padding-top: 2em; }
+    padding-top: 2em;
+    flex-direction: column; }
+    .page .footer .rocket-launch {
+      height: 30%;
+      transform: translateX(0);
+      right: 0; }
     .page .footer address {
-      float: left;
       text-align: left;
       padding-top: 20px;
       padding-bottom: 20px;
