@@ -80,19 +80,35 @@ a {
   }
 
   .footer {
+    display: flex;
+    position: relative;
     background-color: black;
-    padding-top: 5em;
-    overflow: hidden;
+    padding: 5em 0 2em 0;
 
     .digitize-logo {
+      position: relative;
+      z-index: 1;
       width: 12.5em;
+      display: block;
+    }
+
+    .rocket-launch {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: auto;
+      height: 105%;
+      z-index: 0;
     }
 
     address {
+      position: relative;
+      z-index: 1;
+      flex: 1;
       color: white;
       font-style: normal;
-      display: inline-block;
-      float: right;
+      display: block;
       text-align: right;
       font-size: 0.8em;
 
@@ -133,6 +149,7 @@ a {
 .header-img {
   background-color: black;
 }
+
 
 //Tablet
 @media (min-width: 640px) and (max-width: 50em) {
@@ -225,15 +242,27 @@ a {
       padding: 20px;
       box-sizing: border-box;
     }
+
+    .footer {
+      .rocket-launch {
+        height: 50%
+      }
+    }
   }
 }
 
-@media (max-width: 450px){
+@media (max-width: 450px) {
   .page .footer {
     padding-top: 2em;
+    flex-direction: column;
+
+    .rocket-launch {
+      height: 30%;
+      transform: translateX(0);
+      right: 0;
+    }
 
     address {
-      float: left;
       text-align: left;
       padding-top: 20px;
       padding-bottom: 20px;
