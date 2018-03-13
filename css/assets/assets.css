@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: black;
+  background-color: #1d2227;
   margin: 35px 0;
   font-size: 18px;
   padding: 20px; }
@@ -35,7 +35,7 @@ a {
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: black; }
+      background-color: #1d2227; }
       .page .header .just-img img {
         width: 60%;
         min-width: 9em;
@@ -57,7 +57,7 @@ a {
   .page .footer {
     display: flex;
     position: relative;
-    background-color: black;
+    background-color: #1d2227;
     padding: 5em 0 2em 0; }
     .page .footer .digitize-logo {
       position: relative;
@@ -106,7 +106,7 @@ a {
   width: 100%; }
 
 .header-img {
-  background-color: black; }
+  background-color: #1d2227; }
 
 @media (min-width: 640px) and (max-width: 50em) {
   .page a {

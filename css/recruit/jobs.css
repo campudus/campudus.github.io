@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #333333;
+  background-color: #1d2227;
   margin: 0; }
 
 a {
@@ -11,7 +11,7 @@ a {
   box-sizing: border-box;
   max-width: 35em;
   margin: 0 auto;
-  background-color: #333333; }
+  background-color: #1d2227; }
   .jobs .campudus-logo {
     display: block;
     margin: 8em 0 3em 0; }
@@ -22,7 +22,7 @@ a {
     margin: 0 0 3em 0; }
   .jobs .jobLink {
     display: block;
-    color: #333333;
+    color: #1d2227;
     background: white;
     padding: 0.5em 1em;
     margin-bottom: 1em;
