@@ -55,11 +55,6 @@ address {
   display: flex;
   align-items: center;
 
-  padding: 10%;
-
-  @media (max-width: 500px) {
-    padding: 20% 10%;
-  }
 
   .campudus-developer-logo {
     width: 70%;
@@ -77,6 +72,12 @@ address {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    box-sizing: border-box;
+    padding: 10%;
+
+    @media (max-width: 500px) {
+      padding: 20% 10%;
+    }
 
     .hero-head-text {
       margin: 10% auto 5% auto;
