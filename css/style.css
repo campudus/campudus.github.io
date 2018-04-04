@@ -398,12 +398,11 @@ address {
   overflow: hidden;
   position: relative;
   display: flex;
-  align-items: center; }
-  #hero .padding {
-    padding: 10%; }
-    @media (max-width: 500px) {
-      #hero .padding {
-        padding: 20% 10%; } }
+  align-items: center;
+  padding: 10%; }
+  @media (max-width: 500px) {
+    #hero {
+      padding: 20% 10%; } }
   #hero .campudus-developer-logo {
     width: 70%;
     max-width: 350px;
