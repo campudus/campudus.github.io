@@ -55,13 +55,10 @@ address {
   display: flex;
   align-items: center;
 
-  .padding {
-    padding: 10%;
+  padding: 10%;
 
-    @media (max-width: 500px) {
-      padding: 20% 10%;
-    }
-
+  @media (max-width: 500px) {
+    padding: 20% 10%;
   }
 
   .campudus-developer-logo {
