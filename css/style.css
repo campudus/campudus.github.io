@@ -387,6 +387,7 @@ address {
   display: block;
   z-index: 0;
   position: absolute;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -394,7 +395,10 @@ address {
 
 #hero {
   text-align: center;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center; }
   #hero .padding {
     padding: 10%; }
     @media (max-width: 500px) {
@@ -407,33 +411,35 @@ address {
     @media (max-width: 900px) {
       #hero .campudus-developer-logo {
         max-width: 290px; } }
-  #hero .hero-wrapper-text {
+  #hero .hero-wrapper {
     width: 100%;
     max-width: 1300px;
-    margin: 0 auto; }
-    #hero .hero-wrapper-text .hero-head-text {
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; }
+    #hero .hero-wrapper .hero-head-text {
       margin: 10% auto 5% auto;
       font-size: 31px;
       color: #ffe431; }
       @media (max-width: 600px) {
-        #hero .hero-wrapper-text .hero-head-text {
+        #hero .hero-wrapper .hero-head-text {
           max-width: 290px;
           margin: 15% auto 7% auto; } }
       @media (max-width: 400px) {
-        #hero .hero-wrapper-text .hero-head-text {
+        #hero .hero-wrapper .hero-head-text {
           margin: 12% auto; } }
-      #hero .hero-wrapper-text .hero-head-text span {
+      #hero .hero-wrapper .hero-head-text span {
         color: #fff; }
-    #hero .hero-wrapper-text p {
+    #hero .hero-wrapper p {
       color: #fff;
       max-width: 700px;
       margin: 0 auto; }
-    #hero .hero-wrapper-text .arrow-down {
+    #hero .hero-wrapper .arrow-down {
       margin-top: 15%;
       display: block;
       width: 100%;
       text-align: center; }
-      #hero .hero-wrapper-text .arrow-down img {
+      #hero .hero-wrapper .arrow-down img {
         max-width: 50px;
         display: inline-block;
         width: 15%; }
