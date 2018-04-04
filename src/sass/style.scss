@@ -42,7 +42,7 @@ address {
   display: block;
   z-index: 0;
   position: absolute;
-  //height: 100%;
+  top: 0;
   left: 50%;
   @include translateX(-50%)
 }
@@ -51,6 +51,9 @@ address {
   //width: 100%;
   text-align: center;
   overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
 
   .padding {
     padding: 10%;
@@ -71,10 +74,12 @@ address {
     }
   }
 
-  .hero-wrapper-text {
+  .hero-wrapper {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 
     .hero-head-text {
       margin: 10% auto 5% auto;
