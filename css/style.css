@@ -398,11 +398,7 @@ address {
   overflow: hidden;
   position: relative;
   display: flex;
-  align-items: center;
-  padding: 10%; }
-  @media (max-width: 500px) {
-    #hero {
-      padding: 20% 10%; } }
+  align-items: center; }
   #hero .campudus-developer-logo {
     width: 70%;
     max-width: 350px;
@@ -415,7 +411,12 @@ address {
     max-width: 1300px;
     margin: 0 auto;
     position: relative;
-    z-index: 1; }
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 10%; }
+    @media (max-width: 500px) {
+      #hero .hero-wrapper {
+        padding: 20% 10%; } }
     #hero .hero-wrapper .hero-head-text {
       margin: 10% auto 5% auto;
       font-size: 31px;
