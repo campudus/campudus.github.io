@@ -22,6 +22,7 @@ a {
     margin: 0 0 3em 0; }
   .jobs .jobLink {
     display: block;
+    cursor: pointer;
     color: #1d2227;
     background: white;
     padding: 0.5em 1em;
