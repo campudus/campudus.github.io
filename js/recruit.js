@@ -1,9 +1,9 @@
 // Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
 $(document).foundation({
-  equalizer : {
+  equalizer: {
     // Specify if Equalizer should make elements equal height once they become stacked.
-    equalize_on_stack : true
+    equalize_on_stack: true
   }
 });
 
@@ -11,34 +11,34 @@ $(document).ready(function () {
   var request;
 
   var langs = {
-    de : {
-      id : 'de',
-      loading : 'Bewerbe',
-      success : 'Beworben!',
-      retry : 'Erneut senden'
+    de: {
+      id: 'de',
+      loading: 'Bewerbe',
+      success: 'Beworben!',
+      retry: 'Erneut senden'
     },
-    en : {
-      id : 'en',
-      loading : 'Applying',
-      success : 'Applied!',
-      retry : 'Retry sending'
+    en: {
+      id: 'en',
+      loading: 'Applying',
+      success: 'Applied!',
+      retry: 'Retry sending'
     }
   };
 
   var strings = {
-    successNotify : {
-      en : "<span>Good Job! </span> You have distributed all points.",
-      de : "<span>Good Job! </span> Du hast alle Punkte verteilt."
+    successNotify: {
+      en: "<span>Good Job! </span> You have distributed all points.",
+      de: "<span>Good Job! </span> Du hast alle Punkte verteilt."
     },
-    pointsLeftNotify : function (pointsLeft) {
+    pointsLeftNotify: function (pointsLeft) {
       return {
-        en : "<p>You have still <span class='number'>" + pointsLeft + "</span> points left.</p>",
-        de : "<p>Du hast noch <span class='number'>" + pointsLeft + "</span> Skillpunkte zu verteilen.</p>"
+        en: "<p>You have still <span class='number'>" + pointsLeft + "</span> points left.</p>",
+        de: "<p>Du hast noch <span class='number'>" + pointsLeft + "</span> Skillpunkte zu verteilen.</p>"
       }
     },
-    addSkill : {
-      en : "Add skill",
-      de : "Fähigkeit hinzufügen"
+    addSkill: {
+      en: "Add skill",
+      de: "Fähigkeit hinzufügen"
     }
   };
 
@@ -56,7 +56,7 @@ $(document).ready(function () {
   var $resetButton = $('.reset-points');
   var $langSwitcherBtn = $('.langSwitcherBtn');
 
-  $langSwitcherBtn.click(function(){
+  $langSwitcherBtn.click(function () {
     $(this).closest('.langSwitcher').find('.languageWrapper').toggle();
   });
 
@@ -183,7 +183,10 @@ $(document).ready(function () {
     }
 
     if (_.isEmpty(array) || kindIndex === -1 && sumOfAllPoints < MAX_POINTS) {
-      array.push({kind : kind, points : 1});
+      array.push({
+        kind: kind,
+        points: 1
+      });
       scaleAvatar($avatarIcon, 1.05, $avatar);
       --pointsLeft;
     } else {
@@ -238,8 +241,8 @@ $(document).ready(function () {
     var win = $(window);
 
     var viewport = {
-      top : win.scrollTop(),
-      left : win.scrollLeft()
+      top: win.scrollTop(),
+      left: win.scrollLeft()
     };
     viewport.right = viewport.left + win.width();
     viewport.bottom = viewport.top + win.height();
@@ -404,7 +407,9 @@ $(document).ready(function () {
   function focusNextInput(_this) {
     var $input = $('.own-tech input');
     var index = $input.index(_this) + 1;
-    if (index >= $input.length) index;
+    if (index >= $input.length) {
+      index;
+    }
     $input.eq(index).focus();
   }
 
@@ -479,7 +484,10 @@ $(document).ready(function () {
       var techItem = $(value).closest('.tech-item');
       var skillName = $(techItem).attr('id');
       var capability = $(value).data('capability');
-      skillArray.push({name : skillName, capability : capability});
+      skillArray.push({
+        name: skillName,
+        capability: capability
+      });
     });
 
     var customSkillArray = [];
@@ -489,55 +497,51 @@ $(document).ready(function () {
     });
 
     serializedData.push({
-      name : 'skills', value : _.map(skillArray, function (value) {
+      name: 'skills',
+      value: _.map(skillArray, function (value) {
         return value.name + ': ' + value.capability
       }).join('\n')
     });
     serializedData.push({
-      name : 'customSkills', value : customSkillArray.join('\n')
+      name: 'customSkills',
+      value: customSkillArray.join('\n')
     });
     serializedData.push({
-      name : 'kind', value : _.map(kind, function (value) {
+      name: 'kind',
+      value: _.map(kind, function (value) {
         return value.kind + ': ' + value.points + ' points'
       }).join(',')
     });
-    serializedData.push({name : 'language', value : lang.id});
-
-    request = $.ajax({
-      "url" : "https://script.google.com/macros/s/AKfycbwy_70uxGw1hsNbgXN0K9Lnjt2vFriM14qfdQmE0dIyNq6Vbjo/exec",
-      jsonp : "prefix",
-      dataType : "jsonp",
-      "type" : "GET",
-      "data" : serializedData
+    serializedData.push({
+      name: 'language',
+      value: lang.id
     });
 
     $button.attr('disabled', 'disabled');
     $button.text(lang.loading);
 
-    request.done(function (response, textStatus, jqXHR) {
-      if (response.result == 'success') {
-        $button.text(lang.success);
-        ga('send', 'event', 'Bewerbung', 'gesendet');
-      } else {
-        console.error('The following error occured from script: ' + textStatus);
-        resetAfterFail();
-      }
-    });
-
-    // callback handler that will be called on failure
-    request.fail(function (jqXHR, textStatus, errorThrown) {
-      // log the error to the console
-      console.error('The following error occured from server: ' + textStatus, errorThrown);
-      resetAfterFail();
-    });
-
-    request.always(function () {
-    });
-
-    function resetAfterFail() {
-      $button.text(lang.retry);
-      $button.removeAttr('disabled');
+    function getRecruitEntry(name) {
+      return _.chain(serializedData)
+              .filter(["name", name])
+              .get([0, "value"])
+              .value();
     }
+
+    var subject = "[Recruit-Page] Bewerbung von " + getRecruitEntry("name") + " als " + getRecruitEntry("kind") + " (" + getRecruitEntry(
+      "language") + ")";
+    var body = "Hier die Daten:\nName: " + getRecruitEntry("name") +
+      "\nE-Mail: " + getRecruitEntry("email") +
+      "\nURL: " + getRecruitEntry("url") +
+      "\nSkills: " + getRecruitEntry("skills") +
+      "\nZusatskills: " + getRecruitEntry("customSkills") +
+      "\nArt: " + getRecruitEntry("kind") +
+      "\nSprache: " + getRecruitEntry("language");
+
+    var params = "?subject=" +  encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+    var mailToUrl = "mailto:recruit@campudus.com" + params;
+
+    return window.location.href = mailToUrl;
 
   });
 
