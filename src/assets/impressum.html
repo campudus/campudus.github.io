@@ -45,6 +45,26 @@
     ga('send', 'pageview');
 
   </script>
+
+  <script type="text/javascript">
+
+    var gaId = location.search.split("?gaId=");
+
+    // Set to the same value as the web property used on the site
+    var gaProperty = gaId && gaId[1] ? gaId[1] : 'UA-35536346-1';
+
+    // Disable tracking if the opt-out cookie exists.
+    var disableStr = 'ga-disable-' + gaProperty;
+    if (document.cookie.indexOf(disableStr + '=true') > -1) {
+      window[disableStr] = true;
+    }
+
+    // Opt-out function
+    function gaOptout() {
+      document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+      window[disableStr] = true;
+    }
+  </script>
 </head>
 <body id="imprint-wrapper">
 <div id="page-wrapper" class="table">
@@ -244,21 +264,6 @@
   </section>
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="/js/script.js"></script>
-  <script type="text/javascript">
-    // Set to the same value as the web property used on the site
-    var gaProperty = 'UA-35536346-1';
 
-    // Disable tracking if the opt-out cookie exists.
-    var disableStr = 'ga-disable-' + gaProperty;
-    if (document.cookie.indexOf(disableStr + '=true') > -1) {
-      window[disableStr] = true;
-    }
-
-    // Opt-out function
-    function gaOptout() {
-      document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
-      window[disableStr] = true;
-    }
-  </script>
 </div>
 </body>
