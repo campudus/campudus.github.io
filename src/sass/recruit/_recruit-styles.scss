@@ -846,6 +846,78 @@ i.icon-plus {
       font-size: 2rem;
     }
   }
+
+  .data-consent {
+    display: flex;
+    margin-top: 50px;
+  }
+
+  .data-consent-text {
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
+  }
+
+  #data-consent-checkbox {
+    visibility: hidden;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  #data-consent-checkbox:checked + .fake-checkbox:after {
+    opacity: 1;
+  }
+
+  .data-consent-checkbox {
+    cursor: pointer;
+    display: block;
+    height: 25px;
+    margin-right: 25px;
+    min-width: 25px;
+    position: relative;
+    width: 25px;
+  }
+
+  .fake-checkbox.error {
+    border: 1px solid $highlight-color;
+  }
+
+  #data-consent-checkbox:checked + .fake-checkbox.error {
+    border: none;
+  }
+
+  .fake-checkbox {
+    background: $dark-color;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 0;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 8px;
+      background: transparent;
+      top: 6px;
+      left: 5px;
+      border: 2px solid $highlight-color;
+      border-top: none;
+      border-right: none;
+      opacity: 0;
+      -webkit-transform: rotate(-50deg);
+      transform: rotate(-50deg);
+    }
+  }
 }
 
 .number {
