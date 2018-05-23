@@ -3,6 +3,8 @@
 .sass-cache/
 _site/
 *.iml
+*.log
+*-lock.json
 
 out/
 node_modules
