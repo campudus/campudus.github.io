@@ -29,8 +29,8 @@ Campudus
   <script>(function (w, d, s, l, i) {
     w[l] = w[l] || [];
     w[l].push({
-      'gtm.start' : new Date().getTime(),
-      event : 'gtm.js'
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js'
     });
     var f = d.getElementsByTagName(s)[0],
       j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
@@ -550,6 +550,18 @@ Campudus
           <label for="url">Portfolio URL</label>
           <input type="url" name="url" id="url" placeholder="Website, GIT-Repo, Dribbble ..." />
         </div>
+        <div class="data-consent">
+          <label class="data-consent-checkbox" for="data-consent-checkbox">
+            <input type="checkbox" name="url" id="data-consent-checkbox" required />
+            <span class="fake-checkbox"></span>
+          </label>
+          <p class="data-consent-text">Ich habe die Erklärung zum Datenschutz der Campudus GmbH gelesen und bin mit der
+            Verarbeitung meiner personenbezogenen Daten in Übereinstimmung mit den Bedingungen der Erklärung zum
+            Datenschutz einverstanden. Mit dem Absenden der Anfrage erkläre ich mich mit der Verarbeitung meiner
+            angegebenen Daten zum Zweck der Bearbeitung der Anfrage einverstanden.
+            <a href="http://www.campudus.com/impressum">Zum Datenschutz</a>
+          </p>
+        </div>
         <button type="submit">Bewerben <i class="icon-arrow-right"></i></button>
       </form>
     </div>
@@ -567,7 +579,8 @@ Campudus
   <ul class="row uncollapse">
     <li class="home small-4 columns"><a href="http://campudus.com/">Campudus</a></li>
     <li class="contact small-4 columns"><a href="#contact">Kontakt</a></li>
-    <li class="imprint small-4 columns"><a href="http://campudus.com/impressum.html?gaId=UA-35536346-2">Impressum</a></li>
+    <li class="imprint small-4 columns"><a href="http://campudus.com/impressum.html?gaId=UA-35536346-2">Impressum</a>
+    </li>
   </ul>
   <div id="contact" class="row">
     <address>
@@ -594,8 +607,8 @@ Campudus
   (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
     i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
     a = s.createElement(o),
       m = s.getElementsByTagName(o)[0];
     a.async = 1;

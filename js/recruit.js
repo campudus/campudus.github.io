@@ -466,6 +466,14 @@ $(document).ready(function () {
       '</div></li>'
   }
 
+  $button.on("click", function () {
+    var $dataConsentCheckbox = $recruitment.find("#data-consent-checkbox");
+    var $fakeCheckbox = $recruitment.find(".fake-checkbox");
+    var isChecked = $dataConsentCheckbox[0] ? $dataConsentCheckbox[0].checked : false;
+
+    return isChecked ? $fakeCheckbox.removeClass("error") : $fakeCheckbox.addClass("error");
+  });
+
   $recruitment.submit(function (event) {
     event.preventDefault();
 
@@ -537,7 +545,7 @@ $(document).ready(function () {
       "\nArt: " + getRecruitEntry("kind") +
       "\nSprache: " + getRecruitEntry("language");
 
-    var params = "?subject=" +  encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    var params = "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
 
     var mailToUrl = "mailto:recruit@campudus.com" + params;
 
