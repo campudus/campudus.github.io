@@ -58,6 +58,30 @@ Campudus
   <link href="/images/recruit/recruit_poster.jpg" rel="image_src">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
   <script src="/js/modernizr.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/css/recruit/cookieconsent.min.css" />
+  <script src="/js/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#232323"
+          },
+          "button": {
+            "background": "transparent",
+            "text": "#F7D933",
+            "border": "#F7D933"
+          }
+        },
+        content: {
+          link: "Learn more.",
+          href: 'http://campudus.com/impressum',
+          message: "By continuing to browse this site, you are agreeing to the use of cookies and our privacy policy.",
+          dismiss: "Ok",
+        }
+      })});
+  </script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->

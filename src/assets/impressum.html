@@ -65,6 +65,30 @@
       window[disableStr] = true;
     }
   </script>
+
+  <link rel="stylesheet" type="text/css" href="/css/recruit/cookieconsent.min.css" />
+  <script src="/js/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#232323"
+          },
+          "button": {
+            "background": "transparent",
+            "text": "#F7D933",
+            "border": "#F7D933"
+          }
+        },
+        content: {
+          link: "Weitere Informationen.",
+          href: 'http://campudus.com/impressum',
+          message: "Durch die weitere Nutzung der Seite stimmen Sie der Verwendung von Cookies und unseren Datenschutzbestimmungen zu.",
+          dismiss: "Ok",
+        }
+      })});
+  </script>
 </head>
 <body id="imprint-wrapper">
 <div id="page-wrapper" class="table">
@@ -187,6 +211,20 @@
         („Datennutzung zu Werbezwecken“),
         <a target="_blank" href="https://adssettings.google.com/authenticated">https://adssettings.google.com/authenticated</a>
         („Informationen verwalten, die Google verwendet, um Ihnen Werbung einzublenden“).</p>
+
+      <h3>Erhebung von Zugriffsdaten und Logfiles</h3>
+      <p>Wir erheben auf Grundlage unserer berechtigten Interessen im Sinne des
+        Art. 6 Abs. 1 lit. f. DSGVO Daten über jeden Zugriff auf den Server, auf
+        dem sich dieser Dienst befindet (sogenannte Serverlogfiles). Zu den
+        Zugriffsdaten gehören Name der abgerufenen Webseite, Datei, Datum und
+        Uhrzeit des Abrufs, übertragene Datenmenge, Meldung über erfolgreichen
+        Abruf, Browsertyp nebst Version, das Betriebssystem des Nutzers, Referrer
+        URL (die zuvor besuchte Seite), IP-Adresse und der anfragende Provider.
+        Logfile-Informationen werden aus Sicherheitsgründen (z.B. zur Aufklärung
+        von Missbrauchs- oder Betrugshandlungen) für die Dauer von maximal 31
+        Tagen gespeichert und danach gelöscht. Daten, deren weitere
+        Aufbewahrung zu Beweiszwecken erforderlich ist, sind bis zur endgültigen
+        Klärung des jeweiligen Vorfalls von der Löschung ausgenommen.</p>
 
       <h3>Kontaktaufnahme</h3>
       <p>Bei der Kontaktaufnahme mit uns (per Kontaktformular, Chat oder E-Mail) werden Ihre Angaben zur Bearbeitung der

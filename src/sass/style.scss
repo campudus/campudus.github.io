@@ -47,14 +47,24 @@ address {
   @include translateX(-50%)
 }
 
+.cc-message .cc-link {
+  color: white !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #F7D933 !important;
+  padding: 0;
+}
+
+.cc-btn.cc-dismiss {
+  color: #F7D933 !important;
+  text-decoration: none !important;
+}
+
 #hero {
-  //width: 100%;
   text-align: center;
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
-
 
   .campudus-developer-logo {
     width: 70%;
