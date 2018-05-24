@@ -393,15 +393,19 @@ address {
   -ms-transform: translateX(-50%);
   -webkit-transform: translateX(-50%); }
 
+.cc-banner.cc-bottom {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
 .cc-message .cc-link {
-  color: white !important;
+  color: #F7D933 !important;
+  opacity: 1 !important;
   text-decoration: none !important;
-  border-bottom: 1px solid #F7D933 !important;
   padding: 0; }
 
 .cc-btn.cc-dismiss {
   color: #F7D933 !important;
-  text-decoration: none !important; }
+  text-decoration: none !important;
+  text-transform: uppercase; }
 
 #hero {
   text-align: center;
