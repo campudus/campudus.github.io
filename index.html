@@ -38,6 +38,30 @@
     ga('send', 'pageview');
 
   </script>
+
+  <link rel="stylesheet" type="text/css" href="/css/recruit/cookieconsent.min.css" />
+  <script src="/js/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#232323"
+          },
+          "button": {
+            "background": "transparent",
+            "text": "#F7D933",
+            "border": "#F7D933"
+          }
+        },
+        content: {
+          link: "Weitere Informationen.",
+          href: 'http://campudus.com/impressum',
+          message: "Durch die weitere Nutzung der Seite stimmen Sie der Verwendung von Cookies und unseren Datenschutzbestimmungen zu.",
+          dismiss: "Ok",
+        }
+      })});
+  </script>
 </head>
 <body>
   <div id="page-wrapper">

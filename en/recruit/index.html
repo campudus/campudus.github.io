@@ -58,6 +58,30 @@ Campudus
   <link href="/images/recruit/recruit_poster.jpg" rel="image_src">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
   <script src="/js/modernizr.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/css/recruit/cookieconsent.min.css" />
+  <script src="/js/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#232323"
+          },
+          "button": {
+            "background": "transparent",
+            "text": "#F7D933",
+            "border": "#F7D933"
+          }
+        },
+        content: {
+          link: "Learn more.",
+          href: 'http://campudus.com/impressum',
+          message: "By continuing to browse this site, you are agreeing to the use of cookies and our privacy policy.",
+          dismiss: "Ok",
+        }
+      })});
+  </script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -551,18 +575,10 @@ Campudus
           <label for="url">Portfolio URL</label>
           <input type="url" name="url" id="url" placeholder="Website, GIT-Repo, Dribbble ..." />
         </div>
-        <div class="data-consent">
-          <label class="data-consent-checkbox" for="data-consent-checkbox">
-            <input type="checkbox" name="url" id="data-consent-checkbox" required />
-            <span class="fake-checkbox"></span>
-          </label>
-          <p class="data-consent-text">Ich habe die Erklärung zum Datenschutz der Campudus GmbH gelesen und bin mit der
-            Verarbeitung meiner personenbezogenen Daten in Übereinstimmung mit den Bedingungen der Erklärung zum
-            Datenschutz einverstanden. Mit dem Absenden der Anfrage erkläre ich mich mit der Verarbeitung meiner
-            angegebenen Daten zum Zweck der Bearbeitung der Anfrage einverstanden.
-            <a href="http://www.campudus.com/impressum">Zum Datenschutz</a>
-          </p>
-        </div>
+        <p class="data-consent-text">By submitting the contact form, you agree that your data will be used to process
+          your request. For further information, please refer to our <a target="_blank" href="http://www.campudus.com/impressum">data
+            protection policy</a>.
+        </p>
         <button type="submit">Enlist <i class="icon-arrow-right"></i></button>
       </form>
     </div>
